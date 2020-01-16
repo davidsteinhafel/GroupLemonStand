@@ -14,10 +14,17 @@ namespace Lemonade_Stand
         public Wallet wallet;
         public Recipe recipe;
         public Pitcher pitcher;
+        public Pitcher pitcher1 = new Pitcher();
 
         public Player(string name)
         {
             this.name = name;
+        }
+        public void SetName()
+        {
+            Console.WriteLine("Please put your name in");
+            name = Console.ReadLine();
+
         }
     }
     
