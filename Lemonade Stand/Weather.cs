@@ -8,17 +8,17 @@ namespace Lemonade_Stand
 {
     class Weather
     {
-        public string condition;
-        public int temperature;
+        
+        public List <int> Temperature;
         public List<string> weatherConditions;
-        public string predictedForecast;
-        string weather;
+        public List <string> predictedForecast;
         Random random;
 
-        public Weather(string condition, int temperature )
+        public Weather()
         {
+            Temperature = new List<int>() { -50, -20, 10, 40, 70 };
             weatherConditions = new List<string>(){"snow","sleet","rain","sunny","cloudy"};
-
+            predictedForecast = new List<string>() { "snow", "sleet", "rain", "sunny" ,"cloudy" };
             random = new Random();
            
         }
@@ -26,10 +26,25 @@ namespace Lemonade_Stand
         public void Weathercontrol()
         {
             int rng = random.Next(4);
-            string Outside = weatherConditions[rng];
+            string weather = weatherConditions[rng];
             Console.WriteLine("the weather today is" + weatherConditions);
 
             
+        }
+
+        public void Tempcontrol()
+        {
+            int rng = random.Next(5);
+            int temp = Temperature[rng];
+            random = new Random();
+
+        }
+
+        public void Forcasting()
+        {
+            int rng = random.Next(4);
+            string cast = predictedForecast[rng];
+            random = new Random();
         }
     }
 }
