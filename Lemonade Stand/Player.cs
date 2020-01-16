@@ -26,6 +26,13 @@ namespace Lemonade_Stand
             name = Console.ReadLine();
 
         }
+        public void MakeLemonade()
+        {
+            Recipe lemonadeRecipe = new Recipe(4, 4, 4);
+            lemonadeRecipe = 
+            
+           
+        }
     }
     
 }
