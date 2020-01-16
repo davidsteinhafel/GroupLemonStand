@@ -12,10 +12,6 @@ namespace Lemonade_Stand
         double pricePerLemon;
         double pricePerSugar;
         double pricePerIceCube;
-
-
-
-
         double bulkLemons;
         double bulkSugar;
         double bulkIceCubes;
@@ -30,14 +26,12 @@ namespace Lemonade_Stand
             pricePerSugar = .5;
             pricePerIceCube = .5;
             quanity = 10;
-
             bulkLemons = pricePerCup * quanity;
             bulkSugar = pricePerSugar * quanity;
             bulkIceCubes = pricePerIceCube * quanity;
             bulkCups = pricePerCup * quanity;
 
         }
-
 
         //methods
         public void InventoryAquisition()
