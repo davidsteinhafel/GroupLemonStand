@@ -10,10 +10,12 @@ namespace Lemonade_Stand
     {
         public Weather weather;
         public List<Customer> customers;
+        public int days;
 
 
         public Day()
         {
+            days = 7;
             //Constructors
         }
     }
