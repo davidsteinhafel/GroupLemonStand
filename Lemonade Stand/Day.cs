@@ -15,7 +15,7 @@ namespace Lemonade_Stand
 
         public Day()
         {
-            days = 7;
+            totalDays = 7;
             //Constructors
         }
     }
