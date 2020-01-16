@@ -10,16 +10,23 @@ namespace Lemonade_Stand
     {//Member varibales 
         double pricePerCup;
         double pricePerLemon;
-        double pricePerSugar;
+        double pricePerCubeSugar;
         double pricePerIceCube;
 
      //constructor
      public Store()
      {
-
+            pricePerCup = .25;
+            pricePerLemon = .75;
+            pricePerCubeSugar = .5;
+            pricePerIceCube = .5;
      }
 
-     //methods
+     //methods 
+     public void InventoryAcqusition ()
+     {
+
+     }
         
 
         
