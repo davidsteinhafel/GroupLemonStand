@@ -10,5 +10,13 @@ namespace Lemonade_Stand
     {
         double money;
         public double Money;
+
+        public Wallet(double money)
+        {
+            Money = 1.00;
+            this.money = money;
+            
+        }
     }
+
 }

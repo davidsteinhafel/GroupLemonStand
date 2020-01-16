@@ -12,10 +12,7 @@ namespace Lemonade_Stand
         public string name;
 
         //constructor
-        public Item()
-        {
-
-        }
+        
 
         //methods
     }
