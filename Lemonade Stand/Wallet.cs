@@ -11,4 +11,8 @@ namespace Lemonade_Stand
         double money;
         public double Money;
     }
+    public Wallet()
+    {
+
+    }
 }
