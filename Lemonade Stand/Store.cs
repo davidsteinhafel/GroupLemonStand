@@ -47,32 +47,119 @@ namespace Lemonade_Stand
 
             switch (choice)
             {
-
                 case "1":
-                    if (choice == "Lemons")
+
+                    Console.WriteLine("How many lemons would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15");
+                    string lemonQuantity = Console.ReadLine();
+                    switch (lemonQuantity)
                     {
-                        Console.WriteLine("How many lemons would u like to purchase? 10 lemons = $7.50, 15 lemons = $11.25, and 20 = $15");
-                        switch (choice)
-                        {
-                            case "1":
-                                if (choice == "1")
-                                {
-
-                                }
-                                break;
-                            case "2":
-                                break;
-                            case "3":
-                                break;
-                        }
-
+                        case "1":
+                            if (lemonQuantity == "1")
+                            {
+                                //check wallet money method
+                                //then if enough money add count to player inventory
+                            }
+                            break;
+                        case "2":
+                            if (lemonQuantity == "2")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        case "3":
+                            if (lemonQuantity == "3")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input Please Try Again");
+                            break;
                     }
                     break;
                 case "2":
+                    Console.WriteLine("How many Sugar would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15");
+                    string sugarQuantity = Console.ReadLine();
+                    switch (sugarQuantity)
+                    {
+                        case "1":
+                            if (sugarQuantity == "1")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        case "2":
+                            if (sugarQuantity == "2")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        case "3":
+                            if (sugarQuantity == "3")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input Please Try Again");
+                            break;
+                    }
                     break;
                 case "3":
+                    Console.WriteLine("How many Ice would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15");
+                    string iceQuantity = Console.ReadLine();
+                    switch (iceQuantity)
+                    {
+                        case "1":
+                            if (iceQuantity == "1")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        case "2":
+                            if (iceQuantity == "2")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        case "3":
+                            if (iceQuantity == "3")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input Please Try Again");
+                            break;
+                    }
                     break;
                 case "4":
+                    Console.WriteLine("How many Cups would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15");
+                    string cupsQuantity = Console.ReadLine();
+                    switch (cupsQuantity)
+                    {
+                        case "1":
+                            if (cupsQuantity == "1")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        case "2":
+                            if (cupsQuantity == "2")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        case "3":
+                            if (cupsQuantity == "3")
+                            {
+                                //check wallet money method
+                            }
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input Please Try Again");
+                            break;
+                    }
                     break;
                 case "Quite Menu":
 
@@ -80,11 +167,8 @@ namespace Lemonade_Stand
                 default:
                     Console.WriteLine("Invalid Input Please Try Again!");
                     break;
-
             }
         }
-
-
     }
 }
 
