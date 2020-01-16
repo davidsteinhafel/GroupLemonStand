@@ -8,5 +8,8 @@ namespace Lemonade_Stand
 {
     class Game
     {
+        Player player;
+        List<Day> days;
+        int currentDay;
     }
 }
