@@ -12,7 +12,18 @@ namespace Lemonade_Stand
         double pricePerLemon;
         double pricePerSugar;
         double pricePerIceCube;
-        int choice;
+        
+
+        double bulkLemons;
+        double bulkSugar;
+        double bulkIceCubes;
+        double bulkCups;
+        double quanity;
+
+        string lemons = "lemons";
+        string iceCubes = "iceCubes";
+        string cups = 
+        string sugarCubes;
 
 
      //constructor
@@ -22,6 +33,13 @@ namespace Lemonade_Stand
             pricePerLemon = .75;
             pricePerSugar = .5;
             pricePerIceCube = .5;
+
+            quanity = 10;
+            
+            bulkLemons = pricePerCup * quanity;
+            bulkSugar = pricePerSugar * quanity;
+            bulkIceCubes = pricePerIceCube * quanity;
+            bulkCups = pricePerCup * quanity;
             
      }
         
@@ -31,20 +49,21 @@ namespace Lemonade_Stand
             
 
             Console.WriteLine("Please pick your item");
-           int choice = Convert.ToInt32(Console.ReadLine());
+           string choice = Console.ReadLine();
 
             switch (choice)
             {
-                case amountOfCups:
-                    Console.WriteLine("You have choosen " + amountofCups + " Cups ");
+                case "lemon":
+                    
+                    Console.WriteLine("You have choosen " + pricePerCup + " Cups ");
                     break;
-                case amoutOfLemons:
+                case "cups":
                     Console.WriteLine("You have choosen " + amounoLemons + " Cups " );
                     break;
-                case amountofSugarCubes:
+                case "Sugar Cubes":
                     Console.WriteLine("You have choosen " + amountofSugarCubes + " Sugar Cubes ");
                     break;
-                case amountofIceCubes:
+                case "Ice Cubes":
                     Console.WriteLine("You have choosen " + amountofIceCubes + " Ice Cubes ");
                 default:
                     Console.WriteLine("that is the wrong input please try again");
