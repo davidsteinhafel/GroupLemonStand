@@ -12,10 +12,18 @@ namespace Lemonade_Stand
         public int temperature;
         List<string> weatherConditions;
         public string predictedForecast;
+        Random random;
 
-        public Weather()
+        public Weather(List<string> weatherConditions)
         {
-            //Constructor
+            weatherConditions = new List<string>(){"snow","sleet","rain","sunny","cloudy"};
+            random = new Random();
+        }
+        
+        public void Tempcontrol()
+        {
+            int rng = random.Next(4);
+
         }
     }
 }

@@ -12,16 +12,15 @@ namespace Lemonade_Stand
         double pricePerLemon;
         double pricePerSugar;
         double pricePerIceCube;
-        string choice;
+
+
+
+
         double bulkLemons;
         double bulkSugar;
         double bulkIceCubes;
         double bulkCups;
         double quanity;
-        string lemons;
-        string iceCubes;
-        string cups;
-        string sugarCubes;
 
         //constructor
         public Store()
@@ -31,44 +30,61 @@ namespace Lemonade_Stand
             pricePerSugar = .5;
             pricePerIceCube = .5;
             quanity = 10;
+
             bulkLemons = pricePerCup * quanity;
             bulkSugar = pricePerSugar * quanity;
             bulkIceCubes = pricePerIceCube * quanity;
             bulkCups = pricePerCup * quanity;
 
         }
-        //make choice to string and in each case have string lemon,cup,..etc choice and then ask them how much and check wallet to see of they have engouh money if they do have enough money put item in inventory and if not restat menu also add quit menu function
+
+
         //methods
-        public void CustomerPurchase()
+        public void InventoryAquisition()
         {
-            Console.WriteLine("Please pick your item");
+            Console.WriteLine("Please pick your item. For lemon press 1, for Sugar press 2, for Ice press 3, and for Cups press 4");
             string choice = Console.ReadLine();
 
             switch (choice)
             {
-                case "lemon":
-                   Console.WriteLine("You have choosen " + pricePerLemon + " Cups ");
+
+                case "1":
+                    if (choice == "Lemons")
+                    {
+                        Console.WriteLine("How many lemons would u like to purchase? 10 lemons = $7.50, 15 lemons = $11.25, and 20 = $15");
+                        switch (choice)
+                        {
+                            case "1":
+                                if (choice == "1")
+                                {
+
+                                }
+                                break;
+                            case "2":
+                                break;
+                            case "3":
+                                break;
+                        }
+
+                    }
                     break;
-                case "cups":
-                    Console.WriteLine("You have choosen " + pricePerCup + " Cups ");
+                case "2":
                     break;
-                case "Sugar Cubes":
-                    Console.WriteLine("You have choosen " + pricePerSugar + " Sugar Cubes ");
+                case "3":
                     break;
-                case "IceCubes":
-                    Console.WriteLine("You have choosen " + pricePerIceCube + " Ice Cubes ");
+                case "4":
                     break;
                 case "Quite Menu":
-                    Console.WriteLine("See ya next time");
+
                     break;
                 default:
-                    Console.WriteLine("that is the wrong input please try again");
+                    Console.WriteLine("Invalid Input Please Try Again!");
                     break;
-            }
 
+            }
         }
+
+
     }
 }
 
-
-                    

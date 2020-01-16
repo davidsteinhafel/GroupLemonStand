@@ -11,14 +11,16 @@ namespace Lemonade_Stand
     {
         public string name;
         public Inventory inventory;
-        public Wallet wallet;
+        
         public Recipe recipe;
         public Pitcher pitcher;
         public Pitcher pitcher1 = new Pitcher();
-
-        public Player(string name)
+        public Wallet wallet = new Wallet();
+        public Player(Wallet wallet)
         {
-            this.name = name;
+
+            this.wallet = wallet;
+
         }
         public void SetName()
         {

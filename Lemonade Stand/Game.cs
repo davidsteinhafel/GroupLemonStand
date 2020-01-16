@@ -8,10 +8,14 @@ namespace Lemonade_Stand
 {
     class Game
     {
-        Player player;
         List<Day> days;
         int currentDay;
+        public Player player;
 
+        public Game()
+        {
+            player = new Player(player.wallet);
+        }
         public void DisplayWelcome()
         {
             Console.WriteLine("Welcome to Lemonade Stand Game!!!");
@@ -20,6 +24,10 @@ namespace Lemonade_Stand
         public void DisplayInstructions()
         {
             Console.WriteLine("Your goal is to make as much money as you can in 7days by selling lemonade. Buy cups, lemons, sugar and ice cubes then set your recipe based on weather conditions. Lastly, set price and sell your lemonade!!!");
+        }
+        public void AddPlayer()
+        {
+            player.SetName();
         }
     }
 }
