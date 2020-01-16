@@ -8,10 +8,10 @@ namespace Lemonade_Stand
 {
     class Store
     {//Member varibales 
-        double priceperCup;
-        double priceperLemon;
-        double priceperSugar;
-        double priceperIceCube;
+        double pricePerCup;
+        double pricePerLemon;
+        double pricePerSugar;
+        double pricePerIceCube;
 
      //constructor
      public Store()
