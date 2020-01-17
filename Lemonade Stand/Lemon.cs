@@ -8,5 +8,6 @@ namespace Lemonade_Stand
 {
     class Lemon
     {
+        int count;
     }
 }

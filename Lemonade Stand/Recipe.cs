@@ -29,6 +29,27 @@ namespace Lemonade_Stand
 
             
         }
-        
+        public void SetRecipe()
+        {
+            bool isValid = false;
+            do
+            {
+                Console.WriteLine("How many Ice Cubes do you want to use");
+                isValid = int.TryParse(Console.ReadLine(), out amountOfIceCubes);
+            } while (isValid == false);
+            do
+            {
+                Console.WriteLine("How many Lemons do you want to use");
+                isValid = int.TryParse(Console.ReadLine(), out amountOfLemons);
+            } while (isValid == false);
+            do
+            {
+                Console.WriteLine("How many Sugar Cubes do you want to use");
+                isValid = int.TryParse(Console.ReadLine(), out amountOfSugarCubes);
+            } while (isValid == false);
+
+            Recipe userRecipe = new Recipe(amountOfLemons, amountOfIceCubes, amountOfSugarCubes);
+
+        }
     }
 }

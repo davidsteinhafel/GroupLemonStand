@@ -8,5 +8,6 @@ namespace Lemonade_Stand
 {
     class IceCubes
     {
+        int count;
     }
 }
