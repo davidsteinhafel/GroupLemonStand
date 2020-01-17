@@ -8,15 +8,12 @@ namespace Lemonade_Stand
 {
     class Store
     {//Member varibales 
-        double pricePerCup;
-        double pricePerLemon;
-        double pricePerSugar;
-        double pricePerIceCube;
-        double bulkLemons;
-        double bulkSugar;
-        double bulkIceCubes;
-        double bulkCups;
-        double quanity;
+       public  double pricePerCup;
+       public  double pricePerLemon;
+       public double pricePerSugar;
+       public double pricePerIceCube;
+        
+       
 
         //constructor
         public Store()
@@ -25,12 +22,8 @@ namespace Lemonade_Stand
             pricePerLemon = .75;
             pricePerSugar = .5;
             pricePerIceCube = .5;
-            quanity = 10;
-            bulkLemons = pricePerCup * quanity;
-            bulkSugar = pricePerSugar * quanity;
-            bulkIceCubes = pricePerIceCube * quanity;
-            bulkCups = pricePerCup * quanity;
-
+            
+          
         }
 
         //methods
@@ -41,296 +34,79 @@ namespace Lemonade_Stand
             {
 
             
-            Console.WriteLine("Please pick your item. For lemon press 1, for Sugar press 2, for Ice press 3, and for Cups press 4, to leave store press 5");
+            Console.WriteLine("Please pick your item and write in the amount you want. An remember don't break the bank buy items");
             string choice = Console.ReadLine();
 
                 switch (choice)
                 {
-                    case "1":
+                    case "lemons":
 
-                        Console.WriteLine("How many lemons would you like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15, press 4 = go back");
-                        string lemonQuantity = Console.ReadLine();
-                        switch (lemonQuantity)
+                        Console.WriteLine("How many lemons would you like to purchase? ");
+                        int lemonQuantity = Convert.ToInt32(Console.ReadLine());
+                         double cost = lemonQuantity * pricePerLemon;
+
+                        if (BMF = cost)
                         {
-                            case "1":
-                                if (lemonQuantity == "1")
-                                {
-                                    
-                                   if ( BMF.Money >= 7.50)
-                                    {
-                                        BMF.Money -= 7.50;
-                                        
-                                        Console.WriteLine("you now have " + stuff.lemons);
-
-
-                                   }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-                                   
-                                }
-                                break;
-                            case "2":
-                                if (lemonQuantity == "2")
-                                {
-
-
-                                    if (BMF.Money >= 11.25)
-                                    {
-                                        BMF.Money -= 11.25;
-                                       
-                                        Console.WriteLine("you now have " + stuff.lemons);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-                                }
-                                    
-                                break;
-                            case "3":
-                                if (lemonQuantity == "3")
-                                {
-                                 
-                                        if (BMF.Money >= 15)
-                                        {
-                                            BMF.Money -= 15;
-                                           
-                                            Console.WriteLine("you now have " + stuff.lemons);
-
-
-                                        }
-                                        else
-                                        { 
-                                            Console.WriteLine("you do not have engouh money for this item");
-                                        }
-                                    
-                                    
-                                }
-                                break;
-
-                            case "4":
-                                break;
-                            default:
-                                Console.WriteLine("Invalid Input Please Try Again");
-                                break;
+                            Console.WriteLine("you have purchased" + lemonQuantity);
+                        }
+                        else
+                        {
+                            Console.WriteLine("you need more money for this come back later ");
                         }
                         break;
+                        
+                        
+       
+                    case "sugar":
+                        Console.WriteLine("How many sugarcubes would you like to purchase? ");
+                        int sugarQuantity = Convert.ToInt32(Console.ReadLine());
+                         cost = sugarQuantity * pricePerSugar;
 
-                    case "2":
-                        Console.WriteLine("How many Sugar would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15,press 4 = go back");
-                        string sugarQuantity = Console.ReadLine();
-                        switch (sugarQuantity)
+                        if (BMF = cost)
                         {
-                            case "1":
-                                if (sugarQuantity == "1")
-                                {
-                                    if (sugarQuantity == "1")
-                                    {
-                                        if (BMF.Money >= 7.50)
-                                        {
-                                            BMF.Money -= 7.50;
-                                            
-                                            Console.WriteLine("you now have " + stuff.sugarcubes);
-
-
-                                        }
-                                        else
-                                        {
-                                            Console.WriteLine("you do not have engouh money for this item");
-                                        }
-
-
-                                        
-                                    }
-
-                                }    break;          
-                                
-                            case "2":
-                                if (sugarQuantity == "2")
-                                {
-                                    if (BMF.Money >= 11.25)
-                                    {
-                                        BMF.Money -= 11.25;
-                                        
-                                        Console.WriteLine("you now have " + stuff.sugarcubes);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-
-                                    break;
-                                }
-                                break;
-                            case "3":
-                                if (sugarQuantity == "3")
-                                {
-                                    if (BMF.Money >= 15)
-                                    {
-                                        BMF.Money -= 15;
-                                        
-                                        Console.WriteLine("you now have " + stuff.sugarcubes);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-                                }
-                                break;
-                            case "4":
-                                break;
-                            default:
-                                Console.WriteLine("Invalid Input Please Try Again");
-                                break;
+                            Console.WriteLine("you have purchased" + sugarQuantity);
+                        }
+                        else
+                        {
+                            Console.WriteLine("you need more money for this come back later ");
                         }
                         break;
-                    case "3":
-                        Console.WriteLine("How many Ice would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15, press 4 = go back");
-                        string iceQuantity = Console.ReadLine();
-                        switch (iceQuantity)
+                      
+                    case "ice":
+                        Console.WriteLine("How many lemons would you like to purchase? ");
+                        int iceQuantity = Convert.ToInt32(Console.ReadLine());
+                        cost = iceQuantity * pricePerIceCube;
 
+                        if (BMF = cost)
                         {
-                            case "1":
-                                if (iceQuantity == "1")
-                                {
-                                    if (BMF.Money >= 7.50)
-                                    {
-                                        BMF.Money -= 7.50;
-                                        
-                                        Console.WriteLine("you now have " + stuff.icecubes);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-                                }
-                                break;
-                            case "2":
-                                if (iceQuantity == "2")
-                                {
-                                    if (BMF.Money >= 11.25)
-                                    {
-                                        BMF.Money -= 11.25;
-                                        
-                                        Console.WriteLine("you now have " + stuff.icecubes);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-                                }
-                                break;
-                            case "3":
-                                if (iceQuantity == "3")
-                                {
-
-                                    if (BMF.Money >= 15)
-                                    {
-                                        BMF.Money -= 15;
-                                        
-                                        Console.WriteLine("you now have " + stuff.icecubes);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-                                }
-                                break;
-                            case "4":
-                                break;
-                            default:
-                                Console.WriteLine("Invalid Input Please Try Again");
-                                break;
+                            Console.WriteLine("you have purchased" + iceQuantity);
                         }
-                        break;
-                    case "4":
-                        Console.WriteLine("How many Cups would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15, press 4 = go back");
-                        string cupsQuantity = Console.ReadLine();
-                        switch (cupsQuantity)
+                        else
                         {
-                            case "1":
-                                if (cupsQuantity == "1")
-                                {
-                                    if (BMF.Money >= 7.50)
-                                    {
-                                        BMF.Money -= 7.50;
-                                       
-                                        Console.WriteLine("you now have " + stuff.cups);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-                                }
-                                break;
-                            case "2":
-                                if (cupsQuantity == "2")
-                                {
-                                    if (BMF.Money >= 11.25)
-                                    {
-                                        BMF.Money -= 11.25;
-                                       
-                                        Console.WriteLine("you now have " + stuff.cups);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-                                }
-                                break;
-                            case "3":
-                                if (cupsQuantity == "3")
-                                {
-                                    if (BMF.Money >= 15)
-                                    {
-                                        BMF.Money -= 15;
-                                        
-                                        Console.WriteLine("you now have " + stuff.cups);
-
-
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("you do not have engouh money for this item");
-                                    }
-
-                                }
-                                break;
-                            case "4":
-                                break;
-                            default:
-                                Console.WriteLine("Invalid Input Please Try Again");
-                                break;
+                            Console.WriteLine("you need more money for this come back later ");
                         }
+
+                        break;    
+             
+                    case "cups":
+                       Console.WriteLine("How many lemons would you like to purchase? ");
+                       int cupQuantity = Convert.ToInt32(Console.ReadLine());
+                        cost = cupQuantity * pricePerCup;
+
+                        if (BMF = cost)
+                        {
+                            Console.WriteLine("you have purchased" + cupQuantity);
+                        }
+                        else
+                        {
+                            Console.WriteLine("you need more money for this come back later ");
+                        }
+
                         break;
-                    case "5":
-                        walkoutdoor = true;
+
+                    case "back out of menu":
                         break;
+
                     default:
                         Console.WriteLine("Invalid Input Please Try Again!");
                         break;

@@ -16,8 +16,7 @@ namespace Lemonade_Stand
         public Game()
         {
            
-            Wallet BMFwallet = new Wallet(50,50);
-            player = new Player(BMFwallet);
+            player = new Player();
             store = new Store();
 
         }

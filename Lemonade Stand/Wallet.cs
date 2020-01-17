@@ -10,11 +10,12 @@ namespace Lemonade_Stand
     {
         private double money;
         public double Money;
+        //public double Money;
 
-        public Wallet(double money,double Money)
+        public Wallet()
         {
-            this.Money = Money;
-            this.money = money;
+
+            
             
         }
     }

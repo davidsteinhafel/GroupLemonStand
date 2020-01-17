@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-<<<<<<< HEAD:Lemonade Stand/IceCube.cs
+
     class IceCube: Item
     {
         string icecube;
@@ -18,9 +18,6 @@ namespace Lemonade_Stand
 
 
         
-=======
-    class IceCubes
-    {
->>>>>>> 6304a937948e2fabd114fea849dab5cfc30ff287:Lemonade Stand/IceCubes.cs
+
     }
 }

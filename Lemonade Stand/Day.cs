@@ -9,14 +9,15 @@ namespace Lemonade_Stand
     class Day
     {
         
-        public string weather;
+        Weather weather;
         public List<Customer> customers;
         public int days;
 
 
         public Day()
         {
-            
+            days = 7;
+
             
             
         }

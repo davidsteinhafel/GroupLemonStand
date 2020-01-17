@@ -15,10 +15,10 @@ namespace Lemonade_Stand
         public Pitcher pitcher;
         public Pitcher pitcher1 = new Pitcher();
         public Wallet wallet;
-        public Player(Wallet wallet)
+        public Player()
         {
 
-            this.wallet = wallet;
+            wallet = new Wallet();
             inventory = new Inventory();
 
         }
