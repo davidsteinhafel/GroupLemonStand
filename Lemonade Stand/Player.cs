@@ -14,11 +14,11 @@ namespace Lemonade_Stand
         public Recipe recipe;
         public Pitcher pitcher;
         public Pitcher pitcher1 = new Pitcher();
-        public Wallet wallet;
+        public Wallet wallet1;
         public Player()
-        {
-
-            wallet = new Wallet();
+        { 
+            
+            wallet1 = new Wallet();
             inventory = new Inventory();
 
         }

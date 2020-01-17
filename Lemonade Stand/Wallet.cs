@@ -9,7 +9,7 @@ namespace Lemonade_Stand
     class Wallet
     {
         private double money;
-        public double Money {
+        public double Money  {
             get
             {
                 return money;
@@ -29,7 +29,7 @@ namespace Lemonade_Stand
 
         public Wallet()
         {
-
+            money = 50;
             
             
         }

@@ -12,6 +12,7 @@ namespace Lemonade_Stand
        public  double pricePerLemon;
        public double pricePerSugar;
        public double pricePerIceCube;
+       
         
        
 
@@ -27,9 +28,13 @@ namespace Lemonade_Stand
         }
 
         //methods
-        public void InventoryAquisition(Wallet BMF, Inventory stuff)
+        public void InventoryAquisition(Wallet wallet1, Inventory stuff)
         {
             bool walkoutdoor = false;
+            int lemonQuantity = 0;
+            int sugarQuantity = 0;
+            int cupQuantity = 0;
+            int iceQuantity = 0;
             while(!walkoutdoor)
             {
 
@@ -41,28 +46,33 @@ namespace Lemonade_Stand
                 {
                     case "lemons":
 
-                        Console.WriteLine("How many lemons would you like to purchase? ");
-                        int lemonQuantity = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("How many lemons would you like to purchase? " );
+                        lemonQuantity = Convert.ToInt32(Console.ReadLine());
                          double cost = lemonQuantity * pricePerLemon;
 
-                        if (BMF = cost)
+                        if (wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + lemonQuantity);
+                            for ( int i = 0; i > stuff.lemons.Count; i++)
+                            {
+                                stuff.lemons.Add(new List<Lemon>());
+                            }
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later ");
                         }
+
                         break;
                         
                         
        
                     case "sugar":
                         Console.WriteLine("How many sugarcubes would you like to purchase? ");
-                        int sugarQuantity = Convert.ToInt32(Console.ReadLine());
+                        sugarQuantity = Convert.ToInt32(Console.ReadLine());
                          cost = sugarQuantity * pricePerSugar;
 
-                        if (BMF = cost)
+                        if (wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + sugarQuantity);
                         }
@@ -72,12 +82,12 @@ namespace Lemonade_Stand
                         }
                         break;
                       
-                    case "ice":
-                        Console.WriteLine("How many lemons would you like to purchase? ");
-                        int iceQuantity = Convert.ToInt32(Console.ReadLine());
+                    case "icecubes":
+                        Console.WriteLine("How many icecubes would you like to purchase? ");
+                        iceQuantity = Convert.ToInt32(Console.ReadLine());
                         cost = iceQuantity * pricePerIceCube;
 
-                        if (BMF = cost)
+                        if (wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + iceQuantity);
                         }
@@ -89,11 +99,11 @@ namespace Lemonade_Stand
                         break;    
              
                     case "cups":
-                       Console.WriteLine("How many lemons would you like to purchase? ");
-                       int cupQuantity = Convert.ToInt32(Console.ReadLine());
+                       Console.WriteLine("How many cups would you like to purchase? " );
+                        cupQuantity = Convert.ToInt32(Console.ReadLine());
                         cost = cupQuantity * pricePerCup;
 
-                        if (BMF = cost)
+                        if (wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + cupQuantity);
                         }
@@ -104,7 +114,7 @@ namespace Lemonade_Stand
 
                         break;
 
-                    case "back out of menu":
+                    case "back out":
                         break;
 
                     default:

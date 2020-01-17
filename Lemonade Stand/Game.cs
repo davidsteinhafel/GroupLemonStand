@@ -15,7 +15,7 @@ namespace Lemonade_Stand
 
         public Game()
         {
-           
+            
             player = new Player();
             store = new Store();
 
@@ -23,9 +23,9 @@ namespace Lemonade_Stand
 
         public void Start()
         {
-            //DisplayWelcome();
-            //DisplayInstructions();
-            //store.InventoryAquisition(player.wallet,player.inventory);
+            DisplayWelcome();
+            DisplayInstructions();
+            store.InventoryAquisition(player.wallet1,player.inventory);
         }
 
         public void DisplayWelcome()
