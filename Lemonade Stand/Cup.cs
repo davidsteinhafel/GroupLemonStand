@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Cup:Item
+    public class Cup:Item
     {
 
-        string cup;
+        public string cups;
 
         public Cup()
         {
-            name = cup;
+            name = cups;
         }
         
 

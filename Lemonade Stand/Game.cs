@@ -12,6 +12,7 @@ namespace Lemonade_Stand
         int currentDay;
         public Player player;
         Store store;
+        Weather weather;
 
         public Game()
         {
@@ -23,9 +24,11 @@ namespace Lemonade_Stand
 
         public void Start()
         {
+
             DisplayWelcome();
             DisplayInstructions();
             store.InventoryAquisition(player.wallet1,player.inventory);
+
         }
 
         public void DisplayWelcome()
@@ -42,4 +45,5 @@ namespace Lemonade_Stand
             player.SetName();
         }
     }
-}
+}//method for win lose conditions
+

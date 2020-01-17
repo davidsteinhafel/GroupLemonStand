@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Lemon: Item
+    public class Lemon: Item
     {
+        public string lemons;
 
-        string lemon;
-        //constructor
-        public Lemon(int countOf)
+        public Lemon()
         {
-            name = lemon;
-            
+
+            name = lemons;
         }
 
     }

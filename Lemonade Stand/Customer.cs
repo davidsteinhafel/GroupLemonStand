@@ -6,8 +6,24 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Customer
+    public class Customer
     {
-        public string name;
+        public List<string> names;
+        Random random;
+        Weather weather;
+
+
+        public Customer()
+        {
+            random = new Random();
+        }
+
+        //method for randomized preference- temp and weather
+        //method for purchase limit of customer
+        
+
+
+
+
     }
 }

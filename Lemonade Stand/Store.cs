@@ -51,12 +51,12 @@ namespace Lemonade_Stand
                          double cost = lemonQuantity * pricePerLemon;
 
                         if (wallet1.Money >= cost)
+
                         {
-                            Console.WriteLine("you have purchased" + lemonQuantity);
-                            for ( int i = 0; i > stuff.lemons.Count; i++)
-                            {
-                                stuff.lemons.Add(new List<Lemon>());
-                            }
+                            Console.WriteLine("you have purchased " + lemonQuantity);
+                            stuff.AddLemons(lemonQuantity);
+
+
                         }
                         else
                         {
@@ -72,9 +72,12 @@ namespace Lemonade_Stand
                         sugarQuantity = Convert.ToInt32(Console.ReadLine());
                          cost = sugarQuantity * pricePerSugar;
 
+
                         if (wallet1.Money >= cost)
+
                         {
-                            Console.WriteLine("you have purchased" + sugarQuantity);
+                            Console.WriteLine("you have purchased " + sugarQuantity);
+                            stuff.AddSugarCubes(sugarQuantity);
                         }
                         else
                         {
@@ -87,9 +90,12 @@ namespace Lemonade_Stand
                         iceQuantity = Convert.ToInt32(Console.ReadLine());
                         cost = iceQuantity * pricePerIceCube;
 
+
                         if (wallet1.Money >= cost)
+
                         {
                             Console.WriteLine("you have purchased" + iceQuantity);
+                            stuff.AddIceCubes(iceQuantity);
                         }
                         else
                         {
@@ -103,9 +109,12 @@ namespace Lemonade_Stand
                         cupQuantity = Convert.ToInt32(Console.ReadLine());
                         cost = cupQuantity * pricePerCup;
 
+
                         if (wallet1.Money >= cost)
+
                         {
                             Console.WriteLine("you have purchased" + cupQuantity);
+                            stuff.AddCups(cupQuantity);
                         }
                         else
                         {

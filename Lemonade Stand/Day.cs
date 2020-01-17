@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Day
+    public class Day
     {
-        
+
         Weather weather;
-        public List<Customer> customers;
+        public List<Customer>customers;
         public int days;
-
-
+        public int dailyprofit;
         public Day()
         {
-            
-
-            
-            
+            days = 7;
         }
     }
 }
+//run day method for how day operates

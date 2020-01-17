@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class SugarCube:Item
+    public class SugarCube:Item
     {
-
-        string sugarcube;
+        public string sugarcube;
+       
 
         public SugarCube()
         {

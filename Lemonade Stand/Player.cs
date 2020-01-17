@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Player
+    public class Player
         //possibly abstract class?
     {
         public string name;
@@ -16,10 +16,12 @@ namespace Lemonade_Stand
         public Pitcher pitcher1 = new Pitcher();
         public Wallet wallet1;
         public Player()
+
         { 
             
             wallet1 = new Wallet();
             inventory = new Inventory();
+
 
         }
         public void SetName()
@@ -28,13 +30,7 @@ namespace Lemonade_Stand
             name = Console.ReadLine();
 
         }
-        //public void MakeLemonade()
-        //{
-        //    Recipe lemonadeRecipe = new Recipe(4, 4, 4);
-        //    lemonadeRecipe = 
-            
-           
-        //}
+        
     }
     
 }
