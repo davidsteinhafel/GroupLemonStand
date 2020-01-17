@@ -9,7 +9,22 @@ namespace Lemonade_Stand
     class Wallet
     {
         private double money;
-        public double Money;
+        public double Money {
+            get
+            {
+                return money;
+            }
+            set 
+            {
+                if (value < 0)
+                {
+                    money = 0;
+                } else
+                {
+                    money = value;
+                }
+            }
+        }
         //public double Money;
 
         public Wallet()
