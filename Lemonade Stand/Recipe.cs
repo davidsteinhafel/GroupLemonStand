@@ -17,17 +17,12 @@ namespace Lemonade_Stand
 
 
         
-        public Recipe(int amountOfLemons, int amountOfIceCubes, int amountOfSugarCubes)
+        public Recipe()
         {
-
-
-            this.amountOfIceCubes = amountOfIceCubes;
-            this.amountOfLemons = amountOfLemons;
-            this.amountOfSugarCubes = amountOfSugarCubes;
-            pricePerCup = .25;
-
-
-            
+            amountOfIceCubes = 0;
+            amountOfLemons = 0;
+            amountOfSugarCubes = 0;
+            pricePerCup = 0; //dynamic;
         }
         public void SetRecipe()
         {
@@ -46,10 +41,17 @@ namespace Lemonade_Stand
             {
                 Console.WriteLine("How many Sugar Cubes do you want to use");
                 isValid = int.TryParse(Console.ReadLine(), out amountOfSugarCubes);
+            } while (isValid == false); 
+            //Recipe userRecipe = new Recipe(amountOfLemons, amountOfIceCubes, amountOfSugarCubes);
+        }
+        public void setPricePerCup()   
+        {
+            bool isValid = false;
+            do
+            {
+                Console.WriteLine("Set Price Per Cup");
+                isValid = double.TryParse(Console.ReadLine(), out pricePerCup);
             } while (isValid == false);
-
-            Recipe userRecipe = new Recipe(amountOfLemons, amountOfIceCubes, amountOfSugarCubes);
-
         }
     }
 }

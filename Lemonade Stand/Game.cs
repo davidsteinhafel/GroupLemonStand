@@ -23,9 +23,9 @@ namespace Lemonade_Stand
 
         public void Start()
         {
-            DisplayWelcome();
-            DisplayInstructions();
-            store.InventoryAquisition(player.wallet,player.inventory);
+            //DisplayWelcome();
+            //DisplayInstructions();
+            //store.InventoryAquisition(player.wallet,player.inventory);
         }
 
         public void DisplayWelcome()

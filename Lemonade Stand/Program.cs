@@ -12,6 +12,10 @@ namespace Lemonade_Stand
         {
             Game letsgo = new Game();
             letsgo.Start();
+            Recipe recipe = new Recipe();
+            recipe.setPricePerCup();
+            recipe.SetRecipe();
+            
 
             Console.ReadLine();
         }
