@@ -8,7 +8,7 @@ namespace Lemonade_Stand
 {
     public static class UserInterface
     {
-        
+
 
 
         public static void DisplayCurrentDay(Day day)
@@ -28,6 +28,23 @@ namespace Lemonade_Stand
             string choice = Console.ReadLine();
             return choice;
         }
+        public static void ChangeToDouble()
+        {
+            bool isValid = false;
+            try
+            {
+                Convert.ToDouble(UserInput());
+            }catch(Exception e)
+            {
+                ChangeToDouble();
+            }
+            //do
+            //{
+            //    Console.WriteLine("How many Ice Cubes do you want to use");
+            //    isValid = int.TryParse(Console.ReadLine(), out amountOfIceCubes);
+            //} while (isValid == false);
+        }
+
         public static void SetName()
         {
             Console.WriteLine("What is your name?");
@@ -41,11 +58,13 @@ namespace Lemonade_Stand
         {
             Console.WriteLine("Your goal is to make as much money as you can in 7days by selling lemonade. Buy cups, lemons, sugar and ice cubes then set your recipe based on weather conditions. Lastly, set price and sell your lemonade!!!");
         }
+
+
     }
 
 
-        //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
-    }
-
-
+    //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
 }
+
+
+
