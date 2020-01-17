@@ -23,6 +23,7 @@ namespace Lemonade_Stand
 
         public void Start()
         {
+            UserInterface.SetName(new Player());
             //money and current day work but temp still needs work!
             //UserInterface.DisplayCurrentMoney(new Wallet());
             //UserInterface.CurrentTemp(new List<int>());

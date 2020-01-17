@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Inventory
+    public class Inventory
     {
         //Member Variables
         public List<Lemon> lemons;
-        public List<IceCube>icecubes;
-        public List<SugarCube>sugarcubes;
+        public List<IceCube> icecubes;
+        public List<SugarCube> sugarcubes;
         public List<Cup> cups;
 
         //public List(Lemon)
@@ -23,7 +23,7 @@ namespace Lemonade_Stand
             this.lemons = lemons;
             this.sugarcubes = sugarcubes;
             this.icecubes = icecubes;
-                
+
 
 
         }
