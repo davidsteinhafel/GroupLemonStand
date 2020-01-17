@@ -23,14 +23,15 @@ namespace Lemonade_Stand
         {
             Console.WriteLine("Current temperature is {0}", temperature);
         }
-        public static void UserInput(string choice)
+        public static string UserInput(string choice)
         {
-           choice = Console.ReadLine();
+            choice = Console.ReadLine();
+            return choice;
         }
         public static void SetName(Player name)
         {
             Console.WriteLine("What is your name?");
-            Console.ReadLine();
+            UserInput(name.name);
         }
 
 
