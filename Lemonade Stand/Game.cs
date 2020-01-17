@@ -6,45 +6,33 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Game
+    public class Game
     {
-        List<Day> days;
-        int currentDay;
+        public List<Day> days;
+        public int currentDay;
         public Player player;
-        Store store;
+        public Store store;
 
         public Game()
         {
-           
-            player = new Player();
             store = new Store();
+            player = new Player();
+            
 
         }
+        
 
         public void Start()
         {
+            UserInterface.DisplayWelcome();
+            UserInterface.DisplayInstructions();
             UserInterface.SetName(new Player());
             //money and current day work but temp still needs work!
             //UserInterface.DisplayCurrentMoney(new Wallet());
             //UserInterface.CurrentTemp(new List<int>());
             //UserInterface.DisplayCurrentDay(new Day());
-            DisplayWelcome();
-            DisplayInstructions();
-            store.InventoryAquisition(player.wallet, player.inventory);
-        }
-
-        public void DisplayWelcome()
-        {
-            Console.WriteLine("Welcome to Lemonade Stand Game!!!");
-            Console.ReadLine();
-        }
-        public void DisplayInstructions()
-        {
-            Console.WriteLine("Your goal is to make as much money as you can in 7days by selling lemonade. Buy cups, lemons, sugar and ice cubes then set your recipe based on weather conditions. Lastly, set price and sell your lemonade!!!");
-        }
-        public void AddPlayer()
-        {
-            player.SetName();
+            
+            store.InventoryAquisition(player.wallet1, player.inventory);
         }
     }
 }

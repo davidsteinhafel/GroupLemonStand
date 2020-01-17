@@ -33,6 +33,15 @@ namespace Lemonade_Stand
             Console.WriteLine("What is your name?");
             UserInput(name.name);
         }
+        public static void DisplayWelcome()
+        {
+            Console.WriteLine("Welcome to Lemonade Stand Game!!!");
+        }
+        public static void DisplayInstructions()
+        {
+            Console.WriteLine("Your goal is to make as much money as you can in 7days by selling lemonade. Buy cups, lemons, sugar and ice cubes then set your recipe based on weather conditions. Lastly, set price and sell your lemonade!!!");
+        }
+    }
 
 
         //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
