@@ -11,11 +11,24 @@ namespace Lemonade_Stand
         List<Day> days;
         int currentDay;
         public Player player;
+        Store store;
 
         public Game()
         {
-            player = new Player(player.wallet);
+           
+            Wallet BMFwallet = new Wallet(50);
+            player = new Player(BMFwallet);
+            store = new Store();
+
         }
+
+        public void Start()
+        {
+            DisplayWelcome();
+            DisplayInstructions();
+            store.InventoryAquisition(player.wallet,player.inventory);
+        }
+
         public void DisplayWelcome()
         {
             Console.WriteLine("Welcome to Lemonade Stand Game!!!");

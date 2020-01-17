@@ -11,15 +11,15 @@ namespace Lemonade_Stand
     {
         public string name;
         public Inventory inventory;
-        
         public Recipe recipe;
         public Pitcher pitcher;
         public Pitcher pitcher1 = new Pitcher();
-        public Wallet wallet = new Wallet();
+        public Wallet wallet;
         public Player(Wallet wallet)
         {
 
             this.wallet = wallet;
+            inventory = new Inventory(0, 0, 0, 0);
 
         }
         public void SetName()
@@ -28,13 +28,13 @@ namespace Lemonade_Stand
             name = Console.ReadLine();
 
         }
-        public void MakeLemonade()
-        {
-            Recipe lemonadeRecipe = new Recipe(4, 4, 4);
-            lemonadeRecipe = 
+        //public void MakeLemonade()
+        //{
+        //    Recipe lemonadeRecipe = new Recipe(4, 4, 4);
+        //    lemonadeRecipe = 
             
            
-        }
+        //}
     }
     
 }

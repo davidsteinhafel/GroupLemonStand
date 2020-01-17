@@ -8,12 +8,12 @@ namespace Lemonade_Stand
 {
     class Wallet
     {
-        double money;
+        private double money;
         public double Money;
 
-        public Wallet(double money)
+        public Wallet(double money,double Money)
         {
-            Money = 1.00;
+            this.Money = Money;
             this.money = money;
             
         }

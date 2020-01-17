@@ -9,14 +9,20 @@ namespace Lemonade_Stand
     class Inventory
     {
         //Member Variables
-        public List<Lemon>lemons;
-        public List<IceCube> icecube;
-        public List<SugarCube> sugarCubes;
-        public List<Cup> cups;
+        public int lemons;
+        public int icecube;
+        public int sugarcubes;
+        public int cups;
 
         //constructor
-        public Inventory()
+        public Inventory(int lemons,int icecubes, int sugarcubes,int cups)
         {
+            this.cups = cups;
+            this.lemons = lemons;
+            this.sugarcubes = sugarcubes;
+            this.icecube = icecubes;
+                
+
 
         }
 
