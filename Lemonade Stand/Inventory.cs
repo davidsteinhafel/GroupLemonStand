@@ -19,25 +19,19 @@ namespace Lemonade_Stand
         //constructor
         public Inventory()
         {
-<<<<<<< HEAD
+
             cups = new List<Cup>();
             lemons = new List<Lemon>();
             sugarcubes = new List<SugarCube>();
             icecubes = new List<IceCube>();
 
-=======
-            lemons = new List<Lemon>();
-            icecubes = new List<IceCube>();
-            sugarcubes = new List<SugarCube>();
-            cups = new List<Cup>();
->>>>>>> 61bf75abf91a3278cf03ee55940d4ffdc97fe0e1
 
 
 
         }
 
         //methods
-        public void AddLemons(int numberOfLemons)
+        public void AddLemons(double numberOfLemons)
         {
             for(int i = 0; i < numberOfLemons; i++)
             {
@@ -45,7 +39,7 @@ namespace Lemonade_Stand
             }
         }
 
-        public void AddCups(int numberOfCups)
+        public void AddCups(double numberOfCups)
         {
             for (int i = 0; i >= numberOfCups;i++)
             {
@@ -53,7 +47,7 @@ namespace Lemonade_Stand
             }
         }
 
-        public void AddIceCubes(int numerOfIceCubes)
+        public void AddIceCubes(double  numerOfIceCubes)
         {
             for (int i = 0; i >= numerOfIceCubes; i++) 
             {
@@ -61,7 +55,7 @@ namespace Lemonade_Stand
             }
         }
 
-        public void AddSugarCubes(int numberOfsugarCubes)
+        public void AddSugarCubes(double numberOfsugarCubes)
         {
             for (int i = 0; i >= numberOfsugarCubes; i++)
             {
