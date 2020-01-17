@@ -27,7 +27,7 @@ namespace Lemonade_Stand
             pricePerCup = .25;
 
 
-            //Constructor
+            
         }
         
     }
