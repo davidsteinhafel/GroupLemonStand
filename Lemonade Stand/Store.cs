@@ -8,12 +8,12 @@ namespace Lemonade_Stand
 {
     public class Store
     {//Member varibales 
-       public  double pricePerCup;
-       public  double pricePerLemon;
-       public double pricePerSugar;
-       public double pricePerIceCube;
-        
-       
+        public double pricePerCup;
+        public double pricePerLemon;
+        public double pricePerSugar;
+        public double pricePerIceCube;
+
+
 
         //constructor
         public Store()
@@ -22,20 +22,20 @@ namespace Lemonade_Stand
             pricePerLemon = .75;
             pricePerSugar = .5;
             pricePerIceCube = .5;
-            
-          
+
+
         }
 
         //methods
         public void InventoryAquisition(Wallet wallet, Inventory stuff)
         {
-            
+
             bool walkoutdoor = false;
-            while(!walkoutdoor)
+            while (!walkoutdoor)
             {
 
-            
-            Console.WriteLine("Please pick your item and write in the amount you want. An remember don't break the bank buy items");
+
+                Console.WriteLine("Please pick your item and write in the amount you want. An remember don't break the bank buy items");
                 UserInterface.UserInput();
 
                 switch (UserInterface.UserInput())
@@ -43,60 +43,60 @@ namespace Lemonade_Stand
                     case "lemons":
 
                         Console.WriteLine("How many lemons would you like to purchase? ");
-                        UserInterface.UserInput();
-                         double cost = lemonQuantity * pricePerLemon;
+                        double quantity = UserInterface.ChangeToDouble();
+                        double cost = quantity * pricePerLemon;
 
-                        if ( wallet.Money >= cost)
+
+                        if (wallet.Money >= cost)
                         {
-                            Console.WriteLine("you have purchased" + lemonQuantity);
+                            Console.WriteLine("you have purchased {0}", quantity);
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later ");
                         }
                         break;
-                        
-                        
-       
+
+
+
                     case "sugar":
                         Console.WriteLine("How many sugarcubes would you like to purchase? ");
-                        int sugarQuantity = Convert.ToInt32(Console.ReadLine());
-                         cost = sugarQuantity * pricePerSugar;
+                        quantity = UserInterface.ChangeToDouble();
+                        cost = quantity * pricePerSugar;
 
                         if (wallet.Money >= cost)
                         {
-                            Console.WriteLine("you have purchased" + sugarQuantity);
+                            Console.WriteLine("you have purchased" + quantity);
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later ");
                         }
                         break;
-                      
+
                     case "ice":
-                        Console.WriteLine("How many lemons would you like to purchase? ");
-                        int iceQuantity = Convert.ToInt32(Console.ReadLine());
-                        cost = iceQuantity * pricePerIceCube;
+                        Console.WriteLine("How many Ice Cubes would you like to purchase? ");
+                        quantity = UserInterface.ChangeToDouble();
+                        cost = quantity * pricePerLemon;
 
                         if (wallet.Money >= cost)
                         {
-                            Console.WriteLine("you have purchased" + iceQuantity);
+                            Console.WriteLine("you have purchased" + quantity);
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later ");
                         }
 
-                        break;    
-             
-                    case "cups":
-                       Console.WriteLine("How many lemons would you like to purchase? ");
-                       int cupQuantity = Convert.ToInt32(Console.ReadLine());
-                        cost = cupQuantity * pricePerCup;
+                        break;
 
+                    case "cups":
+                        Console.WriteLine("How many Cups would you like to purchase? ");
+                        quantity = UserInterface.ChangeToDouble();
+                        cost = quantity * pricePerLemon;
                         if (wallet.Money >= cost)
                         {
-                            Console.WriteLine("you have purchased" + cupQuantity);
+                            Console.WriteLine("you have purchased" + quantity);
                         }
                         else
                         {

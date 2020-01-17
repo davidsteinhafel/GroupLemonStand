@@ -28,15 +28,16 @@ namespace Lemonade_Stand
             string choice = Console.ReadLine();
             return choice;
         }
-        public static void ChangeToDouble()
+        public static double ChangeToDouble()
         {
-            bool isValid = false;
+            
             try
             {
-                Convert.ToDouble(UserInput());
-            }catch(Exception e)
+                return Convert.ToDouble(UserInput());
+            }
+            catch (Exception e)
             {
-                ChangeToDouble();
+                return ChangeToDouble();
             }
             //do
             //{
