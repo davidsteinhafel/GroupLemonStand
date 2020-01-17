@@ -36,14 +36,14 @@ namespace Lemonade_Stand
 
             
             Console.WriteLine("Please pick your item and write in the amount you want. An remember don't break the bank buy items");
-            string choice = Console.ReadLine();
+                UserInterface.UserInput();
 
-                switch (choice)
+                switch (UserInterface.UserInput())
                 {
                     case "lemons":
 
                         Console.WriteLine("How many lemons would you like to purchase? ");
-                        int lemonQuantity = Convert.ToInt32(Console.ReadLine());
+                        UserInterface.UserInput();
                          double cost = lemonQuantity * pricePerLemon;
 
                         if ( wallet.Money >= cost)
