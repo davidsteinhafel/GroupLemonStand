@@ -55,7 +55,19 @@ namespace Lemonade_Stand
                             case "1":
                                 if (lemonQuantity == "1")
                                 {
-                                    //check wallet money method
+                                    
+                                   if ( BMF.Money >= 7.50)
+                                    {
+                                        BMF.Money -= 7.50;
+                                        stuff.lemons += 10;
+                                        Console.WriteLine("you now have " + stuff.lemons);
+
+
+                                   }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
                                     //then if enough money add count to player inventory
                                 }
                                 break;
@@ -63,6 +75,7 @@ namespace Lemonade_Stand
                                 if (lemonQuantity == "2")
                                 {
                                     //check wallet money method
+
                                 }
                                 break;
                             case "3":
