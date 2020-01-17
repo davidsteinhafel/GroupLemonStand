@@ -45,7 +45,7 @@ namespace Lemonade_Stand
                         int lemonQuantity = Convert.ToInt32(Console.ReadLine());
                          double cost = lemonQuantity * pricePerLemon;
 
-                        if (BMF = cost)
+                        if (BMF.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + lemonQuantity);
                         }
@@ -62,7 +62,7 @@ namespace Lemonade_Stand
                         int sugarQuantity = Convert.ToInt32(Console.ReadLine());
                          cost = sugarQuantity * pricePerSugar;
 
-                        if (BMF = cost)
+                        if (BMF.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + sugarQuantity);
                         }
@@ -77,7 +77,7 @@ namespace Lemonade_Stand
                         int iceQuantity = Convert.ToInt32(Console.ReadLine());
                         cost = iceQuantity * pricePerIceCube;
 
-                        if (BMF = cost)
+                        if (BMF.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + iceQuantity);
                         }
@@ -93,7 +93,7 @@ namespace Lemonade_Stand
                        int cupQuantity = Convert.ToInt32(Console.ReadLine());
                         cost = cupQuantity * pricePerCup;
 
-                        if (BMF = cost)
+                        if (BMF.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + cupQuantity);
                         }

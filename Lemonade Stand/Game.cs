@@ -23,9 +23,13 @@ namespace Lemonade_Stand
 
         public void Start()
         {
-            //DisplayWelcome();
-            //DisplayInstructions();
-            //store.InventoryAquisition(player.wallet,player.inventory);
+            //money and current day work but temp still needs work!
+            //UserInterface.DisplayCurrentMoney(new Wallet());
+            //UserInterface.CurrentTemp(new List<int>());
+            //UserInterface.DisplayCurrentDay(new Day());
+            DisplayWelcome();
+            DisplayInstructions();
+            store.InventoryAquisition(player.wallet, player.inventory);
         }
 
         public void DisplayWelcome()

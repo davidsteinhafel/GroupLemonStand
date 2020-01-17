@@ -18,8 +18,8 @@ namespace Lemonade_Stand
         public Player()
         {
 
-            wallet = new Wallet();
-            inventory = new Inventory();
+            Wallet BMF = new Wallet();
+            //inventory = new Inventory();
 
         }
         public void SetName()
@@ -28,13 +28,7 @@ namespace Lemonade_Stand
             name = Console.ReadLine();
 
         }
-        //public void MakeLemonade()
-        //{
-        //    Recipe lemonadeRecipe = new Recipe(4, 4, 4);
-        //    lemonadeRecipe = 
-            
-           
-        //}
+        
     }
     
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Wallet
+    public class Wallet
     {
         private double money;
         public double Money {
@@ -29,7 +29,7 @@ namespace Lemonade_Stand
 
         public Wallet()
         {
-
+            money = 50;
             
             
         }
