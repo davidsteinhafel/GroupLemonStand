@@ -48,7 +48,7 @@ namespace Lemonade_Stand
                 {
                     case "1":
 
-                        Console.WriteLine("How many lemons would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15, press 4 = go back");
+                        Console.WriteLine("How many lemons would you like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15, press 4 = go back");
                         string lemonQuantity = Console.ReadLine();
                         switch (lemonQuantity)
                         {
@@ -59,7 +59,7 @@ namespace Lemonade_Stand
                                    if ( BMF.Money >= 7.50)
                                     {
                                         BMF.Money -= 7.50;
-                                        stuff.lemons += 10;
+                                        
                                         Console.WriteLine("you now have " + stuff.lemons);
 
 
@@ -68,22 +68,50 @@ namespace Lemonade_Stand
                                     {
                                         Console.WriteLine("you do not have engouh money for this item");
                                     }
-                                    //then if enough money add count to player inventory
+                                   
                                 }
                                 break;
                             case "2":
                                 if (lemonQuantity == "2")
                                 {
-                                    //check wallet money method
 
+
+                                    if (BMF.Money >= 11.25)
+                                    {
+                                        BMF.Money -= 11.25;
+                                       
+                                        Console.WriteLine("you now have " + stuff.lemons);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
                                 }
+                                    
                                 break;
                             case "3":
                                 if (lemonQuantity == "3")
                                 {
-                                    //check wallet money method
+                                 
+                                        if (BMF.Money >= 15)
+                                        {
+                                            BMF.Money -= 15;
+                                           
+                                            Console.WriteLine("you now have " + stuff.lemons);
+
+
+                                        }
+                                        else
+                                        { 
+                                            Console.WriteLine("you do not have engouh money for this item");
+                                        }
+                                    
+                                    
                                 }
                                 break;
+
                             case "4":
                                 break;
                             default:
@@ -91,6 +119,7 @@ namespace Lemonade_Stand
                                 break;
                         }
                         break;
+
                     case "2":
                         Console.WriteLine("How many Sugar would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15,press 4 = go back");
                         string sugarQuantity = Console.ReadLine();
@@ -99,19 +128,63 @@ namespace Lemonade_Stand
                             case "1":
                                 if (sugarQuantity == "1")
                                 {
-                                    //check wallet money method
-                                }
-                                break;
+                                    if (sugarQuantity == "1")
+                                    {
+                                        if (BMF.Money >= 7.50)
+                                        {
+                                            BMF.Money -= 7.50;
+                                            
+                                            Console.WriteLine("you now have " + stuff.sugarcubes);
+
+
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("you do not have engouh money for this item");
+                                        }
+
+
+                                        
+                                    }
+
+                                }    break;          
+                                
                             case "2":
                                 if (sugarQuantity == "2")
                                 {
-                                    //check wallet money method
+                                    if (BMF.Money >= 11.25)
+                                    {
+                                        BMF.Money -= 11.25;
+                                        
+                                        Console.WriteLine("you now have " + stuff.sugarcubes);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
+
+                                    break;
                                 }
                                 break;
                             case "3":
                                 if (sugarQuantity == "3")
                                 {
-                                    //check wallet money method
+                                    if (BMF.Money >= 15)
+                                    {
+                                        BMF.Money -= 15;
+                                        
+                                        Console.WriteLine("you now have " + stuff.sugarcubes);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
                                 }
                                 break;
                             case "4":
@@ -125,23 +198,61 @@ namespace Lemonade_Stand
                         Console.WriteLine("How many Ice would u like to purchase? Press 1 = 10 lemons for $7.50, Press 2 = 15 lemons for $11.25, Press 3 = 20 for $15, press 4 = go back");
                         string iceQuantity = Console.ReadLine();
                         switch (iceQuantity)
+
                         {
                             case "1":
                                 if (iceQuantity == "1")
                                 {
-                                    //check wallet money method
+                                    if (BMF.Money >= 7.50)
+                                    {
+                                        BMF.Money -= 7.50;
+                                        
+                                        Console.WriteLine("you now have " + stuff.icecubes);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
                                 }
                                 break;
                             case "2":
                                 if (iceQuantity == "2")
                                 {
-                                    //check wallet money method
+                                    if (BMF.Money >= 11.25)
+                                    {
+                                        BMF.Money -= 11.25;
+                                        
+                                        Console.WriteLine("you now have " + stuff.icecubes);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
                                 }
                                 break;
                             case "3":
                                 if (iceQuantity == "3")
                                 {
-                                    //check wallet money method
+
+                                    if (BMF.Money >= 15)
+                                    {
+                                        BMF.Money -= 15;
+                                        
+                                        Console.WriteLine("you now have " + stuff.icecubes);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
                                 }
                                 break;
                             case "4":
@@ -159,19 +270,55 @@ namespace Lemonade_Stand
                             case "1":
                                 if (cupsQuantity == "1")
                                 {
-                                    //check wallet money method
+                                    if (BMF.Money >= 7.50)
+                                    {
+                                        BMF.Money -= 7.50;
+                                       
+                                        Console.WriteLine("you now have " + stuff.cups);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
                                 }
                                 break;
                             case "2":
                                 if (cupsQuantity == "2")
                                 {
-                                    //check wallet money method
+                                    if (BMF.Money >= 11.25)
+                                    {
+                                        BMF.Money -= 11.25;
+                                       
+                                        Console.WriteLine("you now have " + stuff.cups);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
                                 }
                                 break;
                             case "3":
                                 if (cupsQuantity == "3")
                                 {
-                                    //check wallet money method
+                                    if (BMF.Money >= 15)
+                                    {
+                                        BMF.Money -= 15;
+                                        
+                                        Console.WriteLine("you now have " + stuff.cups);
+
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("you do not have engouh money for this item");
+                                    }
+
                                 }
                                 break;
                             case "4":

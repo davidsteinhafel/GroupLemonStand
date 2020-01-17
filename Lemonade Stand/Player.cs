@@ -19,7 +19,7 @@ namespace Lemonade_Stand
         {
 
             this.wallet = wallet;
-            inventory = new Inventory(0, 0, 0, 0);
+            inventory = new Inventory();
 
         }
         public void SetName()
