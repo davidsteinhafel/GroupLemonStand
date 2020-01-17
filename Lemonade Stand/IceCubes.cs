@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class IceCube
+    class IceCubes
     {
-        
     }
 }
