@@ -28,9 +28,6 @@ namespace Lemonade_Stand
 
 
         }
-
-        //methods
-
         public void InventoryAquisition(Wallet wallet1, Inventory stuff)
 
         {
@@ -124,13 +121,8 @@ namespace Lemonade_Stand
                         }
 
                         break;
-
-
                     case "back out of menu":
-
-
                         break;
-
                     default:
                         Console.WriteLine("Invalid Input Please Try Again!");
                         break;
