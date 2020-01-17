@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace Lemonade_Stand
 {
     public class Player
-        //possibly abstract class?
+
     {
         public string name;
+<<<<<<< HEAD
         public Inventory inventory;
         public Recipe recipe;
         public Pitcher pitcher;
@@ -22,15 +23,26 @@ namespace Lemonade_Stand
             wallet1 = new Wallet();
             inventory = new Inventory();
 
+=======
+        public Inventory inventory1;
+        public Recipe recipe1;
+        public Pitcher pitcher1;
+        public Wallet wallet1;
 
-        }
-        public void SetName()
+
+        public Player()
         {
-            Console.WriteLine("Please put your name in");
-            name = Console.ReadLine();
+            wallet1 = new Wallet();
+            pitcher1 = new Pitcher();
+            inventory1 = new Inventory();
+            recipe1 = new Recipe();
+
+
+>>>>>>> 61bf75abf91a3278cf03ee55940d4ffdc97fe0e1
+
 
         }
-        
+
     }
-    
+
 }

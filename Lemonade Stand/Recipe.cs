@@ -42,7 +42,7 @@ namespace Lemonade_Stand
                 Console.WriteLine("How many Sugar Cubes do you want to use");
                 isValid = int.TryParse(Console.ReadLine(), out amountOfSugarCubes);
             } while (isValid == false); 
-            //Recipe userRecipe = new Recipe(amountOfLemons, amountOfIceCubes, amountOfSugarCubes);
+            
         }
         public void setPricePerCup()   
         {

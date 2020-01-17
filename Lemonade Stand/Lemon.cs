@@ -10,6 +10,11 @@ namespace Lemonade_Stand
     {
         public string lemons;
 
+<<<<<<< HEAD
+=======
+        public string lemon;
+        //constructor
+>>>>>>> 61bf75abf91a3278cf03ee55940d4ffdc97fe0e1
         public Lemon()
         {
 

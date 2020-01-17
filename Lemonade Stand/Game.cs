@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-    class Game
+    public class Game
     {
-        List<Day> days;
-        int currentDay;
+        public List<Day> days;
+        public int currentDay;
         public Player player;
+<<<<<<< HEAD
         Store store;
         Weather weather;
 
@@ -18,12 +19,22 @@ namespace Lemonade_Stand
         {
             
             player = new Player();
+=======
+        public Store store;
+
+        public Game()
+        {
+>>>>>>> 61bf75abf91a3278cf03ee55940d4ffdc97fe0e1
             store = new Store();
+            player = new Player();
+            
 
         }
+        
 
         public void Start()
         {
+<<<<<<< HEAD
 
             DisplayWelcome();
             DisplayInstructions();
@@ -43,6 +54,17 @@ namespace Lemonade_Stand
         public void AddPlayer()
         {
             player.SetName();
+=======
+            UserInterface.DisplayWelcome();
+            UserInterface.DisplayInstructions();
+            UserInterface.SetName();
+            //money and current day work but temp still needs work!
+            //UserInterface.DisplayCurrentMoney(new Wallet());
+            //UserInterface.CurrentTemp(new List<int>());
+            //UserInterface.DisplayCurrentDay(new Day());
+            
+            store.InventoryAquisition(player.wallet1, player.inventory1);
+>>>>>>> 61bf75abf91a3278cf03ee55940d4ffdc97fe0e1
         }
     }
 }//method for win lose conditions

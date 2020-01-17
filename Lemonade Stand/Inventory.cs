@@ -19,11 +19,18 @@ namespace Lemonade_Stand
         //constructor
         public Inventory()
         {
+<<<<<<< HEAD
             cups = new List<Cup>();
             lemons = new List<Lemon>();
             sugarcubes = new List<SugarCube>();
             icecubes = new List<IceCube>();
 
+=======
+            lemons = new List<Lemon>();
+            icecubes = new List<IceCube>();
+            sugarcubes = new List<SugarCube>();
+            cups = new List<Cup>();
+>>>>>>> 61bf75abf91a3278cf03ee55940d4ffdc97fe0e1
 
 
 
