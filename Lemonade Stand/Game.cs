@@ -32,7 +32,7 @@ namespace Lemonade_Stand
             //UserInterface.CurrentTemp(new List<int>());
             //UserInterface.DisplayCurrentDay(new Day());
             
-            store.InventoryAquisition(player.wallet1, player.inventory);
+            store.InventoryAquisition(player.wallet1, player.inventory1);
         }
     }
 }

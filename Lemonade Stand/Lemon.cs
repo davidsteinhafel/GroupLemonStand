@@ -11,7 +11,7 @@ namespace Lemonade_Stand
 
         public string lemon;
         //constructor
-        public Lemon(int countOf)
+        public Lemon()
         {
             name = lemon;
             

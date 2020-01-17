@@ -35,12 +35,12 @@ namespace Lemonade_Stand
             {
 
 
-                Console.WriteLine("Please pick your item and write in the amount you want. An remember don't break the bank buy items");
+                Console.WriteLine("Please pick what you would item you would like to buy: For lemons press 1, sugar cubes press 2, ice cubes press 3, and cups press 4");
                 UserInterface.UserInput();
 
                 switch (UserInterface.UserInput())
                 {
-                    case "lemons":
+                    case "1":
 
                         Console.WriteLine("How many lemons would you like to purchase? ");
                         double quantity = UserInterface.ChangeToDouble();
@@ -53,14 +53,12 @@ namespace Lemonade_Stand
                         }
                         else
                         {
-                            Console.WriteLine("you need more money for this come back later ");
+                            Console.WriteLine("you need more money for this come back later");
                         }
                         break;
 
-
-
-                    case "sugar":
-                        Console.WriteLine("How many sugarcubes would you like to purchase? ");
+                    case "2":
+                        Console.WriteLine("How many sugarcubes would you like to purchase?");
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerSugar;
 
@@ -70,12 +68,12 @@ namespace Lemonade_Stand
                         }
                         else
                         {
-                            Console.WriteLine("you need more money for this come back later ");
+                            Console.WriteLine("you need more money for this come back later");
                         }
                         break;
 
-                    case "ice":
-                        Console.WriteLine("How many Ice Cubes would you like to purchase? ");
+                    case "3":
+                        Console.WriteLine("How many Ice Cubes would you like to purchase?");
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerLemon;
 
@@ -85,13 +83,13 @@ namespace Lemonade_Stand
                         }
                         else
                         {
-                            Console.WriteLine("you need more money for this come back later ");
+                            Console.WriteLine("you need more money for this come back later");
                         }
 
                         break;
 
-                    case "cups":
-                        Console.WriteLine("How many Cups would you like to purchase? ");
+                    case "4":
+                        Console.WriteLine("How many Cups would you like to purchase?");
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerLemon;
                         if (wallet.Money >= cost)
@@ -100,12 +98,13 @@ namespace Lemonade_Stand
                         }
                         else
                         {
-                            Console.WriteLine("you need more money for this come back later ");
+                            Console.WriteLine("you need more money for this come back later");
                         }
 
                         break;
 
                     case "back out of menu":
+
                         break;
 
                     default:

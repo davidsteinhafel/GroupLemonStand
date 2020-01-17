@@ -39,11 +39,6 @@ namespace Lemonade_Stand
             {
                 return ChangeToDouble();
             }
-            //do
-            //{
-            //    Console.WriteLine("How many Ice Cubes do you want to use");
-            //    isValid = int.TryParse(Console.ReadLine(), out amountOfIceCubes);
-            //} while (isValid == false);
         }
 
         public static void SetName()

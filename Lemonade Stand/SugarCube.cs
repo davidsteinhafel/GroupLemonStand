@@ -8,12 +8,10 @@ namespace Lemonade_Stand
 {
     public class SugarCube : Item
     {
-
-        string sugarcube;
-
+        string sugarCube;
         public SugarCube()
         {
-            name = sugarcube;
+            name = sugarCube;
         }
 
     }

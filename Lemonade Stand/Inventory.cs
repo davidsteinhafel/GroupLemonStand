@@ -17,12 +17,12 @@ namespace Lemonade_Stand
         //public List(Lemon)
 
         //constructor
-        public Inventory(List<Lemon> lemons, List<IceCube> icecubes, List<SugarCube> sugarcubes, List<Cup> cups)
+        public Inventory()
         {
-            this.cups = cups;
-            this.lemons = lemons;
-            this.sugarcubes = sugarcubes;
-            this.icecubes = icecubes;
+            lemons = new List<Lemon>();
+            icecubes = new List<IceCube>();
+            sugarcubes = new List<SugarCube>();
+            cups = new List<Cup>();
 
 
 
