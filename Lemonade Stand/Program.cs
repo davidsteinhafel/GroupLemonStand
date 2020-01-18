@@ -10,12 +10,19 @@ namespace Lemonade_Stand
     {
         static void Main(string[] args)
         {
-            Game letsgo = new Game();
-            letsgo.Start();
-            Recipe recipe = new Recipe();
-            recipe.setPricePerCup();
-            recipe.SetRecipe();
+            Game game = new Game();
+            Customer customer = new Customer();
+            customer.CustomerPreference();
             Console.ReadLine();
+            Console.WriteLine();
+            
+            
+            //Game letsgo = new Game();
+            //letsgo.Start();
+            //Recipe recipe = new Recipe();
+            //recipe.setPricePerCup();
+            //recipe.SetRecipe();
+            //Console.ReadLine();
         }
     }
 }

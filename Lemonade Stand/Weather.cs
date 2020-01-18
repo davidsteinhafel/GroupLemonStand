@@ -30,7 +30,6 @@ namespace Lemonade_Stand
             int rng = random.Next(5);
             int temp = temperature[rng];
             random = new Random();
-
         }
         public void Forcasting()
         {
