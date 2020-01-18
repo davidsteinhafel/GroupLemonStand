@@ -11,19 +11,11 @@ namespace Lemonade_Stand
         public List<string> names;
         Random random;
         Weather weather;
-
-
         public Customer()
         {
             random = new Random();
         }
-
         //method for randomized preference- temp and weather
         //method for purchase limit of customer
-        
-
-
-
-
     }
 }

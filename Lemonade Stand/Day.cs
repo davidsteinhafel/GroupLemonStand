@@ -8,7 +8,6 @@ namespace Lemonade_Stand
 {
     public class Day
     {
-
         Weather weather;
         public List<Customer>customers;
         public int days;

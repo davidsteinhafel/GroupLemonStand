@@ -6,18 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand
 {
-
     public class IceCube:Item
     {
-        public string icecube;
-        
         public IceCube()
         {
             name = "ice cube";
         }
-  
-
-        
-
     }
 }

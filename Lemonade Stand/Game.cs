@@ -13,22 +13,13 @@ namespace Lemonade_Stand
         public Player player1;
         Store store;
         Weather weather;
-
-       
-        
         public Game()
         {
-
             store = new Store();
             player1 = new Player();
-            
-
         }
-        
-
         public void Start()
         {
-
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
@@ -36,9 +27,7 @@ namespace Lemonade_Stand
             //UserInterface.DisplayCurrentMoney(new Wallet());
             //UserInterface.CurrentTemp(new List<int>());
             //UserInterface.DisplayCurrentDay(new Day());
-            
             store.InventoryAquisition(player1);
-
         }
     }
 }//method for win lose conditions

@@ -10,7 +10,6 @@ namespace Lemonade_Stand
 
     {
         public string name;
-
         public Recipe recipe1;
         public Pitcher pitcher1;
         public Wallet wallet1;
@@ -22,13 +21,6 @@ namespace Lemonade_Stand
             pitcher1 = new Pitcher();
             inventory1 = new Inventory();
             recipe1 = new Recipe();
-
-
-
-
-
         }
-
     }
-
 }

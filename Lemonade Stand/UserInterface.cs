@@ -8,17 +8,10 @@ namespace Lemonade_Stand
 {
     public static class UserInterface
     {
-
-
-
         public static void DisplayCurrentDay(Day day)
         {
             Console.WriteLine("Current day is {0}", day.days);
         }
-        //public static void DisplayCurrentMoney(Wallet Money)
-        //{
-        //    Console.WriteLine("Current money made is {0}", Money.Money);
-        //}
         public static void CurrentTemp(Weather weather)
         {
             Console.WriteLine("Current temperature is {0}", weather.temperature);
@@ -60,11 +53,7 @@ namespace Lemonade_Stand
         {
             Console.WriteLine("{0} left, {1} left, {2} left, {3} left,", inventory1.cups, inventory1.lemons, inventory1.icecubes, inventory1.sugarcubes);
         }
-
-
     }
-
-
     //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
 }
 

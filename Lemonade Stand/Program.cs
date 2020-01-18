@@ -15,8 +15,6 @@ namespace Lemonade_Stand
             Recipe recipe = new Recipe();
             recipe.setPricePerCup();
             recipe.SetRecipe();
-            
-
             Console.ReadLine();
         }
     }

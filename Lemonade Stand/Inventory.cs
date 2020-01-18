@@ -8,7 +8,6 @@ namespace Lemonade_Stand
 {
     public class Inventory
     {
-        //Member Variables
         public List<Lemon> lemons;
         public List<IceCube> icecubes;
         public List<SugarCube> sugarcubes;
@@ -48,9 +47,6 @@ namespace Lemonade_Stand
                 sugarcubes.Add(new SugarCube());
             }
         }
-       
-
-        
     }
 }
 

@@ -8,17 +8,10 @@ namespace Lemonade_Stand
 {
     public class Pitcher
     {
-        //Member Variables
         public int CupsinPitcher;
-        
-
-        //constructor
         public Pitcher()
         {
             CupsinPitcher = 8;
-            
         }
-
-        //methods
     }
 }

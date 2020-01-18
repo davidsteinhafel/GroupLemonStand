@@ -7,40 +7,25 @@ using System.Threading.Tasks;
 namespace Lemonade_Stand
 {
     public class Store
-    {//Member varibales 
-
+    {
         public double pricePerCup;
         public double pricePerLemon;
         public double pricePerSugar;
         public double pricePerIceCube;
-        
-
-
-
-
-        //constructor
         public Store()
         {
             pricePerCup = .50;
             pricePerLemon = .75;
             pricePerSugar = .5;
             pricePerIceCube = .5;
-
-
         }
         public void InventoryAquisition(Player player1)
-
         {
-
             bool walkoutdoor = false;
-
-
             while (!walkoutdoor)
             {
-
                 Console.WriteLine("Welcome to the Store!!! Press 1 to buy lemons, 2 to buy sugar cubes, 3 to buy ice cubes, and 4 to buy cups");
                 UserInterface.UserInput();
-
                 switch (UserInterface.UserInput())
                 {
                     case "1":
@@ -106,7 +91,6 @@ namespace Lemonade_Stand
                             player1.inventory1.AddCups(quantity);
 
                         }
-
                         else
                         {
                             Console.WriteLine("you need more money for this come back later");
@@ -122,7 +106,6 @@ namespace Lemonade_Stand
                         break;
                 }
             }
-
         }
     }
 }
