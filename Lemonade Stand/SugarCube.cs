@@ -15,7 +15,7 @@ namespace Lemonade_Stand
 
         public SugarCube()
         {
-            name = sugarCube;
+            name = "Sugar Cube";
         }
 
     }

@@ -13,24 +13,13 @@ namespace Lemonade_Stand
         public List<IceCube> icecubes;
         public List<SugarCube> sugarcubes;
         public List<Cup> cups;
-
-        //public List(Lemon)
-
-        //constructor
         public Inventory()
         {
-
             cups = new List<Cup>();
             lemons = new List<Lemon>();
             sugarcubes = new List<SugarCube>();
             icecubes = new List<IceCube>();
-
-
-
-
         }
-
-        //methods
         public void AddLemons(double numberOfLemons)
         {
             for(int i = 0; i < numberOfLemons; i++)
@@ -38,26 +27,23 @@ namespace Lemonade_Stand
                 lemons.Add(new Lemon());
             }
         }
-
         public void AddCups(double numberOfCups)
         {
-            for (int i = 0; i >= numberOfCups;i++)
+            for (int i = 0; i < numberOfCups;i++)
             {
                 cups.Add(new Cup());
             }
         }
-
         public void AddIceCubes(double  numerOfIceCubes)
         {
-            for (int i = 0; i >= numerOfIceCubes; i++) 
+            for (int i = 0; i < numerOfIceCubes; i++) 
             {
                 icecubes.Add(new IceCube());
             }
         }
-
         public void AddSugarCubes(double numberOfsugarCubes)
         {
-            for (int i = 0; i >= numberOfsugarCubes; i++)
+            for (int i = 0; i < numberOfsugarCubes; i++)
             {
                 sugarcubes.Add(new SugarCube());
             }
@@ -66,6 +52,5 @@ namespace Lemonade_Stand
 
         
     }
-    //dispaly methods console.writeline
 }
 

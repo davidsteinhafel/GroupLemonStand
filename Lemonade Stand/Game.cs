@@ -10,7 +10,7 @@ namespace Lemonade_Stand
     {
         public List<Day> days;
         public int currentDay;
-        public Player player;
+        public Player player1;
         Store store;
         Weather weather;
 
@@ -20,7 +20,7 @@ namespace Lemonade_Stand
         {
 
             store = new Store();
-            player = new Player();
+            player1 = new Player();
             
 
         }
@@ -37,7 +37,7 @@ namespace Lemonade_Stand
             //UserInterface.CurrentTemp(new List<int>());
             //UserInterface.DisplayCurrentDay(new Day());
             
-            store.InventoryAquisition(player.wallet1, player.inventory1);
+            store.InventoryAquisition(player1);
 
         }
     }

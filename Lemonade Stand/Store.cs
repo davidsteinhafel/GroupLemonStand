@@ -9,13 +9,13 @@ namespace Lemonade_Stand
     public class Store
     {//Member varibales 
 
-       public  double pricePerCup;
-       public  double pricePerLemon;
-       public double pricePerSugar;
-       public double pricePerIceCube;
-       
+        public double pricePerCup;
+        public double pricePerLemon;
+        public double pricePerSugar;
+        public double pricePerIceCube;
         
-       
+
+
 
 
         //constructor
@@ -28,62 +28,54 @@ namespace Lemonade_Stand
 
 
         }
-        public void InventoryAquisition(Wallet wallet1, Inventory stuff)
+        public void InventoryAquisition(Player player1)
 
         {
 
             bool walkoutdoor = false;
 
-           
-            while(!walkoutdoor)
 
+            while (!walkoutdoor)
             {
 
-
-                Console.WriteLine("Please pick what you would item you would like to buy: For lemons press 1, sugar cubes press 2, ice cubes press 3, and cups press 4");
+                Console.WriteLine("Welcome to the Store!!! Press 1 to buy lemons, 2 to buy sugar cubes, 3 to buy ice cubes, and 4 to buy cups");
                 UserInterface.UserInput();
 
                 switch (UserInterface.UserInput())
                 {
                     case "1":
-
-
-
                         Console.WriteLine("How many lemons would you like to purchase? ");
                         double quantity = UserInterface.ChangeToDouble();
                         double cost = quantity * pricePerLemon;
 
-
-                        if (wallet1.Money >= cost)
+                        if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased {0}", quantity);
-                            stuff.AddLemons(quantity);
+                            player1.inventory1.AddLemons(quantity);
 
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-
+                        InventoryAquisition(player1);
                         break;
 
-
                     case "2":
-                        Console.WriteLine("How many sugarcubes would you like to purchase?");
+                        Console.WriteLine("How many sugar cubes would you like to purchase?");
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerSugar;
-
-                        if (wallet1.Money >= cost)
+                        if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + quantity);
-                            stuff.AddSugarCubes(quantity);
-                            
+                            player1.inventory1.AddSugarCubes(quantity);
 
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
+                        InventoryAquisition(player1);
                         break;
 
                     case "3":
@@ -91,40 +83,42 @@ namespace Lemonade_Stand
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerLemon;
 
-                        if (wallet1.Money >= cost)
+                        if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + quantity);
-                            stuff.AddIceCubes(quantity);
+                            player1.inventory1.AddIceCubes(quantity);
 
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-
-
+                        InventoryAquisition(player1);
                         break;
 
                     case "4":
                         Console.WriteLine("How many Cups would you like to purchase?");
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerLemon;
-                        if (wallet1.Money >= cost)
+                        if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + quantity);
-                            stuff.AddCups(quantity);
+                            player1.inventory1.AddCups(quantity);
+
                         }
 
                         else
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-
+                        InventoryAquisition(player1);
                         break;
-                    case "back out of menu":
+                    case "5":
+                        Console.WriteLine("Thanks for visiting and good luck!!!");
                         break;
                     default:
                         Console.WriteLine("Invalid Input Please Try Again!");
+                        InventoryAquisition(player1);
                         break;
                 }
             }

@@ -8,11 +8,11 @@ namespace Lemonade_Stand
 {
     public class Cup : Item
     {
-        public string cups;
+        public string cup;
 
         public Cup()
         {
-            name = cups;
+            name = "Cup";
         }
 
 

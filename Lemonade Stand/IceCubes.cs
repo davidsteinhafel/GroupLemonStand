@@ -13,7 +13,7 @@ namespace Lemonade_Stand
         
         public IceCube()
         {
-            name = icecube;
+            name = "ice cube";
         }
   
 
