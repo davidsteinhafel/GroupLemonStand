@@ -16,6 +16,7 @@ namespace Lemonade_Stand
         Weather weather;
         Random random;
         Customer customer;
+        Recipe recipe;
         public Game()
         {
             store = new Store();
@@ -30,14 +31,35 @@ namespace Lemonade_Stand
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
 
+            while(!gameover())
+            {
+             //money and current day work but temp still needs work!
+             //UserInterface.DisplayCurrentMoney(new Wallet());
+               //UserInterface.CurrentTemp(new List<int>());
+              //UserInterface.DisplayCurrentDay(new Day());
+               store.InventoryAquisition(player1);
+               recipe.SetRecipe();
+               recipe.setPricePerCup();
+               weather.Weathercontrol();
+               weather.Tempcontrol();
 
 
+                int rgn = random.Next(2, 10);
+                for (int i = 0; i < rgn; i++) 
+                {
+                    double potentialcustomer = customer.CustomerPreference(weather);
+                     if (recipe.pricePerCup <= potentialcustomer)
+                    {
+                        Console.WriteLine("Sale");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No sale");
+                    }
 
-            //money and current day work but temp still needs work!
-            //UserInterface.DisplayCurrentMoney(new Wallet());
-            //UserInterface.CurrentTemp(new List<int>());
-            //UserInterface.DisplayCurrentDay(new Day());
-            store.InventoryAquisition(player1);
+                }
+                weather.Forcasting();
+            }
         }
 
         public bool gameover()

@@ -11,11 +11,10 @@ namespace Lemonade_Stand
         static void Main(string[] args)
         {
             Game game = new Game();
-          
+            game.Start();
             
             Console.ReadLine();
-            Console.WriteLine();
-            
+           
             
             //Game letsgo = new Game();
             //letsgo.Start();
