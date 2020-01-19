@@ -13,6 +13,9 @@ namespace Lemonade_Stand
         Random random;
         Weather weather;
         public List<int> customerPreference;
+        int customerChoice;
+
+
 
         public Customer()
         {
@@ -21,32 +24,69 @@ namespace Lemonade_Stand
         }
         //method for randomized preference- temp and weather
 
-        public void CustomerPreference()
+        public double CustomerPreference(Weather weather)
         {
 
             int rng = random.Next(11);
-            int customerChoice = customerPreference[rng];
+            customerChoice = customerPreference[rng];
 
-            Console.WriteLine(customerChoice);
+            //Console.WriteLine(customerChoice);
 
-            if (customerChoice > 3)
+            //if (customerChoice > 3)
+            //{
+            //    //customerChoice = 4 & 3; not sure what this is but it always returned 0
+            //    Console.WriteLine(customerChoice);
+            //    Console.WriteLine("Sale!");
+            //    //method for buying lemonade an giving money to wallet
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No Sale!");
+            //}
+            if(weather.weather == "sunny")
             {
-                //customerChoice = 4 & 3; not sure what this is but it always returned 0
-                Console.WriteLine(customerChoice);
-                Console.WriteLine("Sale!");
-                //method for buying lemonade an giving money to wallet
+                customerChoice += 2;
+            }
+            else if (weather.weather == "cloudy")
+            {
+                customerChoice -= 1;
             }
             else
             {
-                Console.WriteLine("No Sale!");
+                customerChoice -= 2;
             }
 
-        }
-        //method for purchase limit of customer
-        public void limitPurchasePrice()
-        {
+            if (weather.temp >=40 )
+            {
+                customerChoice += 2;
+            }
+            else
+            {
+                customerChoice -= 2;
+            }
+            if (customerChoice > 8)
+            {
+                return 20;
+            }
+            else if (customerChoice > 6)
+            {
+                return 10;
+            }
+            else if (customerChoice > 4)
+            {
+                return 5;
+            }
+            else if (customerChoice > 2)
+            {
+                return 2;
+            }
+            return 0;
 
         }
+
+
+        //method for purchase limit of customer
+        
 
     }
 }

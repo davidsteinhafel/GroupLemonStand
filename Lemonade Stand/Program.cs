@@ -11,8 +11,8 @@ namespace Lemonade_Stand
         static void Main(string[] args)
         {
             Game game = new Game();
-            Customer customer = new Customer();
-            customer.CustomerPreference();
+          
+            
             Console.ReadLine();
             Console.WriteLine();
             

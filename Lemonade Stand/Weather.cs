@@ -11,6 +11,9 @@ namespace Lemonade_Stand
         public List<int> temperature;
         public List<string> weatherConditions;
         public List<string> predictedForecast;
+       public  string weather;
+       public  int temp;
+       public  string cast;
         Random random;
         public Weather()
         {
@@ -22,20 +25,22 @@ namespace Lemonade_Stand
         public void Weathercontrol()
         {
             int rng = random.Next(4);
-            string weather = weatherConditions[rng];
+             weather = weatherConditions[rng];
             Console.WriteLine("the weather today is" + weatherConditions);
         }
         public void Tempcontrol()
         {
             int rng = random.Next(5);
-            int temp = temperature[rng];
+             temp = temperature[rng];
             random = new Random();
+            Console.WriteLine("the tempurature today is" + temperature);
         }
         public void Forcasting()
         {
             int rng = random.Next(4);
-            string cast = predictedForecast[rng];
+            cast = predictedForecast[rng];
             random = new Random();
+            Console.WriteLine("this is the predicted forcast" + predictedForecast);
         }
     }
 }

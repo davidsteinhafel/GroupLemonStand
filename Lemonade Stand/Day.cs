@@ -11,10 +11,12 @@ namespace Lemonade_Stand
         Weather weather;
         public List<Customer>customers;
         public int days;
+        public int maxdays;
         public int dailyprofit;
         public Day()
         {
-            days = 7;
+            days = 0;
+            maxdays = 7;
         }
     }
 }

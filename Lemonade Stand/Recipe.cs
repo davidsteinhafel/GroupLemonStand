@@ -17,7 +17,7 @@ namespace Lemonade_Stand
             amountOfIceCubes = 0;
             amountOfLemons = 0;
             amountOfSugarCubes = 0;
-            pricePerCup = 0; //dynamic;
+            pricePerCup = 0;
         }
         public void SetRecipe()
         {
