@@ -41,7 +41,7 @@ namespace Lemonade_Stand
                recipe.setPricePerCup();
                AddDay();
                day.displaystartofdaybalance(player1.wallet1);
-               day.displaydailyprofits(player1.wallet1);
+
                weather.Weathercontrol();
                weather.Tempcontrol();
 
@@ -50,16 +50,17 @@ namespace Lemonade_Stand
                 {
                     double potentialcustomer = customer.CustomerPreference(weather);
                      if (recipe.pricePerCup <= potentialcustomer)
-                    {
+                     {
                         Console.WriteLine("Sale");
                         player1.wallet1.Money += recipe.pricePerCup;
-                    }
+                     }
                     else
                     {
                         Console.WriteLine("No sale");
                     }
 
                 }
+                day.displaydailyprofits(player1.wallet1);
                 weather.Forcasting();
             }
             

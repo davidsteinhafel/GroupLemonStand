@@ -19,8 +19,8 @@ namespace Lemonade_Stand
         {
             wallet1 = new Wallet();
             pitcher1 = new Pitcher();
-            inventory1 = new Inventory();
             recipe1 = new Recipe();
+            inventory1 = new Inventory();
         }
     }
 }
