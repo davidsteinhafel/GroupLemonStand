@@ -32,6 +32,7 @@ namespace Lemonade_Stand
                         Console.WriteLine("Lemons cost {0} per lemon", pricePerLemon);
                         double quantity = UserInterface.ChangeToDouble();
                         double cost = quantity * pricePerLemon;
+                        UserInterface.DisplayRemainingInventory(player1.inventory1);
                         
 
                         if (player1.wallet1.Money >= cost)
