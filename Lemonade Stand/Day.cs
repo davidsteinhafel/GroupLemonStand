@@ -15,6 +15,8 @@ namespace Lemonade_Stand
         public double startofdaybalance;
         public string weatheroftheday;
         public int customerCount;
+        public int pricperCup;
+        Customer customer;
         List<Customer> customers;
         public Day()
         {
@@ -43,22 +45,17 @@ namespace Lemonade_Stand
                 case "cloudy":
                     customerCount = 25;
                     return customerCount;
-                    break;
                 case "rainy":
                     customerCount = 20;
                     return customerCount;
-                    break;
                 case "sleet":
                     customerCount = 15;
                     return customerCount;
-                    break;
                 case "snowy":
                     customerCount = 10;
                     return customerCount;
-                    break;
                 default:
                     return customerCount;
-                    break;
             }
         }
         public void AddCustomer()
@@ -68,6 +65,59 @@ namespace Lemonade_Stand
                 customers.Add(new Customer());
             }
         }
-       
+        public double CustomerBuy()
+        {
+            if (customer.)
+            {
+
+            }
+        }
+        public void CustomerBuyLemonade()
+        {
+            Random random = new Random();
+            int rng = random.Next(11);
+            if(customer.customerPreference[rng] >= 5)
+            {
+              +=
+            }
+        }
+        public void CustomerPreference(Weather weather)
+        {
+            Random random = new Random();
+            int rng = random.Next(11);
+
+            if (weather.weather == "sunny")
+            {
+                customer.customerPreference[rng] += 3;
+            }
+            else if (weather.weather == "cloudy")
+            {
+                customer.customerPreference[rng] += 1;
+            }
+            else if (weather.weather == "sleet")
+            {
+                customer.customerPreference[rng] -= 2;
+            }
+            else if (weather.weather == "snow")
+            {
+                customer.customerPreference[rng] -= 3;
+            }
+            else if (weather.weather == "rain")
+            {
+                customer.customerPreference[rng] -= 1;
+            }
+        }
+
+        public void DayStart()
+        {
+            weather.Weathercontrol();
+            weather.Tempcontrol();
+            CustomerCount();
+            AddCustomer();
+            customer.CustomerPreference(weather);
+
+
+        }
+
     }
 }

@@ -93,18 +93,7 @@ namespace Lemonade_Stand
                 days.Add(new Day());
             }
         }
-        public void AddCustomer()
-        {
-            for(int i = 0; i < 200; i++)
-            {
-
-                customer.add(newCustomer)
-            }
-        }
-        public void CustomerCount()
-        {
-            for(weather.weatherConditions[0])
-        }
+        
     }
 }
 

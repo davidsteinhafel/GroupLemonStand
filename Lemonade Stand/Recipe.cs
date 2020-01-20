@@ -14,6 +14,7 @@ namespace Lemonade_Stand
         public double pricePerCup;
         public Recipe()
         {
+            
             amountOfIceCubes = 0;
             amountOfLemons = 0;
             amountOfSugarCubes = 0;

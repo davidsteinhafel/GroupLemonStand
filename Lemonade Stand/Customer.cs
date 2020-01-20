@@ -11,7 +11,6 @@ namespace Lemonade_Stand
     {
         
         Random random;
-        Weather weather;
         public List<int> customerPreference;
         int customerChoice;
 
@@ -19,55 +18,11 @@ namespace Lemonade_Stand
         {
             random = new Random();
             customerPreference = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            customerChoice = random.Next(11);
         }
         
-        public double CustomerPreference(Weather weather)
-        {
-
-            int rng = random.Next(11);
-            customerChoice = customerPreference[rng];
-
-            if(weather.weather == "sunny")
-            {
-                customerChoice += 2;
-            }
-            else if (weather.weather == "cloudy")
-            {
-                customerChoice -= 1;
-            }
-            else
-            {
-                customerChoice -= 2;
-            }
-
-            if (weather.temp >=40 )
-            {
-                customerChoice += 2;
-            }
-            else
-            {
-                customerChoice -= 2;
-            }
-
-            if (customerChoice > 8)
-            {
-                return 20;
-            }
-            else if (customerChoice > 6)
-            {
-                return 10;
-            }
-            else if (customerChoice > 4)
-            {
-                return 5;
-            }
-            else if (customerChoice > 2)
-            {
-                return 2;
-            }
-            return 0;
-
-        }
+        
+        
 
         
 
