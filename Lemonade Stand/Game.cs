@@ -9,40 +9,41 @@ namespace Lemonade_Stand
     public class Game
     {
         Day day;
+        List<Day> days;
+        int currentday;
         Player player1;
         Store store;
         Weather weather;
-        Random random;
         Customer customer;
         Recipe recipe;
+        Random random;
+
         public Game()
         {
             store = new Store();
             player1 = new Player();
             random = new Random();
             customer = new Customer();
-            day = new Day();
+            days = new List<Day>();
+            currentday = 0;
         }
         public void Start()
-        {   
+        {
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
 
-            
-
             while(!gameover())
             {
-             //money and current day work but temp still needs work!
-             //UserInterface.DisplayCurrentMoney(new Wallet());
-               //UserInterface.CurrentTemp(new List<int>());
-              //UserInterface.DisplayCurrentDay(new Day());
+               
                store.InventoryAquisition(player1);
                recipe.SetRecipe();
                recipe.setPricePerCup();
+               AddDay();
+               day.displaystartofdaybalance(player1.wallet1);
+               day.displaydailyprofits(player1.wallet1);
                weather.Weathercontrol();
                weather.Tempcontrol();
-
 
                 int rgn = random.Next(2, 10);
                 for (int i = 0; i < rgn; i++) 
@@ -61,6 +62,7 @@ namespace Lemonade_Stand
                 }
                 weather.Forcasting();
             }
+            
         }
 
         public bool gameover()
@@ -71,7 +73,7 @@ namespace Lemonade_Stand
                 return true;
                
             }
-            else if (day.days== day.maxdays)
+            else if (day.days == day.maxdays)
             {
                 Console.WriteLine("you survived");
                 return true;
@@ -80,10 +82,18 @@ namespace Lemonade_Stand
             {
                 return false;
             }
-                
-                    
-
         }
+
+        public void AddDay()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                days.Add(new Day());
+                currentday = currentday + 1;
+                
+            }
+        }
+
     }
 }
 

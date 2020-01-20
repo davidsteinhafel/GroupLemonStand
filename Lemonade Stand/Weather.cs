@@ -22,11 +22,11 @@ namespace Lemonade_Stand
             predictedForecast = new List<string>() { "snow", "sleet", "rain", "sunny", "cloudy" };
             random = new Random();
         }
-        public string Weathercontrol()
+        public void Weathercontrol()
         {
             int rng = random.Next(4);
             weather = weatherConditions[rng];
-            return weather;
+            Console.WriteLine("this is today's weather " + weather);
         }
         public void Tempcontrol()
         {

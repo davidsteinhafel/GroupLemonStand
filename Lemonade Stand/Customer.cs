@@ -15,35 +15,18 @@ namespace Lemonade_Stand
         public List<int> customerPreference;
         int customerChoice;
 
-
-
         public Customer()
         {
             random = new Random();
             customerPreference = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            
         }
         
-
         public double CustomerPreference(Weather weather)
         {
 
             int rng = random.Next(11);
             customerChoice = customerPreference[rng];
 
-            //Console.WriteLine(customerChoice);
-
-            //if (customerChoice > 3)
-            //{
-            //    //customerChoice = 4 & 3; not sure what this is but it always returned 0
-            //    Console.WriteLine(customerChoice);
-            //    Console.WriteLine("Sale!");
-            //    //method for buying lemonade an giving money to wallet
-            //}
-            //else
-            //{
-            //    Console.WriteLine("No Sale!");
-            //}
             if(weather.weather == "sunny")
             {
                 customerChoice += 2;
@@ -65,6 +48,7 @@ namespace Lemonade_Stand
             {
                 customerChoice -= 2;
             }
+
             if (customerChoice > 8)
             {
                 return 20;
@@ -84,6 +68,8 @@ namespace Lemonade_Stand
             return 0;
 
         }
+
+        
 
 
         

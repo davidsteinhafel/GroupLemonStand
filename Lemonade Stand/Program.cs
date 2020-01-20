@@ -16,12 +16,7 @@ namespace Lemonade_Stand
             Console.ReadLine();
            
             
-            //Game letsgo = new Game();
-            //letsgo.Start();
-            //Recipe recipe = new Recipe();
-            //recipe.setPricePerCup();
-            //recipe.SetRecipe();
-            //Console.ReadLine();
+            
         }
     }
 }

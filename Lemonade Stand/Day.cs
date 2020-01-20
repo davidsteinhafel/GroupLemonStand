@@ -8,7 +8,7 @@ namespace Lemonade_Stand
 {
     public class Day
     {
-        Weather weather;    
+        public Weather weather;
         public int days;
         public int maxdays;
         public double dailyprofit;
@@ -19,12 +19,8 @@ namespace Lemonade_Stand
             days = 0;
             maxdays = 7;
         }
-        public void displayweather()
-        {
-            weatheroftheday = weather.Weathercontrol();
-            Console.WriteLine("this is the weather today" + weather.Weathercontrol());
-
-        }
+        
+        
         public void displaystartofdaybalance(Wallet wallet)
         {
             startofdaybalance = wallet.Money;
