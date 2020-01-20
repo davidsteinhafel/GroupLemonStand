@@ -8,16 +8,17 @@ namespace Lemonade_Stand
 {
     public class Weather
     {
-       public List<int> temperature;
+      
        public List<string> weatherConditions;
        public List<string> predictedForecast;
        public  string weather;
-       public  int temp;
+       public  int temperature;
        public  string cast;
         Random random;
         public Weather()
         {
-            temperature = new List<int>() { -50, -20, 10, 40, 70 };
+            temperature = TemperatureSet(weather);
+            
             weatherConditions = new List<string>() { "snow", "sleet", "rain", "sunny", "cloudy" };
             predictedForecast = new List<string>() { "snow", "sleet", "rain", "sunny", "cloudy" };
             random = new Random();
@@ -26,15 +27,42 @@ namespace Lemonade_Stand
         {
             int rng = random.Next(6);
             weather = weatherConditions[rng];
+            Console.WriteLine("this is today's weather " + weather);
             return weather;
-            //Console.WriteLine("this is today's weather " + weather);
+            
         }
-        public void Tempcontrol()
+        //public void Tempcontrol()
+        //{
+        //    int rng = random.Next(5);
+        //    temp = temperature[rng];
+        //    random = new Random();
+        //    Console.WriteLine("the tempurature today is" + temperature);
+        //}
+        public void TemperatureSet()
         {
-            int rng = random.Next(5);
-            temp = temperature[rng];
-            random = new Random();
-            Console.WriteLine("the tempurature today is" + temperature);
+            Random random = new Random();
+            int rng = random.Next(11);
+
+            if (weather == "sunny")
+            {
+                temperature = random.Next(70, 105);
+            }
+            else if (weather == "cloudy")
+            {
+                temperature = random.Next(60, 80);
+            }
+            else if (weather == "sleet")
+            {
+                temperature = random.Next(25, 40);
+            }
+            else if (weather == "snow")
+            {
+                temperature = random.Next(-5, 30);
+            }
+            else if (weather == "rain")
+            {
+                temperature = random.Next(50, 70);
+            }
         }
         public void Forcasting()
         {

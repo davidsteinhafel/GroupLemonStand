@@ -10,13 +10,11 @@ namespace Lemonade_Stand
     {
         Day day;
         List<Day> days;
-        int currentday;
         Player player1;
         Store store;
-        Weather weather;
         Customer customer;
         
-        Recipe recipe;
+        
         Random random;
 
         public Game()
@@ -48,7 +46,7 @@ namespace Lemonade_Stand
                 int rgn = random.Next(2, 10);
                 for (int i = 0; i < rgn; i++)
                 {
-                    double potentialcustomer = customer.CustomerPreference(weather);
+                    double potentialcustomer = customer.customerPreference(weather);
                     if (recipe.pricePerCup <= potentialcustomer)
                     {
                         Console.WriteLine("Sale");
@@ -65,6 +63,7 @@ namespace Lemonade_Stand
             }
 
         }
+       
 
         public bool gameover()
         {
@@ -82,8 +81,7 @@ namespace Lemonade_Stand
         }
         public void StartDay()
         {
-            weather.Weathercontrol();
-            weather.Tempcontrol();
+            
 
         }
         public void AddDay()

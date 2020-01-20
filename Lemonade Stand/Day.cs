@@ -16,25 +16,26 @@ namespace Lemonade_Stand
         public string weatheroftheday;
         public int customerCount;
         public int pricperCup;
-        Customer customer;
+        public Player player1;
         List<Customer> customers;
         public Day()
         {
+            player1 = new Player();
             customers = new List<Customer>();
             days = 0;
             maxdays = 7;
         }
 
-        public void displaystartofdaybalance(Wallet wallet)
-        {
-            startofdaybalance = wallet.Money;
-            Console.WriteLine("your starting balance of the day " + startofdaybalance);
-        }
-        public void displaydailyprofits(Wallet wallet)
-        {
-            dailyprofit = wallet.Money - startofdaybalance;
-            Console.WriteLine("this is how much moneny you made " + dailyprofit);
-        }
+        //public void displaystartofdaybalance(Wallet wallet)
+        //{
+        //    startofdaybalance = wallet.Money;
+        //    Console.WriteLine("your starting balance of the day " + startofdaybalance);
+        //}
+        //public void displaydailyprofits(Wallet wallet)
+        //{
+        //    dailyprofit = wallet.Money - startofdaybalance;
+        //    Console.WriteLine("this is how much moneny you made " + dailyprofit);
+        //}
         public int CustomerCount()
         {
             switch (weather.Weathercontrol())
@@ -65,46 +66,15 @@ namespace Lemonade_Stand
                 customers.Add(new Customer());
             }
         }
-        public double CustomerBuy()
-        {
-            if (customer.)
-            {
-
-            }
-        }
+        
+        
         public void CustomerBuyLemonade()
         {
             Random random = new Random();
             int rng = random.Next(11);
-            if(customer.customerPreference[rng] >= 5)
+            if (customer.customerPreference[rng] >= 5)
             {
-              +=
-            }
-        }
-        public void CustomerPreference(Weather weather)
-        {
-            Random random = new Random();
-            int rng = random.Next(11);
-
-            if (weather.weather == "sunny")
-            {
-                customer.customerPreference[rng] += 3;
-            }
-            else if (weather.weather == "cloudy")
-            {
-                customer.customerPreference[rng] += 1;
-            }
-            else if (weather.weather == "sleet")
-            {
-                customer.customerPreference[rng] -= 2;
-            }
-            else if (weather.weather == "snow")
-            {
-                customer.customerPreference[rng] -= 3;
-            }
-            else if (weather.weather == "rain")
-            {
-                customer.customerPreference[rng] -= 1;
+                UserInterface.MakeSale(player1.wallet1, player1);
             }
         }
 
@@ -114,7 +84,8 @@ namespace Lemonade_Stand
             weather.Tempcontrol();
             CustomerCount();
             AddCustomer();
-            customer.CustomerPreference(weather);
+            CustomerPreference(weather);
+            customer.
 
 
         }
