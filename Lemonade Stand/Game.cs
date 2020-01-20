@@ -8,7 +8,6 @@ namespace Lemonade_Stand
 {
     public class Game
     {
-
         Day day;
         List<Day> days;
         Player player1;
@@ -27,31 +26,24 @@ namespace Lemonade_Stand
             currentday = 0;
 
         }
+        
         public void Start()
         {
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
+            GameMenu();
             gameover();
-
-            
- 
         }
       
         public bool gameover()
         {
 
-            while (gameover() == false)
-            {
-                GameMenu();
-
-
-            }
+          
             if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
             {
                 Console.WriteLine("gameover");
                 return true;
-
             }
             else
             {
@@ -60,10 +52,6 @@ namespace Lemonade_Stand
             
         }
         
-       
-        
-
-
         public void GameMenu()
         {
             
@@ -86,8 +74,9 @@ namespace Lemonade_Stand
                     case "3":
                        player1.recipe.setPricePerCup();
                         break;
-                   // case "4":
-                    //days.startDay();
+                   case "4":
+                        day.DayStart();
+                        break;
                     case "5":
                         leavemenu = true;
                         break;

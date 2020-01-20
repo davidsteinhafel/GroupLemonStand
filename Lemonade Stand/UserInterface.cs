@@ -51,7 +51,7 @@ namespace Lemonade_Stand
         }
         public static void DisplayCurrentWeather(Weather weather)
         {
-            Console.WriteLine("Current weather is {0}", weather.Weathercontrol);
+            Console.WriteLine("Current weather is {0}", weather);
         }
         public static void DisplayRemainingInventory(Inventory inventory1)
         {
@@ -81,10 +81,10 @@ namespace Lemonade_Stand
         }
         public static void MakeSale(Wallet wallet, Player player)
         {
-            wallet.Money += player.recipe1.pricePerCup;
+            wallet.Money += player.recipe.pricePerCup;
         }
     }
-    //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
+     
 }
 
 

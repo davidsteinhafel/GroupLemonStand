@@ -17,7 +17,7 @@ namespace Lemonade_Stand
         public int pricperCup;
         public Player player1;
         List<Customer> customers;
-        
+
 
         public Day()
         {
@@ -65,17 +65,34 @@ namespace Lemonade_Stand
             }
         }
 
-        
-        
-        public void CustomerBuyLemonade()
+        public void AddCustomer()
         {
-            Random random = new Random();
-            int rng = random.Next(11);
-            
+            for (int i = 0; i < CustomerCount(); i++)
+            {
+                customers.Add(new Customer());
+            }
         }
 
-      
+
+        public void CustomerBuyLemonade()
+        {
+            foreach (Customer customer in customers)
+            {
+                bool decision = customer.DesicionToBuy(weather, player1.recipe);
+
+            }
+        }
+
+        public void DayStart()
+        {
+            weather.Weathercontrol();
+            weather.TemperatureSet();
+            CustomerCount();
+            AddCustomer();
 
 
+
+
+        }
     }
 }
