@@ -8,16 +8,34 @@ namespace Lemonade_Stand
 {
     public class Day
     {
-        Weather weather;
-        public List<Customer>customers;
+        Weather weather;    
         public int days;
         public int maxdays;
-        public int dailyprofit;
+        public double dailyprofit;
+        public double startofdaybalance;
+        public string weatheroftheday;
         public Day()
         {
             days = 0;
             maxdays = 7;
         }
+        public void displayweather()
+        {
+            weatheroftheday = weather.Weathercontrol();
+            Console.WriteLine("this is the weather today" + weather.Weathercontrol());
+
+        }
+        public void displaystartofdaybalance(Wallet wallet)
+        {
+            startofdaybalance = wallet.Money;
+            Console.WriteLine("your starting balance of the day " + startofdaybalance);
+        }
+        public void displaydailyprofits(Wallet wallet)
+        {
+            dailyprofit = wallet.Money - startofdaybalance;
+            Console.WriteLine("this is how much moneny you made " + dailyprofit);
+        }
+
+       
     }
 }
-//run day method for how day operates

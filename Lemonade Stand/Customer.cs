@@ -9,7 +9,7 @@ namespace Lemonade_Stand
 {
     public class Customer
     {
-        public List<string> names;
+        
         Random random;
         Weather weather;
         public List<int> customerPreference;
@@ -21,8 +21,9 @@ namespace Lemonade_Stand
         {
             random = new Random();
             customerPreference = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            
         }
-        //method for randomized preference- temp and weather
+        
 
         public double CustomerPreference(Weather weather)
         {
@@ -85,7 +86,6 @@ namespace Lemonade_Stand
         }
 
 
-        //method for purchase limit of customer
         
 
     }

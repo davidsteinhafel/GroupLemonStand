@@ -9,9 +9,7 @@ namespace Lemonade_Stand
     public class Game
     {
         Day day;
-        public List<Day> days;
-        public int currentDay;
-        public Player player1;
+        Player player1;
         Store store;
         Weather weather;
         Random random;
@@ -30,6 +28,8 @@ namespace Lemonade_Stand
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
+
+            
 
             while(!gameover())
             {
@@ -51,6 +51,7 @@ namespace Lemonade_Stand
                      if (recipe.pricePerCup <= potentialcustomer)
                     {
                         Console.WriteLine("Sale");
+                        player1.wallet1.Money += recipe.pricePerCup;
                     }
                     else
                     {
@@ -84,5 +85,5 @@ namespace Lemonade_Stand
 
         }
     }
-}//method for win lose conditions
+}
 
