@@ -25,19 +25,22 @@ namespace Lemonade_Stand
             while (!walkoutdoor)
             {
                 Console.WriteLine("Welcome to the Store!!! Press 1 to buy lemons, 2 to buy sugar cubes, 3 to buy ice cubes, and 4 to buy cups");
-                UserInterface.UserInput();
                 switch (UserInterface.UserInput())
                 {
                     case "1":
-                        Console.WriteLine("How many lemons would you like to purchase? ");
+                        Console.WriteLine("How many lemons would you like to purchase?");
+                        Console.WriteLine("Lemons cost {0} per lemon", pricePerLemon);
                         double quantity = UserInterface.ChangeToDouble();
                         double cost = quantity * pricePerLemon;
+                        
 
                         if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased {0}", quantity);
                             player1.inventory1.AddLemons(quantity);
-
+                            Console.WriteLine("thanks for buying {0} lemons for ${1}", quantity, cost);
+                            player1.wallet1.Money -= cost;
+                            UserInterface.DisplayCurrentMoney(player1.wallet1);
                         }
                         else
                         {
@@ -65,6 +68,7 @@ namespace Lemonade_Stand
 
                     case "3":
                         Console.WriteLine("How many Ice Cubes would you like to purchase?");
+                        Console.WriteLine("Price per lemon is = {0}", pricePerLemon);
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerLemon;
 
@@ -72,6 +76,8 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you have purchased" + quantity);
                             player1.inventory1.AddIceCubes(quantity);
+                            
+                            
 
                         }
                         else

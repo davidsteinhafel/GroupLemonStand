@@ -53,6 +53,10 @@ namespace Lemonade_Stand
         {
             Console.WriteLine("{0} left, {1} left, {2} left, {3} left,", inventory1.cups, inventory1.lemons, inventory1.icecubes, inventory1.sugarcubes);
         }
+        public static void DisplayCurrentMoney(Wallet wallet)
+        {
+            Console.WriteLine("You currently have {0} much money", wallet.Money);
+        }
     }
     //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
 }
