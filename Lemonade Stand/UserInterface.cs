@@ -71,6 +71,7 @@ namespace Lemonade_Stand
                 return false;
             }
         }
+       
     }
     //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
 }

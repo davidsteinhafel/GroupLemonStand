@@ -15,6 +15,7 @@ namespace Lemonade_Stand
         Store store;
         Weather weather;
         Customer customer;
+        
         Recipe recipe;
         Random random;
 
@@ -23,6 +24,7 @@ namespace Lemonade_Stand
             store = new Store();
             player1 = new Player();
             random = new Random();
+
             days = new List<Day>();
             currentday = 0;
 
@@ -36,17 +38,18 @@ namespace Lemonade_Stand
 
 
 
-            while (gameover())
+            while (gameover() == false)
             {
-               
+
                 store.InventoryAquisition(player1);
                 recipe.SetRecipe();
                 recipe.setPricePerCup();
+                
                 day.displaystartofdaybalance(player1.wallet1);
-                day.displaydailyprofits(player1.wallet1);
+
                 weather.Weathercontrol();
                 weather.Tempcontrol();
-                
+
 
                 int rgn = random.Next(2, 10);
                 for (int i = 0; i < rgn; i++)
@@ -67,24 +70,53 @@ namespace Lemonade_Stand
 
                 }
             }
-            
+
         }
         public bool gameover()
         {
-            
+
             if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
             {
                 Console.WriteLine("gameover");
                 return true;
+
             }
-          else
-          {
+            else
+            {
                 return false;
-          }
+            }
+            
+        }
+        public void StartDay()
+        {
+            weather.Weathercontrol();
+            weather.Tempcontrol();
 
         }
+        public void AddDay()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                days.Add(new Day());
+            }
 
-       
+        }
+        public void AddCustomer()
+        {
+            for(int i = 0; i < 200; i++)
+            {
+
+                customer.Add(new Customer());
+            }
+        }
+        public void CustomerCount()
+        {
+            for (int i = 0; i > weather.weather.Length; i++)
+            {
+
+            }
+        }
+
     }
 }
 
