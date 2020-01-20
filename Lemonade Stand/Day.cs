@@ -10,14 +10,16 @@ namespace Lemonade_Stand
     {
         public Weather weather;
         public int days;
-        public int maxdays;
         public double dailyprofit;
         public double startofdaybalance;
         public string weatheroftheday;
+        public List<Customer> customers;
+
         public Day()
         {
             days = 0;
-            maxdays = 7;
+            customers = new List<Customer>();
+            
         }
         
         
@@ -31,6 +33,7 @@ namespace Lemonade_Stand
             dailyprofit = wallet.Money - startofdaybalance;
             Console.WriteLine("this is how much moneny you made " + dailyprofit);
         }
+      
 
        
     }

@@ -113,6 +113,7 @@ namespace Lemonade_Stand
                         InventoryAquisition(player1);
                         break;
                     case "5":
+                        walkoutdoor = true;
                         Console.WriteLine("Thanks for visiting and good luck!!!");
 
                         break;

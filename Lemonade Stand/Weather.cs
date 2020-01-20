@@ -14,7 +14,8 @@ namespace Lemonade_Stand
        public  string weather;
        public  int temp;
        public  string cast;
-        Random random;
+       
+       Random random;
         public Weather()
         {
             temperature = new List<int>() { -50, -20, 10, 40, 70 };
@@ -42,5 +43,7 @@ namespace Lemonade_Stand
             random = new Random();
             Console.WriteLine("this is the predicted forcast" + predictedForecast);
         }
+
+        
     }
 }

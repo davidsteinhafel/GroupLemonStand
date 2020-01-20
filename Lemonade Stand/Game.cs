@@ -23,78 +23,68 @@ namespace Lemonade_Stand
             store = new Store();
             player1 = new Player();
             random = new Random();
-            customer = new Customer();
             days = new List<Day>();
             currentday = 0;
+
         }
         public void Start()
         {
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
+            store.InventoryAquisition(player1);
 
-            while(!gameover())
+
+
+            while (gameover())
             {
                
-               store.InventoryAquisition(player1);
-               recipe.SetRecipe();
-               recipe.setPricePerCup();
-               AddDay();
-               day.displaystartofdaybalance(player1.wallet1);
-
-               weather.Weathercontrol();
-               weather.Tempcontrol();
+                store.InventoryAquisition(player1);
+                recipe.SetRecipe();
+                recipe.setPricePerCup();
+                day.displaystartofdaybalance(player1.wallet1);
+                day.displaydailyprofits(player1.wallet1);
+                weather.Weathercontrol();
+                weather.Tempcontrol();
+                
 
                 int rgn = random.Next(2, 10);
-                for (int i = 0; i < rgn; i++) 
+                for (int i = 0; i < rgn; i++)
                 {
                     double potentialcustomer = customer.CustomerPreference(weather);
-                     if (recipe.pricePerCup <= potentialcustomer)
-                     {
+                    if (recipe.pricePerCup <= potentialcustomer)
+                    {
                         Console.WriteLine("Sale");
                         player1.wallet1.Money += recipe.pricePerCup;
-                     }
+                    }
                     else
                     {
                         Console.WriteLine("No sale");
                     }
 
+
+
+
                 }
-                day.displaydailyprofits(player1.wallet1);
-                weather.Forcasting();
             }
             
         }
-
         public bool gameover()
-        { 
-            if (player1.wallet1.Money == 0)
+        {
+            
+            if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
             {
                 Console.WriteLine("gameover");
                 return true;
-               
             }
-            else if (day.days == day.maxdays)
-            {
-                Console.WriteLine("you survived");
-                return true;
-            }
-            else
-            {
+          else
+          {
                 return false;
-            }
+          }
+
         }
 
-        public void AddDay()
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                days.Add(new Day());
-                currentday = currentday + 1;
-                
-            }
-        }
-
+       
     }
 }
 
