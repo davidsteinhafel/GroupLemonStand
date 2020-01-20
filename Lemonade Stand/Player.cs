@@ -10,7 +10,7 @@ namespace Lemonade_Stand
 
     {
         public string name;
-        public Recipe recipe1;
+        public Recipe recipe;
         public Pitcher pitcher1;
         public Wallet wallet1;
         public Inventory inventory1;
@@ -19,7 +19,7 @@ namespace Lemonade_Stand
         {
             wallet1 = new Wallet();
             pitcher1 = new Pitcher();
-            recipe1 = new Recipe();
+            recipe = new Recipe();
             inventory1 = new Inventory();
         }
     }

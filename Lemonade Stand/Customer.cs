@@ -11,9 +11,8 @@ namespace Lemonade_Stand
     {
         
         Random random;
-        Weather weather;
         public List<int> customerPreference;
-        int customerChoice;
+        public int customerChoice;
 
         public Customer()
         {
@@ -27,18 +26,6 @@ namespace Lemonade_Stand
             int rng = random.Next(11);
             customerChoice = customerPreference[rng];
 
-            if(weather.weather == "sunny")
-            {
-                customerChoice += 2;
-            }
-            else if (weather.weather == "cloudy")
-            {
-                customerChoice -= 1;
-            }
-            else
-            {
-                customerChoice -= 2;
-            }
 
             if (weather.temp >=40 )
             {

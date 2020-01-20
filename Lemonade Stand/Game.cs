@@ -8,15 +8,15 @@ namespace Lemonade_Stand
 {
     public class Game
     {
-        Day day;
-        List<Day> days;
-        int currentday;
-        Player player1;
-        Store store;
-        Weather weather;
-        Customer customer;
+       
+       List<Day> days;
+       int currentday;
+       public Player player1;
+       Store store;
+       Customer customer;
+       Weather weather;
+      
         
-        Recipe recipe;
         Random random;
 
         public Game()
@@ -24,7 +24,6 @@ namespace Lemonade_Stand
             store = new Store();
             player1 = new Player();
             random = new Random();
-
             days = new List<Day>();
             currentday = 0;
 
@@ -34,41 +33,12 @@ namespace Lemonade_Stand
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
-            store.InventoryAquisition(player1);
-
-
-
+            
             while (gameover() == false)
             {
-
-                store.InventoryAquisition(player1);
-                recipe.SetRecipe();
-                recipe.setPricePerCup();
-                
-                day.displaystartofdaybalance(player1.wallet1);
-
-                weather.Weathercontrol();
-                weather.Tempcontrol();
-
-
-                int rgn = random.Next(2, 10);
-                for (int i = 0; i < rgn; i++)
-                {
-                    double potentialcustomer = customer.CustomerPreference(weather);
-                    if (recipe.pricePerCup <= potentialcustomer)
-                    {
-                        Console.WriteLine("Sale");
-                        player1.wallet1.Money += recipe.pricePerCup;
-                    }
-                    else
-                    {
-                        Console.WriteLine("No sale");
-                    }
-
-
-
-
-                }
+                GameMenu();
+                StartDay();
+                AddDay();
             }
 
         }
@@ -89,33 +59,79 @@ namespace Lemonade_Stand
         }
         public void StartDay()
         {
-            weather.Weathercontrol();
-            weather.Tempcontrol();
+            
+            days[currentday].weather.Weathercontrol();
+            days[currentday].weather.Tempcontrol();
 
-        }
+            int rgn = random.Next(2, 10);
+
+            for (int i = 0; i < rgn; i++)
+            {
+                double potentialcustomer = customer.CustomerPreference(weather);
+                if (player1.recipe.pricePerCup <= potentialcustomer)
+                {
+                    Console.WriteLine("Sale");
+                    player1.wallet1.Money += player1.recipe.pricePerCup;
+                }
+                else
+                {
+                    Console.WriteLine("No sale");
+                }
+            }
+            weather.Forcasting();
+             currentday++;
+        }    
         public void AddDay()
         {
             for (int i = 0; i < 7; i++)
             {
                 days.Add(new Day());
+                
             }
 
         }
-        public void AddCustomer()
+        
+
+        public void GameMenu()
         {
-            for(int i = 0; i < 200; i++)
-            {
+            
+            bool leavemenu = false;
 
-                customer.Add(new Customer());
-            }
-        }
-        public void CustomerCount()
-        {
-            for (int i = 0; i > weather.weather.Length; i++)
+            while(!leavemenu)
             {
+                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups,press 4 for start day, press 5 for leave menu");
+                 
+                string gamemenu = Console.ReadLine();
+                switch (gamemenu)
+                {
+                    case "1":
 
+                        store.InventoryAquisition(player1);
+                        break;
+                    case "2":
+                       player1.recipe.SetRecipe();
+                        break;
+                    case "3":
+                       player1.recipe.setPricePerCup();
+                        break;
+                   // case "4":
+                    //days.startDay();
+                    case "5":
+                        leavemenu = true;
+                        break;
+                    default:
+                        Console.WriteLine("invalid respone please make another choice!");
+                        break;
+
+                }
             }
-        }
+            
+
+        }   
+       
+
+            
+        
 
     }
 }
