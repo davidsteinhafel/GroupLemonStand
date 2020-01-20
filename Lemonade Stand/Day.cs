@@ -66,26 +66,24 @@ namespace Lemonade_Stand
                 customers.Add(new Customer());
             }
         }
-        
-        
+
+
         public void CustomerBuyLemonade()
         {
-            Random random = new Random();
-            int rng = random.Next(11);
-            if (customer.customerPreference[rng] >= 5)
+            foreach (Customer customer in customers)
             {
-                UserInterface.MakeSale(player1.wallet1, player1);
+                bool decision = customer.DesicionToBuy(weather, player1.recipe1);
+
             }
         }
 
         public void DayStart()
         {
             weather.Weathercontrol();
-            weather.Tempcontrol();
+            weather.TemperatureSet();
             CustomerCount();
             AddCustomer();
-            CustomerPreference(weather);
-            customer.
+            
 
 
         }

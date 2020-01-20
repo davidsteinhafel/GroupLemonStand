@@ -25,6 +25,7 @@ namespace Lemonade_Stand
             days = new List<Day>();
             currentday = 0;
         }
+        
         public void Start()
         {
             UserInterface.DisplayWelcome();

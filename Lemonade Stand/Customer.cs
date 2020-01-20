@@ -11,14 +11,13 @@ namespace Lemonade_Stand
     {
 
         Random random;
-        public List<int> customerPreference;
         int customerChoice;
         bool customerBuy;
 
         public Customer()
         {
             random = new Random();
-            customerPreference = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            
             customerChoice = random.Next(11);
             customerBuy = false;
         }

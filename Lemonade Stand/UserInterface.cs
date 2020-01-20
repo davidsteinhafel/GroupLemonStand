@@ -51,7 +51,7 @@ namespace Lemonade_Stand
         }
         public static void DisplayCurrentWeather(Weather weather)
         {
-            Console.WriteLine("Current weather is {0}", weather.Weathercontrol);
+            Console.WriteLine("Current weather is {0}", weather);
         }
         public static void DisplayRemainingInventory(Inventory inventory1)
         {
