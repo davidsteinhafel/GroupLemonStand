@@ -51,13 +51,16 @@ namespace Lemonade_Stand
 
                     case "2":
                         Console.WriteLine("How many sugar cubes would you like to purchase?");
+                        Console.WriteLine("Sugar cubes cost {0} per cube", pricePerSugar);
                         quantity = UserInterface.ChangeToDouble();
                         cost = quantity * pricePerSugar;
                         if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + quantity);
                             player1.inventory1.AddSugarCubes(quantity);
-
+                            Console.WriteLine("thanks for buying {0} sugar cubes for ${1}", quantity, cost);
+                            player1.wallet1.Money -= cost;
+                            UserInterface.DisplayCurrentMoney(player1.wallet1);
                         }
                         else
                         {
@@ -68,16 +71,17 @@ namespace Lemonade_Stand
 
                     case "3":
                         Console.WriteLine("How many Ice Cubes would you like to purchase?");
-                        Console.WriteLine("Price per lemon is = {0}", pricePerLemon);
+                        Console.WriteLine("Price per Ice Cube is = {0}", pricePerIceCube);
                         quantity = UserInterface.ChangeToDouble();
-                        cost = quantity * pricePerLemon;
+                        cost = quantity * pricePerIceCube;
 
                         if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + quantity);
                             player1.inventory1.AddIceCubes(quantity);
-                            
-                            
+                            Console.WriteLine("thanks for buying {0} ice cubes for ${1}", quantity, cost);
+                            player1.wallet1.Money -= cost;
+                            UserInterface.DisplayCurrentMoney(player1.wallet1);
 
                         }
                         else
@@ -88,13 +92,17 @@ namespace Lemonade_Stand
                         break;
 
                     case "4":
-                        Console.WriteLine("How many Cups would you like to purchase?");
+                        Console.WriteLine("How many cups would you like to purchase?");
+                        Console.WriteLine("Price per cup is = {0}", pricePerCup);
                         quantity = UserInterface.ChangeToDouble();
-                        cost = quantity * pricePerLemon;
+                        cost = quantity * pricePerCup;
                         if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased" + quantity);
                             player1.inventory1.AddCups(quantity);
+                            Console.WriteLine("thanks for buying {0} cups for ${1}", quantity, cost);
+                            player1.wallet1.Money -= cost;
+                            UserInterface.DisplayCurrentMoney(player1.wallet1);
 
                         }
                         else

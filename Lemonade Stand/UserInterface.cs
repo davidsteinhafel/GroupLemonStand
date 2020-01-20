@@ -55,7 +55,7 @@ namespace Lemonade_Stand
         }
         public static void DisplayCurrentMoney(Wallet wallet)
         {
-            Console.WriteLine("You currently have {0} much money", wallet.Money);
+            Console.WriteLine("You currently have ${0} left", wallet.Money);
         }
     }
     //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
