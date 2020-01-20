@@ -24,7 +24,6 @@ namespace Lemonade_Stand
             store = new Store();
             player1 = new Player();
             random = new Random();
-            customers = new List<Customer>();
             days = new List<Day>();
             currentday = 0;
         }
