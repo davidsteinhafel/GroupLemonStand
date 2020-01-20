@@ -24,7 +24,7 @@ namespace Lemonade_Stand
             bool walkoutdoor = false;
             while (!walkoutdoor)
             {
-                Console.WriteLine("Welcome to the Store!!! Press 1 to buy lemons, 2 to buy sugar cubes, 3 to buy ice cubes, and 4 to buy cups");
+                Console.WriteLine("Welcome to the Store " + " !!! Press 1 to buy lemons, 2 to buy sugar cubes, 3 to buy ice cubes, 4 to buy cups, and 5 to leave store");
                 switch (UserInterface.UserInput())
                 {
                     case "1":
@@ -114,6 +114,7 @@ namespace Lemonade_Stand
                         break;
                     case "5":
                         Console.WriteLine("Thanks for visiting and good luck!!!");
+
                         break;
                     default:
                         Console.WriteLine("Invalid Input Please Try Again!");

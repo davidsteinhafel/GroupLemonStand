@@ -57,12 +57,19 @@ namespace Lemonade_Stand
         {
             Console.WriteLine("You currently have ${0} left", wallet.Money);
         }
-        public static void CalculateDepletedInventory(Inventory inventory1)
+        public static bool CalculateDepletedInventory(Inventory inventory1)
         {
-         if(inventory1.cups.Count == 0 && inventory1.icecubes.Count == 0 && inventory1.lemons.Count == 0 && inventory1.sugarcubes.Count == 0)
+            if (inventory1.cups.Count == 0 && inventory1.icecubes.Count == 0 && inventory1.lemons.Count == 0 && inventory1.sugarcubes.Count == 0)
             {
                 Console.WriteLine("Inventory is depleted");
-            }   
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("You still have items in your inventory");
+                DisplayRemainingInventory(inventory1);
+                return false;
+            }
         }
     }
     //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar

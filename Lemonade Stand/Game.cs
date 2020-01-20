@@ -32,54 +32,43 @@ namespace Lemonade_Stand
 
 
 
-            //    while()
-            //    {
-            //     //money and current day work but temp still needs work!
-            //     //UserInterface.DisplayCurrentMoney(new Wallet());
-            //       //UserInterface.CurrentTemp(new List<int>());
-            //      //UserInterface.DisplayCurrentDay(new Day());
-            //       store.InventoryAquisition(player1);
-            //       recipe.SetRecipe();
-            //       recipe.setPricePerCup();
-            //       weather.Weathercontrol();
-            //       weather.Tempcontrol();
-
-
-            //        int rgn = random.Next(2, 10);
-            //        for (int i = 0; i < rgn; i++) 
-            //        {
-            //            double potentialcustomer = customer.CustomerPreference(weather);
-            //             if (recipe.pricePerCup <= potentialcustomer)
-            //            {
-            //                Console.WriteLine("Sale");
-            //                player1.wallet1.Money += recipe.pricePerCup;
-            //            }
-            //            else
-            //            {
-            //                Console.WriteLine("No sale");
-            //            }
-            //        }
-            //        weather.Forcasting();
-            //    }
-            //}
-
-            //public bool gameover()
-            //{ 
-            //    if (player1.wallet1.Money == 0)
-            //    {
-            //        Console.WriteLine("gameover");
-            //        return true;
-
-            //    }
-            //    else if (day.days== day.maxdays)
-            //    {
-            //        Console.WriteLine("you survived");
-            //        return false;
-
-            //    }
 
 
 
+            //UserInterface.DisplayCurrentMoney(player1.wallet1);
+            //UserInterface.CurrentTemp(weather);
+            //UserInterface.DisplayCurrentDay(day);
+            
+            recipe.SetRecipe();
+            recipe.setPricePerCup();
+            weather.Weathercontrol();
+            weather.Tempcontrol();
+
+
+            int rgn = random.Next(2, 10);
+            for (int i = 0; i < rgn; i++)
+            {
+                double potentialcustomer = customer.CustomerPreference(weather);
+                if (recipe.pricePerCup <= potentialcustomer)
+                {
+                    Console.WriteLine("Sale");
+                    player1.wallet1.Money += recipe.pricePerCup;
+                }
+                else
+                {
+                    Console.WriteLine("No sale");
+                }
+            }
+            weather.Forcasting();
+
+        }
+
+        public void gameover()
+        {
+            if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
+            {
+                Console.WriteLine("gameover");
+            }
 
         }
     }
