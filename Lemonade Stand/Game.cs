@@ -15,6 +15,7 @@ namespace Lemonade_Stand
         Store store;
         Weather weather;
         Customer customer;
+        
         Recipe recipe;
         Random random;
 
@@ -23,7 +24,7 @@ namespace Lemonade_Stand
             store = new Store();
             player1 = new Player();
             random = new Random();
-            customer = new Customer();
+            customers = new List<Customer>();
             days = new List<Day>();
             currentday = 0;
         }
@@ -33,27 +34,27 @@ namespace Lemonade_Stand
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
 
-            while(!gameover())
+            while (gameover() == false)
             {
-               
-               store.InventoryAquisition(player1);
-               recipe.SetRecipe();
-               recipe.setPricePerCup();
-               AddDay();
-               day.displaystartofdaybalance(player1.wallet1);
 
-               weather.Weathercontrol();
-               weather.Tempcontrol();
+                store.InventoryAquisition(player1);
+                recipe.SetRecipe();
+                recipe.setPricePerCup();
+                AddDay();
+                day.displaystartofdaybalance(player1.wallet1);
+
+                weather.Weathercontrol();
+                weather.Tempcontrol();
 
                 int rgn = random.Next(2, 10);
-                for (int i = 0; i < rgn; i++) 
+                for (int i = 0; i < rgn; i++)
                 {
                     double potentialcustomer = customer.CustomerPreference(weather);
-                     if (recipe.pricePerCup <= potentialcustomer)
-                     {
+                    if (recipe.pricePerCup <= potentialcustomer)
+                    {
                         Console.WriteLine("Sale");
                         player1.wallet1.Money += recipe.pricePerCup;
-                     }
+                    }
                     else
                     {
                         Console.WriteLine("No sale");
@@ -63,38 +64,48 @@ namespace Lemonade_Stand
                 day.displaydailyprofits(player1.wallet1);
                 weather.Forcasting();
             }
-            
+
         }
 
         public bool gameover()
-        { 
-            if (player1.wallet1.Money == 0)
+        {
+            if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
             {
                 Console.WriteLine("gameover");
                 return true;
-               
-            }
-            else if (day.days == day.maxdays)
-            {
-                Console.WriteLine("you survived");
-                return true;
+
             }
             else
             {
                 return false;
             }
+            
         }
+        public void StartDay()
+        {
+            weather.Weathercontrol();
+            weather.Tempcontrol();
 
+        }
         public void AddDay()
         {
             for (int i = 0; i < 7; i++)
             {
                 days.Add(new Day());
-                currentday = currentday + 1;
-                
             }
         }
+        public void AddCustomer()
+        {
+            for(int i = 0; i < 200; i++)
+            {
 
+                customer.add(newCustomer)
+            }
+        }
+        public void CustomerCount()
+        {
+            for(weather.weatherConditions[0])
+        }
     }
 }
 
