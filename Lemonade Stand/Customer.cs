@@ -22,44 +22,71 @@ namespace Lemonade_Stand
             customerChoice = random.Next(11);
             customerBuy = false;
         }
-        public void DesicionToBuy(Weather weather, Recipe recipe)
-        {
-            int rng;
-            rng = random.Next(1, 100);
-            
 
-            if(rng > 60)
+        public bool DesicionToBuy(Weather weather, Recipe recipe)
+        {
+            if (recipe.pricePerCup > 5)
             {
-                customerBuy = true;
+                return false;
             }
-            else if(weather.temperature > 90)
+            int numBasedOnRecipe;
+            int numBaseOnWeather;
+            if((recipe.amountOfLemons < 1 || recipe.amountOfLemons > 7) || (recipe.amountOfSugarCubes < 2 || recipe.amountOfSugarCubes > 20))
             {
-                rng += 45;
+                numBasedOnRecipe = random.Next(0, 100);
             }
-            else if(weather.temperature > 60 && weather.temperature < 90)
+            else
             {
-                rng += 30;
+                numBasedOnRecipe = random.Next(50, 100);
             }
-            else if (weather.temperature > 30 && weather.temperature < 60)
+            if(weather.temperature < 60 || weather.weather != "sunny"|| weather.weather != "cloudy")
             {
-                rng += 15;
-            }
-            else if (weather.temperature > -10 && weather.temperature < 30)
+                numBaseOnWeather = random.Next(0, 100);
+            }else
             {
-               rng -= 15;
+                numBaseOnWeather = random.Next(50, 100);
             }
-            else if(recipe.amountOfLemons < 4)
+            if (numBaseOnWeather >= 60 && numBasedOnRecipe >= 60)
             {
-                rng -= 15;
+                return true;
             }
-            else if(recipe.amountOfSugarCubes < 4)
+            else
             {
-                rng -= 15;
+                return false;
             }
-            else if(recipe.amountOfIceCubes < 4)
-            {
-                rng -= 15;
-            }
+
+            //if(rng > 60)
+            //{
+            //    customerBuy = true;
+            //}
+            //else if(weather.temperature > 90)
+            //{
+            //    rng += 45;
+            //}
+            //else if(weather.temperature > 60 && weather.temperature < 90)
+            //{
+            //    rng += 30;
+            //}
+            //else if (weather.temperature > 30 && weather.temperature < 60)
+            //{
+            //    rng += 15;
+            //}
+            //else if (weather.temperature > -10 && weather.temperature < 30)
+            //{
+            //   rng -= 15;
+            //}
+            //else if(recipe.amountOfLemons < 4)
+            //{
+            //    rng -= 15;
+            //}
+            //else if(recipe.amountOfSugarCubes < 4)
+            //{
+            //    rng -= 15;
+            //}
+            //else if(recipe.amountOfIceCubes < 4)
+            //{
+            //    rng -= 15;
+            //}
         }
 
     }
