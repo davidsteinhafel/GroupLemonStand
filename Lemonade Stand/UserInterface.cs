@@ -49,6 +49,10 @@ namespace Lemonade_Stand
         {
             Console.WriteLine("Predicted forecast is {0}", weather.predictedForecast);
         }
+        public static void DisplayCurrentWeather(Weather weather)
+        {
+            Console.WriteLine("Current weather is {0}", weather.Weathercontrol);
+        }
         public static void DisplayRemainingInventory(Inventory inventory1)
         {
             Console.WriteLine("{0} left, {1} left, {2} left, {3} left,", inventory1.cups.Count, inventory1.lemons.Count, inventory1.icecubes.Count, inventory1.sugarcubes.Count);
@@ -71,7 +75,14 @@ namespace Lemonade_Stand
                 return false;
             }
         }
-       
+        public static void DisplayStartingDayBalance(Wallet wallet)
+        {
+
+        }
+        public static void MakeSale(Wallet wallet, Player player)
+        {
+            wallet.Money += player.recipe1.pricePerCup;
+        }
     }
     //Display Current Day, Current Money made that day, Current temp, Weather forcast, update amount left of cups,lemons,ice,sugar
 }

@@ -14,19 +14,20 @@ namespace Lemonade_Stand
         public double startofdaybalance;
         public string weatheroftheday;
         public int customerCount;
-        public  List<Customer> customers;
-       
-
+        public int pricperCup;
+        public Player player1;
+        List<Customer> customers;
+        
 
         public Day()
         {
+            player1 = new Player();
             customers = new List<Customer>();
             days = 0;
             customers = new List<Customer>();
             weather = new Weather();
-           
-
         }
+
 
         public void displaystartofdaybalance(Wallet wallet)
         {
@@ -39,6 +40,7 @@ namespace Lemonade_Stand
             Console.WriteLine("this is how much moneny you made " + dailyprofit);
         }
 
+
         public int CustomerCount()
         {
             switch (weather.Weathercontrol())
@@ -49,32 +51,31 @@ namespace Lemonade_Stand
                 case "cloudy":
                     customerCount = 25;
                     return customerCount;
-                    break;
                 case "rainy":
                     customerCount = 20;
                     return customerCount;
-                    break;
                 case "sleet":
                     customerCount = 15;
                     return customerCount;
-                    break;
                 case "snowy":
                     customerCount = 10;
                     return customerCount;
-                    break;
                 default:
                     return customerCount;
-                    break;
             }
         }
 
-        public void AddCustomers()
+        
+        
+        public void CustomerBuyLemonade()
         {
+            Random random = new Random();
+            int rng = random.Next(11);
             
         }
 
       
 
-       
+
     }
 }

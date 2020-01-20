@@ -8,16 +8,15 @@ namespace Lemonade_Stand
 {
     public class Game
     {
-       
-       List<Day> days;
-       int currentday;
-       public Player player1;
-       Store store;
-       Customer customer;
-       Weather weather;
-      
-        
+
+        Day day;
+        List<Day> days;
+        Player player1;
+        Store store;
+        Customer customer;
         Random random;
+        int currentday;
+        
 
         public Game()
         {
@@ -33,18 +32,21 @@ namespace Lemonade_Stand
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
-            
-            while (gameover() == false)
-            {
-                GameMenu();
-                StartDay();
-                AddDay();
-            }
+            gameover();
 
+            
+ 
         }
+      
         public bool gameover()
         {
 
+            while (gameover() == false)
+            {
+                GameMenu();
+
+
+            }
             if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
             {
                 Console.WriteLine("gameover");
@@ -57,40 +59,10 @@ namespace Lemonade_Stand
             }
             
         }
-        public void StartDay()
-        {
-            
-            days[currentday].weather.Weathercontrol();
-            days[currentday].weather.Tempcontrol();
-
-            int rgn = random.Next(2, 10);
-
-            for (int i = 0; i < rgn; i++)
-            {
-                double potentialcustomer = customer.CustomerPreference(weather);
-                if (player1.recipe.pricePerCup <= potentialcustomer)
-                {
-                    Console.WriteLine("Sale");
-                    player1.wallet1.Money += player1.recipe.pricePerCup;
-                }
-                else
-                {
-                    Console.WriteLine("No sale");
-                }
-            }
-            weather.Forcasting();
-             currentday++;
-        }    
-        public void AddDay()
-        {
-            for (int i = 0; i < 7; i++)
-            {
-                days.Add(new Day());
-                
-            }
-
-        }
         
+       
+        
+
 
         public void GameMenu()
         {
@@ -132,7 +104,9 @@ namespace Lemonade_Stand
 
             
         
+     
 
     }
+
 }
 

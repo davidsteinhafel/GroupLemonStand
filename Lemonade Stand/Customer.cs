@@ -9,56 +9,20 @@ namespace Lemonade_Stand
 {
     public class Customer
     {
-        
+
         Random random;
         public List<int> customerPreference;
-        public int customerChoice;
-
+        int customerChoice;
+        bool customerBuy;
+        
         public Customer()
         {
             random = new Random();
-            customerPreference = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+           
+            customerChoice = random.Next(11);
+            customerBuy = false;
+           
         }
-        
-        public double CustomerPreference(Weather weather)
-        {
-
-            int rng = random.Next(11);
-            customerChoice = customerPreference[rng];
-
-
-            if (weather.temp >=40 )
-            {
-                customerChoice += 2;
-            }
-            else
-            {
-                customerChoice -= 2;
-            }
-
-            if (customerChoice > 8)
-            {
-                return 20;
-            }
-            else if (customerChoice > 6)
-            {
-                return 10;
-            }
-            else if (customerChoice > 4)
-            {
-                return 5;
-            }
-            else if (customerChoice > 2)
-            {
-                return 2;
-            }
-            return 0;
-
-        }
-
-        
-
-
         
 
     }
