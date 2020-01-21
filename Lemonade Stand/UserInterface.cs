@@ -55,7 +55,7 @@ namespace Lemonade_Stand
         }
         public static void DisplayRemainingInventory(Inventory inventory1)
         {
-            Console.WriteLine("{0} left, {1} left, {2} left, {3} left,", inventory1.cups.Count, inventory1.lemons.Count, inventory1.icecubes.Count, inventory1.sugarcubes.Count);
+            Console.WriteLine("{0} cups left, {1} lemons left, {2} ice cubes left, {3} sugar cubes left,", inventory1.cups.Count, inventory1.lemons.Count, inventory1.icecubes.Count, inventory1.sugarcubes.Count);
         }
         public static void DisplayCurrentMoney(Wallet wallet)
         {
@@ -84,6 +84,7 @@ namespace Lemonade_Stand
             wallet.Money += player.recipe.pricePerCup;
             player.pitcher1.CupsinPitcher -= 1;
             Console.WriteLine("SALE!!!");
+            Console.ReadLine();
         }
     }
 

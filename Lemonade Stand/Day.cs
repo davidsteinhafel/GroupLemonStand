@@ -65,13 +65,6 @@ namespace Lemonade_Stand
             }
         }
 
-        public void AddCustomer()
-        {
-            for (int i = 0; i < CustomerCount(); i++)
-            {
-                customers.Add(new Customer());
-            }
-        }
         
     }
 }
