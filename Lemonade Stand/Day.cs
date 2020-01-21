@@ -11,8 +11,6 @@ namespace Lemonade_Stand
         public Weather weather;
         public Customer customer;
         public double dailyprofit;
-        public double startofdaybalance;
-        public string weatheroftheday;
         public int customerCount;
         public int pricperCup;
         public List<Customer> customers;
@@ -23,12 +21,12 @@ namespace Lemonade_Stand
         {
             customer = new Customer();
             customers = new List<Customer>();
-            
             weather = new Weather();
             weather.Weathercontrol();
             weather.TemperatureSet();
-            AddCustomer();
+            ////AddCustomer();
         }
+
 
 
         //public void displaystartofdaybalance(Wallet wallet)
@@ -50,6 +48,7 @@ namespace Lemonade_Stand
                 customers.Add(new Customer());
             }
         }
+
         public int CustomerCount()
         {
             switch (weather.weather)

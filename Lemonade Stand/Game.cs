@@ -8,11 +8,11 @@ namespace Lemonade_Stand
 {
     public class Game
     {
-
         List<Day> week;
         Player player1;
         Store store;
         int currentday;
+        
 
 
         public Game()
@@ -20,9 +20,11 @@ namespace Lemonade_Stand
             store = new Store();
             player1 = new Player();
 
+
             week = new List<Day>();
 
             currentday = 0;
+
 
         }
 
@@ -34,20 +36,20 @@ namespace Lemonade_Stand
             GenerateDays();
             PlayGame();
 
-        }
-        public bool gameover()
-        {
 
-            if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
-            {
-                Console.WriteLine("gameover");
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
         }
+        public void DayStart(Day day)
+        {
+            day.weather.Weathercontrol();
+            day.weather.TemperatureSet();
+            day.CustomerCount();
+            day.customer.DesicionToBuy(day.weather, player1.recipe);
+            
+            
+
+        }
+        
 
         public void GameMenu()
         {
@@ -71,6 +73,10 @@ namespace Lemonade_Stand
                         player1.recipe.setPricePerCup();
                         break;
                     case "4":
+                        PlayGame();
+                        break;
+                    case "5":
+
                         leavemenu = true;
                         break;
                     default:
@@ -78,6 +84,8 @@ namespace Lemonade_Stand
                         break;
                 }
             }
+
+
         }
 
         public void PlayGame()
@@ -109,13 +117,43 @@ namespace Lemonade_Stand
                         // then could not make new pitcher end day
                     }
 
+
                 }
                 if (gameover())
                 {
-                    // stop game
+
+                    ////DayStart();
+                    ////Console.WriteLine("lets get started");
+
                 }
             }
         }
+
+
+        public bool gameover()
+        {
+
+            if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
+            {
+                Console.WriteLine("gameover");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //public void AddDays()
+        //{
+        //    for (int i = 0; i > days.Count; i++)
+        //    {
+        //        days.Add(new Day());
+        //        Console.WriteLine("new day was added");
+        //    }
+        //}
+        
+
         public void GenerateDays()
         {
             for (int i = 0; i < 7; i++)
@@ -134,6 +172,7 @@ namespace Lemonade_Stand
         //        }
 
         //}
+
 
 
 

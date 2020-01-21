@@ -22,8 +22,6 @@ namespace Lemonade_Stand
 
             //customerChoice = random.Next(11);
             //customerBuy = false;
-            
-           
         }
 
 
@@ -61,10 +59,16 @@ namespace Lemonade_Stand
                 Console.WriteLine("No sale");
                 return false;
             }
-
-           
         }
+        public void CustomerBuyLemon(Day day,Player player1)
+        {
+            foreach (Customer customer in day.customers)
 
+                if (customer.DesicionToBuy(day.weather, player1.recipe) == true)
+                {
+                    UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
+                }
 
+        }
     }
 }
