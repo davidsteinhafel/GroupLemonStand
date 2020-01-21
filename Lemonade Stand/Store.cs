@@ -12,7 +12,7 @@ namespace Lemonade_Stand
         public double pricePerLemon;
         public double pricePerSugar;
         public double pricePerIceCube;
-        
+
 
         public Store()
         {
@@ -25,7 +25,7 @@ namespace Lemonade_Stand
         {
             bool walkoutdoor = false;
             while (!walkoutdoor)
-            
+
             {
                 Console.WriteLine("Welcome to the Store " + " !!! Press 1 to buy lemons, 2 to buy sugar cubes, 3 to buy ice cubes, 4 to buy cups, and 5 to leave store");
                 switch (UserInterface.UserInput())
@@ -36,7 +36,7 @@ namespace Lemonade_Stand
                         double quantity = UserInterface.ChangeToDouble();
                         double cost = quantity * pricePerLemon;
                         UserInterface.DisplayRemainingInventory(player1.inventory1);
-                        
+
 
                         if (player1.wallet1.Money >= cost)
                         {
@@ -50,7 +50,7 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-                        
+
                         break;
 
                     case "2":
@@ -70,7 +70,7 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-                        
+
                         break;
 
                     case "3":
@@ -92,7 +92,7 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-                        
+
                         break;
 
                     case "4":
@@ -113,19 +113,19 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-                        
+
                         break;
                     case "5":
                         walkoutdoor = true;
 
                         Console.WriteLine("Thanks for visiting and good luck!!!");
                         break;
-                            
-                        
-                        
+
+
+
                     default:
                         Console.WriteLine("Invalid Input Please Try Again!");
-                        
+
                         break;
                 }
             }

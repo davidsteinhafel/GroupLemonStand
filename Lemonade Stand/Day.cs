@@ -9,7 +9,8 @@ namespace Lemonade_Stand
     public class Day
     {
         public Weather weather;
-        public int days;
+        public Day day;
+        public Customer customer;
         public double dailyprofit;
         public double startofdaybalance;
         public string weatheroftheday;
@@ -19,12 +20,12 @@ namespace Lemonade_Stand
         public List<Customer> customers;
 
 
+
         public Day()
         {
-            player1 = new Player();
+            customer = new Customer();
             customers = new List<Customer>();
-            days = 0;
-            customers = new List<Customer>();
+
             weather = new Weather();
         }
 
@@ -75,6 +76,7 @@ namespace Lemonade_Stand
         }
 
 
+
         public void CustomerBuyLemonade()
         {
             foreach (Customer customer in customers)
@@ -86,10 +88,11 @@ namespace Lemonade_Stand
 
         public void DayStart()
         {
-           weather.Weathercontrol();
-           weather.TemperatureSet();
-           AddCustomer(); 
-            
+            weather.Weathercontrol();
+            weather.TemperatureSet();
+            AddCustomer();
+
+
 
         }
     }
