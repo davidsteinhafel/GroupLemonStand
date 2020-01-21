@@ -17,10 +17,9 @@ namespace Lemonade_Stand
         public Customer()
         {
             random = new Random();
-<<<<<<< HEAD
-=======
+
             name = "customer";
->>>>>>> a40fefbd6ecbe011f334edba55f249ccc30ec390
+
             customerChoice = random.Next(11);
             customerBuy = false;
            

@@ -110,10 +110,19 @@ namespace Lemonade_Stand
 
         public void Playgame()
         {
-            bool playgame = false;
-            while (playgame != false)
+            bool endday = true;
+            while (endday != true)
             {
-                day.DayStart();
+                
+                if (day.customerCount > 0 && player1.pitcher1.CupsinPitcher > 0)
+                {
+                    endday = true;
+                    
+                }
+                else
+                {
+                   
+                }
 
 
             }
@@ -139,19 +148,7 @@ namespace Lemonade_Stand
         }
 
 
-        public bool EndDay()
-        {
-            bool endDay = true;
-            if (day.customerCount > 0 && player1.pitcher1.CupsinPitcher > 0)
-            {
-
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+        
     }
 
         
