@@ -8,7 +8,7 @@ namespace Lemonade_Stand
 {
     public class Game
     {
-        List<Day> days;
+        List<Day> week;
         Player player1;
         Store store;
         int currentday;
@@ -19,10 +19,9 @@ namespace Lemonade_Stand
         {
             store = new Store();
             player1 = new Player();
-            days = new List<Day>();
-            
-
+            week = new List<Day>();
             currentday = 0;
+
 
         }
 
@@ -31,9 +30,9 @@ namespace Lemonade_Stand
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
-            GameMenu();
-            gameover();
-          
+            GenerateDays();
+            PlayGame();
+
 
 
         }
@@ -45,6 +44,7 @@ namespace Lemonade_Stand
             day.customer.DesicionToBuy(day.weather, player1.recipe);
             
             
+
         }
         
 
@@ -55,7 +55,7 @@ namespace Lemonade_Stand
 
             while (!leavemenu)
             {
-                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups,press 4 for play game, press 5 for leave menu");
+                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups, press 4 to start day");
 
                 string gamemenu = Console.ReadLine();
                 switch (gamemenu)
@@ -70,9 +70,10 @@ namespace Lemonade_Stand
                         player1.recipe.setPricePerCup();
                         break;
                     case "4":
-                        Playgame(days);
+                        PlayGame();
                         break;
                     case "5":
+
                         leavemenu = true;
                         break;
                     default:
@@ -81,31 +82,52 @@ namespace Lemonade_Stand
                 }
             }
 
+
         }
         
 
-        public void Playgame(List<Day>days)
+      
+        
+  
+        public void PlayGame()
         {
-            bool endday = true;
-
-            while (endday != false)
+            foreach(Day day in week)
             {
-                
-
-                if (days.customerCount == 0 && player1.pitcher1.CupsinPitcher == 0)
+                GameMenu();
+                foreach(Customer customer in day.customers)
                 {
-                    endday = true;
-                    Console.WriteLine("day has ended");
+                    //check if cups left in pither
+                    // if no then create new pitcher
+                    if(player1.pitcher1.CupsinPitcher > 0)
+                    {
+                        bool didBuy = customer.DesicionToBuy(day.weather, player1.recipe);
+                        if (didBuy)
+                        {
+                            // give money
+                            // take cup out of pitcher
+                        }
+                        else
+                        {
+                            // did not buy do nothing
+                        }
+                    }
+                    else
+                    {
+                        // then could not make new pitcher end day
+                    }
+     
 
                 }
-                else
+                if (gameover())
                 {
-                    DayStart();
-                    Console.WriteLine("lets get started");
-                }
 
+                    ////DayStart();
+                    ////Console.WriteLine("lets get started");
+
+                }
             }
         }
+
 
         public bool gameover()
         {
@@ -121,15 +143,34 @@ namespace Lemonade_Stand
             }
         }
 
-        public void AddDays()
+        //public void AddDays()
+        //{
+        //    for (int i = 0; i > days.Count; i++)
+        //    {
+        //        days.Add(new Day());
+        //        Console.WriteLine("new day was added");
+        //    }
+        //}
+        
+
+        public void GenerateDays()
         {
-            for (int i = 0; i > days.Count; i++)
+            for (int i = 0; i < 7; i++)
             {
-                days.Add(new Day());
-                Console.WriteLine("new day was added");
+                week.Add(new Day());
             }
         }
-        
+        //public void CustomerBuyLemon()
+        //{
+        //    foreach (Customer customer in days.customers)
+
+        //        if (customer.DesicionToBuy(day.weather, player1.recipe) == true)
+        //        {
+        //            UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
+        //        }
+
+        //}
+
 
 
 

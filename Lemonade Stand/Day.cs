@@ -22,8 +22,32 @@ namespace Lemonade_Stand
             customer = new Customer();
             customers = new List<Customer>();
             weather = new Weather();
+            weather.Weathercontrol();
+            weather.TemperatureSet();
+            ////AddCustomer();
         }
 
+
+
+        //public void displaystartofdaybalance(Wallet wallet)
+        //{
+        //    startofdaybalance = wallet.Money;
+        //    Console.WriteLine("your starting balance of the day " + startofdaybalance);
+        //}
+        //public void displaydailyprofits(Wallet wallet)
+        //{
+        //    dailyprofit = wallet.Money - startofdaybalance;
+        //    Console.WriteLine("this is how much moneny you made " + dailyprofit);
+        //}
+
+        public void AddCustomer()
+        {
+            int amountOfCustomers = CustomerCount();
+            for (int i = 0; i < amountOfCustomers; i++)
+            {
+                customers.Add(new Customer());
+            }
+        }
 
         public int CustomerCount()
         {

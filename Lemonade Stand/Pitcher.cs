@@ -8,9 +8,11 @@ namespace Lemonade_Stand
 {
     public class Pitcher
     {
+        public Cup cup;
         public int CupsinPitcher;
         public Pitcher()
         {
+            
             CupsinPitcher = 30;
         }
 

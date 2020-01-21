@@ -14,10 +14,11 @@ namespace Lemonade_Stand
         public double pricePerCup;
         public Recipe()
         {
-            amountOfIceCubes = 4;
-            amountOfLemons = 4;
-            amountOfSugarCubes = 4;
-            pricePerCup = 4;
+            amountOfIceCubes = 0;
+            amountOfLemons = 0;
+            amountOfSugarCubes = 0;
+            pricePerCup = 0;
+
         }
         public void SetRecipe()
         {
@@ -38,7 +39,6 @@ namespace Lemonade_Stand
                 isValid = int.TryParse(Console.ReadLine(), out amountOfSugarCubes);
             } while (isValid == false); 
         }
-       
         public void setPricePerCup()   
         {
             bool isValid = false;

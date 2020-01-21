@@ -10,7 +10,7 @@ namespace Lemonade_Stand
     {
         public static void DisplayCurrentDay(Day day)
         {
-            Console.WriteLine("Current day is {0}", day.day);
+            Console.WriteLine("Current day is {0}", day);
         }
         public static void CurrentTemp(Weather weather)
         {

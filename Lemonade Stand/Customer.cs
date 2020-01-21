@@ -75,14 +75,14 @@ namespace Lemonade_Stand
                 }
 
         }
-        public void AddCustomer(Day day, Player player1)
-        {
-            for (int i = 0; i < day.CustomerCount; i++)
-            {
-                day.customers.Add(new Customer());
-                day.customer.DesicionToBuy(day.weather, player1.recipe);
-            }
-        }
+        //public void AddCustomer(Day day, Player player1)
+        //{
+        //    for (int i = 0; i < day.CustomerCount; i++)
+        //    {
+        //        day.customers.Add(new Customer());
+        //        day.customer.DesicionToBuy(day.weather, player1.recipe);
+        //    }
+        //}
 
 
     }
