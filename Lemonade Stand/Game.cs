@@ -19,13 +19,8 @@ namespace Lemonade_Stand
         {
             store = new Store();
             player1 = new Player();
-
-
             week = new List<Day>();
-
             currentday = 0;
-
-
         }
 
         public void Start()
@@ -34,34 +29,33 @@ namespace Lemonade_Stand
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
             GenerateDays();
-            PlayGame();
-
-
-
-        }
-        public void DayStart(Day day)
-        {
-            day.weather.Weathercontrol();
-            day.weather.TemperatureSet();
-            day.CustomerCount();
-            day.customer.DesicionToBuy(day.weather, player1.recipe);
-            
+            GameMenu();
+           
             
 
+            
         }
+        //public void DayStart(Day day)
+        //{
+        //    day.weather.Weathercontrol();
+        //    day.weather.TemperatureSet();
+        //    day.CustomerCount();
+        //    day.customer.DesicionToBuy(day.weather, player1.recipe);
+            
+        //}
         
 
         public void GameMenu()
         {
 
-            bool leavemenu = false;
+            bool leaveMenu = false;
 
-            while (!leavemenu)
+            while (!leaveMenu)
             {
-                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups, press 4 to start day");
+                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups, press 4 to play game, press 5 to leave game");
 
-                string gamemenu = Console.ReadLine();
-                switch (gamemenu)
+                string gameMenu = Console.ReadLine();
+                switch (gameMenu)
                 {
                     case "1":
                         store.InventoryAquisition(player1);
@@ -76,8 +70,7 @@ namespace Lemonade_Stand
                         PlayGame();
                         break;
                     case "5":
-
-                        leavemenu = true;
+                    leaveMenu = true;
                         break;
                     default:
                         Console.WriteLine("invalid respone please make another choice!");
@@ -90,9 +83,11 @@ namespace Lemonade_Stand
 
         public void PlayGame()
         {
+
+
             foreach (Day day in week)
             {
-                GameMenu();
+                
                 foreach (Customer customer in day.customers)
                 {
                     if(player1.pitcher1.CupsinPitcher == 0 && (player1.inventory1.lemons.Count > 0) && (player1.inventory1.icecubes.Count > 0) && (player1.inventory1.sugarcubes.Count > 0))
@@ -114,23 +109,25 @@ namespace Lemonade_Stand
                     }
                     else
                     {
-                        // then could not make new pitcher end day
+                        return;
                     }
 
 
                 }
-                if (gameover())
+                if (player1.pitcher1.CupsinPitcher == 0)
                 {
-
-                    ////DayStart();
-                    ////Console.WriteLine("lets get started");
-
+                    GameOver();
                 }
+
+                
+                    
+
+                
             }
         }
 
 
-        public bool gameover()
+        public bool GameOver()
         {
 
             if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
@@ -156,27 +153,29 @@ namespace Lemonade_Stand
 
         public void GenerateDays()
         {
-            for (int i = 0; i < 7; i++)
+            
+            for (int i = 0; i< 7; i++)
             {
                 week.Add(new Day());
+
             }
         }
-        
-        //public void CustomerBuyLemon()
-        //{
-        //    foreach (Customer customer in days.customers)
 
-        //        if (customer.DesicionToBuy(day.weather, player1.recipe) == true)
-        //        {
-        //            UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
-        //        }
+    //public void CustomerBuyLemon()
+    //{
+    //    foreach (Customer customer in days.customers)
 
-        //}
+    //        if (customer.DesicionToBuy(day.weather, player1.recipe) == true)
+    //        {
+    //            UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
+    //        }
 
-
+    //}
 
 
-    }
+
+
+}
 
 
 
