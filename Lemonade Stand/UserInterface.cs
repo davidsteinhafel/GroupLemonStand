@@ -10,7 +10,7 @@ namespace Lemonade_Stand
     {
         public static void DisplayCurrentDay(Day day)
         {
-            Console.WriteLine("Current day is {0}", day.days);
+            Console.WriteLine("Current day is {0}", day.day);
         }
         public static void CurrentTemp(Weather weather)
         {
@@ -79,12 +79,14 @@ namespace Lemonade_Stand
         {
 
         }
-        public static void MakeSale(Wallet wallet, Player player)
+        public static void MakeSale(Player player, Wallet wallet, Pitcher pitcher)
         {
             wallet.Money += player.recipe.pricePerCup;
+            player.pitcher1.CupsinPitcher -= 1;
+            Console.WriteLine("SALE!!!");
         }
     }
-     
+
 }
 
 

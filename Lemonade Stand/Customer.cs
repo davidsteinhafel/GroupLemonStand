@@ -9,7 +9,7 @@ namespace Lemonade_Stand
 {
     public class Customer
     {
-
+        public string name;
         Random random;
         int customerChoice;
         bool customerBuy;
@@ -17,7 +17,7 @@ namespace Lemonade_Stand
         public Customer()
         {
             random = new Random();
-
+            name = "customer";
             customerChoice = random.Next(11);
             customerBuy = false;
            

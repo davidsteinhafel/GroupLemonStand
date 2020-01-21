@@ -9,22 +9,22 @@ namespace Lemonade_Stand
     public class Day
     {
         public Weather weather;
-        public int days;
+        public Day day;
+        public Customer customer;
         public double dailyprofit;
         public double startofdaybalance;
         public string weatheroftheday;
         public int customerCount;
         public int pricperCup;
-        public Player player1;
-        List<Customer> customers;
+        public List<Customer> customers;
+        
 
 
         public Day()
         {
-            player1 = new Player();
+            customer = new Customer();
             customers = new List<Customer>();
-            days = 0;
-            customers = new List<Customer>();
+            
             weather = new Weather();
         }
 
@@ -74,25 +74,9 @@ namespace Lemonade_Stand
         }
 
 
-        public void CustomerBuyLemonade()
-        {
-            foreach (Customer customer in customers)
-            {
-                bool decision = customer.DesicionToBuy(weather, player1.recipe);
+        
+        
 
-            }
-        }
-
-        public void DayStart()
-        {
-            weather.Weathercontrol();
-            weather.TemperatureSet();
-            CustomerCount();
-            AddCustomer();
-
-
-
-
-        }
+        
     }
 }
