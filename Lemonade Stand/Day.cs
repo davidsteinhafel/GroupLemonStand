@@ -43,7 +43,7 @@ namespace Lemonade_Stand
 
         public int CustomerCount()
         {
-            switch (weather.Weathercontrol())
+            switch (weather.weather)
             {
                 case "sunny":
                     customerCount = 30;

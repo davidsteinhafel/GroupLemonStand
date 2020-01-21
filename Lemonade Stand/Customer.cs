@@ -20,8 +20,9 @@ namespace Lemonade_Stand
 
             name = "customer";
 
-            customerChoice = random.Next(11);
-            customerBuy = false;
+            //customerChoice = random.Next(11);
+            //customerBuy = false;
+            
            
         }
 
