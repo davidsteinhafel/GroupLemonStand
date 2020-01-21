@@ -33,7 +33,7 @@ namespace Lemonade_Stand
             UserInterface.SetName();
             GameMenu();
             gameover();
-            DayStart();
+          
 
 
         }
@@ -44,7 +44,7 @@ namespace Lemonade_Stand
             day.CustomerCount();
             day.AddCustomer();
             day.customer.DesicionToBuy(day.weather, player1.recipe);
-            //day.EndDay();
+            
         }
         public bool gameover()
         {
@@ -67,7 +67,7 @@ namespace Lemonade_Stand
 
             while (!leavemenu)
             {
-                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups,press 4 for start day, press 5 for leave menu");
+                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups,press 4 for play game, press 5 for leave menu");
 
                 string gamemenu = Console.ReadLine();
                 switch (gamemenu)
@@ -82,8 +82,7 @@ namespace Lemonade_Stand
                         player1.recipe.setPricePerCup();
                         break;
                     case "4":
-
-
+                        Playgame();
                         break;
                     case "5":
                         leavemenu = true;
@@ -93,9 +92,6 @@ namespace Lemonade_Stand
                         break;
                 }
             }
-
-
-
 
 
         }
@@ -111,28 +107,25 @@ namespace Lemonade_Stand
         public void Playgame()
         {
             bool endday = true;
-            while (endday != true)
+            while (!endday)
             {
-                
-                if (day.customerCount > 0 && player1.pitcher1.CupsinPitcher > 0)
+                 DayStart();
+                if (day.customerCount < 0 && player1.pitcher1.CupsinPitcher < 0)
                 {
-                    endday = true;
-                    
+                   
+
+                    Console.WriteLine("lets get started");
                 }
                 else
                 {
-                   
+                    endday = true;
+                    Console.WriteLine("day has ended");
                 }
 
-
+     
             }
 
-
-
-
         }
-
-
 
         public void CustomerBuyLemon()
         {

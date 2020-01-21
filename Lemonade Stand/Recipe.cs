@@ -38,6 +38,7 @@ namespace Lemonade_Stand
                 isValid = int.TryParse(Console.ReadLine(), out amountOfSugarCubes);
             } while (isValid == false); 
         }
+       
         public void setPricePerCup()   
         {
             bool isValid = false;
