@@ -19,55 +19,40 @@ namespace Lemonade_Stand
         {
             store = new Store();
             player1 = new Player();
-
-
             week = new List<Day>();
-
             currentday = 0;
-
-
         }
-
         public void Start()
         {
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
             GenerateDays();
-            PlayGame();
-
-
-
+            GameMenu();
         }
         public void DayStart(Day day)
         {
             day.weather.Weathercontrol();
             day.weather.TemperatureSet();
             day.CustomerCount();
-            day.customer.DesicionToBuy(day.weather, player1.recipe);
-            
-            
-
+            //day.customer.DesicionToBuy(day.weather, player1.recipe); not sure if needed here anymore because down in play game loop
         }
-        
-
         public void GameMenu()
         {
+            bool leaveMenu = false;
 
-            bool leavemenu = false;
-
-            while (!leavemenu)
+            while (!leaveMenu)
             {
-                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups, press 4 to start day");
+                Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups, press 4 to start day, press 5 to leave menu");
 
-                string gamemenu = Console.ReadLine();
-                switch (gamemenu)
+                string gameMenu = Console.ReadLine();
+                switch (gameMenu)
                 {
                     case "1":
                         store.InventoryAquisition(player1);
                         break;
                     case "2":
-                        player1.recipe.SetRecipe();
+                        player1.FillPitcher();
                         break;
                     case "3":
                         player1.recipe.setPricePerCup();
@@ -76,25 +61,26 @@ namespace Lemonade_Stand
                         PlayGame();
                         break;
                     case "5":
-
-                        leavemenu = true;
+                        leaveMenu = true;
                         break;
                     default:
                         Console.WriteLine("invalid respone please make another choice!");
                         break;
                 }
             }
-
-
         }
 
         public void PlayGame()
         {
             foreach (Day day in week)
             {
+                currentday++;
+                Console.WriteLine($"Current Day: {currentday}");
                 GameMenu();
+                
                 foreach (Customer customer in day.customers)
                 {
+                    
                     if(player1.pitcher1.CupsinPitcher == 0 && (player1.inventory1.lemons.Count > 0) && (player1.inventory1.icecubes.Count > 0) && (player1.inventory1.sugarcubes.Count > 0))
                     {
                         player1.FillPitcher();
@@ -109,22 +95,18 @@ namespace Lemonade_Stand
                         }
                         else
                         {
-                            Console.WriteLine("No Sale!");
+                            
                         }
                     }
                     else
                     {
-                        // then could not make new pitcher end day
+                       //if cant make pitcher and out end day
                     }
+                    if (gameover())
+                    {
 
-
-                }
-                if (gameover())
-                {
-
-                    ////DayStart();
-                    ////Console.WriteLine("lets get started");
-
+                        Console.WriteLine("Better Luck Next Time!");
+                    }
                 }
             }
         }

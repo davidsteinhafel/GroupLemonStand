@@ -24,6 +24,7 @@ namespace Lemonade_Stand
             weather = new Weather();
             weather.Weathercontrol();
             weather.TemperatureSet();
+            AddCustomer();
             ////AddCustomer();
         }
 

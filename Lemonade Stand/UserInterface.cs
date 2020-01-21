@@ -83,8 +83,7 @@ namespace Lemonade_Stand
         {
             wallet.Money += player.recipe.pricePerCup;
             player.pitcher1.CupsinPitcher -= 1;
-            Console.WriteLine("SALE!!!");
-            Console.ReadLine();
+            
         }
         
         
