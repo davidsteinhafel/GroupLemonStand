@@ -47,6 +47,11 @@ namespace Lemonade_Stand
                 sugarcubes.Add(new SugarCube());
             }
         }
+        public void removeSugar()
+        {
+            sugarcubes.RemoveRange()
+        }
+        
     }
 }
 

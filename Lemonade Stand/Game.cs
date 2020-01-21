@@ -8,7 +8,7 @@ namespace Lemonade_Stand
 {
     public class Game
     {
-        
+
         List<Day> week;
         Player player1;
         Store store;
@@ -19,10 +19,10 @@ namespace Lemonade_Stand
         {
             store = new Store();
             player1 = new Player();
-            
+
             week = new List<Day>();
-            
-            currentday = 0 ;
+
+            currentday = 0;
 
         }
 
@@ -79,34 +79,36 @@ namespace Lemonade_Stand
                 }
             }
         }
-  
+
         public void PlayGame()
         {
-            foreach(Day day in week)
+            foreach (Day day in week)
             {
                 GameMenu();
-                foreach(Customer customer in day.customers)
+                foreach (Customer customer in day.customers)
                 {
-                    //check if cups left in pither
-                    // if no then create new pitcher
-                    if(player1.pitcher1.CupsinPitcher > 0)
+                    if(player1.pitcher1.CupsinPitcher == 0 && (player1.inventory1.lemons.Count > 0) && (player1.inventory1.icecubes.Count > 0) && (player1.inventory1.sugarcubes.Count > 0))
+                    {
+                        player1.FillPitcher();
+                    }
+                    
+                    if (player1.pitcher1.CupsinPitcher > 0)
                     {
                         bool didBuy = customer.DesicionToBuy(day.weather, player1.recipe);
                         if (didBuy)
                         {
-                            // give money
-                            // take cup out of pitcher
+                            UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
                         }
                         else
                         {
-                            // did not buy do nothing
+                            Console.WriteLine("No Sale!");
                         }
                     }
                     else
                     {
                         // then could not make new pitcher end day
                     }
-     
+
                 }
                 if (gameover())
                 {
@@ -121,6 +123,7 @@ namespace Lemonade_Stand
                 week.Add(new Day());
             }
         }
+        
         //public void CustomerBuyLemon()
         //{
         //    foreach (Customer customer in days.customers)

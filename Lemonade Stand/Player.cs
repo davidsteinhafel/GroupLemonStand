@@ -23,14 +23,14 @@ namespace Lemonade_Stand
             inventory1 = new Inventory();
             
         }
+        
         public void FillPitcher()
         {
-
             recipe.SetRecipe();
-            pitcher1 = new Pitcher();
-
-            inventory1.
-        } 
+            inventory1.lemons.RemoveRange(0, recipe.amountOfLemons);
+            inventory1.sugarcubes.RemoveRange(0, recipe.amountOfSugarCubes);
+            inventory1.icecubes.RemoveRange(0, recipe.amountOfIceCubes);
+        }
         
     }
 }
