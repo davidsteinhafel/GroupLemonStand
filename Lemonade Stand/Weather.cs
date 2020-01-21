@@ -21,6 +21,7 @@ namespace Lemonade_Stand
             weatherConditions = new List<string>() { "snow", "sleet", "rain", "sunny", "cloudy" };
             predictedForecast = new List<string>() { "snow", "sleet", "rain", "sunny", "cloudy" };
             random = new Random();
+
         }
 
         public string Weathercontrol()

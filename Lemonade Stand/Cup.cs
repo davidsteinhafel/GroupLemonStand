@@ -8,6 +8,7 @@ namespace Lemonade_Stand
 {
     public class Cup : Item
     {
+
         public Cup()
         {
             name = "Cup";

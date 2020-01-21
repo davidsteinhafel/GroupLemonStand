@@ -102,6 +102,10 @@ namespace Lemonade_Stand
                             // did not buy do nothing
                         }
                     }
+                    else
+                    {
+                        // then could not make new pitcher end day
+                    }
      
                 }
                 if (gameover())
