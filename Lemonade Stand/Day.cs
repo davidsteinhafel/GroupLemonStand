@@ -43,7 +43,7 @@ namespace Lemonade_Stand
 
         public int CustomerCount()
         {
-            switch (weather.Weathercontrol())
+            switch (weather.weather)
             {
                 case "sunny":
                     customerCount = 30;
@@ -65,13 +65,6 @@ namespace Lemonade_Stand
             }
         }
 
-        public void AddCustomer()
-        {
-            for (int i = 0; i < CustomerCount(); i++)
-            {
-                customers.Add(new Customer());
-            }
-        }
         
     }
 }

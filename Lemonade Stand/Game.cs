@@ -42,7 +42,7 @@ namespace Lemonade_Stand
             day.weather.Weathercontrol();
             day.weather.TemperatureSet();
             day.CustomerCount();
-            day.AddCustomer();
+            AddCustomer();
             day.customer.DesicionToBuy(day.weather, player1.recipe);
             
         }
@@ -82,7 +82,9 @@ namespace Lemonade_Stand
                         player1.recipe.setPricePerCup();
                         break;
                     case "4":
+
                         Playgame();
+
                         break;
                     case "5":
                         leavemenu = true;
@@ -93,7 +95,6 @@ namespace Lemonade_Stand
                 }
             }
 
-
         }
         public void AddDay()
         {
@@ -103,28 +104,33 @@ namespace Lemonade_Stand
                 currentday++;
             }
         }
+        public void AddCustomer()
+        {
+            for (int i = 0; i < day.CustomerCount(); i++)
+            {
+                day.customers.Add(new Customer());
+                day.customer.DesicionToBuy(day.weather, player1.recipe);
+            }
+        }
 
         public void Playgame()
         {
             bool endday = true;
-            while (!endday)
-            {
-                 DayStart();
-                if (day.customerCount < 0 && player1.pitcher1.CupsinPitcher < 0)
-                {
-                   
 
-                    Console.WriteLine("lets get started");
+            while (endday != false)
+            {
+
+                if (day.customerCount > 0 && player1.pitcher1.CupsinPitcher > 0)
+                {
+                    endday = true;
+
                 }
                 else
                 {
-                    endday = true;
-                    Console.WriteLine("day has ended");
+
                 }
 
-     
             }
-
         }
 
         public void CustomerBuyLemon()
@@ -136,19 +142,17 @@ namespace Lemonade_Stand
                     UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
                 }
 
-
-
         }
 
 
-        
+
     }
 
-        
-   
+
+
 }
 
- 
+
 
 
 

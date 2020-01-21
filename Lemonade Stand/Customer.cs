@@ -20,8 +20,9 @@ namespace Lemonade_Stand
 
             name = "customer";
 
-            customerChoice = random.Next(11);
-            customerBuy = false;
+            //customerChoice = random.Next(11);
+            //customerBuy = false;
+            
            
         }
 
@@ -51,10 +52,13 @@ namespace Lemonade_Stand
             }
             if (numBaseOnWeather >= 60 && numBasedOnRecipe >= 60)
             {
+                Console.WriteLine("Sale made");
                 return true;
+
             }
             else
             {
+                Console.WriteLine("No sale");
                 return false;
             }
 

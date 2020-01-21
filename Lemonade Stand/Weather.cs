@@ -41,22 +41,27 @@ namespace Lemonade_Stand
             if (weather == "sunny")
             {
                 temperature = random.Next(70, 105);
+                Console.WriteLine("{0} degrees", temperature);
             }
             else if (weather == "cloudy")
             {
                 temperature = random.Next(60, 80);
+                Console.WriteLine("{0} degrees", temperature);
             }
             else if (weather == "sleet")
             {
                 temperature = random.Next(25, 40);
+                Console.WriteLine("{0} degrees", temperature);
             }
             else if (weather == "snow")
             {
                 temperature = random.Next(0, 30);
+                Console.WriteLine("{0} degrees", temperature);
             }
             else if (weather == "rain")
             {
                 temperature = random.Next(50, 70);
+                Console.WriteLine("{0} degrees", temperature);
             }
         }
         public void Forcasting()
