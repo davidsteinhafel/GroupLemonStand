@@ -9,7 +9,6 @@ namespace Lemonade_Stand
     public class Day
     {
         public Weather weather;
-        public Day day;
         public Customer customer;
         public double dailyprofit;
         public double startofdaybalance;
@@ -26,21 +25,31 @@ namespace Lemonade_Stand
             customers = new List<Customer>();
             
             weather = new Weather();
+            weather.Weathercontrol();
+            weather.TemperatureSet();
+            AddCustomer();
         }
 
 
-        public void displaystartofdaybalance(Wallet wallet)
+        //public void displaystartofdaybalance(Wallet wallet)
+        //{
+        //    startofdaybalance = wallet.Money;
+        //    Console.WriteLine("your starting balance of the day " + startofdaybalance);
+        //}
+        //public void displaydailyprofits(Wallet wallet)
+        //{
+        //    dailyprofit = wallet.Money - startofdaybalance;
+        //    Console.WriteLine("this is how much moneny you made " + dailyprofit);
+        //}
+
+        public void AddCustomer()
         {
-            startofdaybalance = wallet.Money;
-            Console.WriteLine("your starting balance of the day " + startofdaybalance);
+            int amountOfCustomers = CustomerCount();
+            for (int i = 0; i < amountOfCustomers; i++)
+            {
+                customers.Add(new Customer());
+            }
         }
-        public void displaydailyprofits(Wallet wallet)
-        {
-            dailyprofit = wallet.Money - startofdaybalance;
-            Console.WriteLine("this is how much moneny you made " + dailyprofit);
-        }
-
-
         public int CustomerCount()
         {
             switch (weather.weather)
