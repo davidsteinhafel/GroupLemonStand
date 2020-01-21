@@ -9,11 +9,8 @@ namespace Lemonade_Stand
     public class Day
     {
         public Weather weather;
-        public Day day;
         public Customer customer;
         public double dailyprofit;
-        public double startofdaybalance;
-        public string weatheroftheday;
         public int customerCount;
         public int pricperCup;
         public List<Customer> customers;
@@ -24,20 +21,7 @@ namespace Lemonade_Stand
         {
             customer = new Customer();
             customers = new List<Customer>();
-            
             weather = new Weather();
-        }
-
-
-        public void displaystartofdaybalance(Wallet wallet)
-        {
-            startofdaybalance = wallet.Money;
-            Console.WriteLine("your starting balance of the day " + startofdaybalance);
-        }
-        public void displaydailyprofits(Wallet wallet)
-        {
-            dailyprofit = wallet.Money - startofdaybalance;
-            Console.WriteLine("this is how much moneny you made " + dailyprofit);
         }
 
 

@@ -65,6 +65,25 @@ namespace Lemonade_Stand
            
         }
 
+        public void CustomerBuyLemon(Day day,Player player1)
+        {
+            foreach (Customer customer in day.customers)
+
+                if (customer.DesicionToBuy(day.weather, player1.recipe) == true)
+                {
+                    UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
+                }
+
+        }
+        public void AddCustomer(Day day, Player player1)
+        {
+            for (int i = 0; i < day.CustomerCount; i++)
+            {
+                day.customers.Add(new Customer());
+                day.customer.DesicionToBuy(day.weather, player1.recipe);
+            }
+        }
+
 
     }
 }

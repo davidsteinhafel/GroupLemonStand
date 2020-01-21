@@ -8,20 +8,20 @@ namespace Lemonade_Stand
 {
     public class Game
     {
-        Day day;
         List<Day> days;
         Player player1;
         Store store;
         int currentday;
+        
 
 
         public Game()
         {
             store = new Store();
             player1 = new Player();
-            day = new Day();
             days = new List<Day>();
-            day = new Day();
+            
+
             currentday = 0;
 
         }
@@ -37,28 +37,16 @@ namespace Lemonade_Stand
 
 
         }
-        public void DayStart()
+        public void DayStart(Day day)
         {
             day.weather.Weathercontrol();
             day.weather.TemperatureSet();
             day.CustomerCount();
-            AddCustomer();
             day.customer.DesicionToBuy(day.weather, player1.recipe);
             
+            
         }
-        public bool gameover()
-        {
-
-            if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
-            {
-                Console.WriteLine("gameover");
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
 
         public void GameMenu()
         {
@@ -82,9 +70,7 @@ namespace Lemonade_Stand
                         player1.recipe.setPricePerCup();
                         break;
                     case "4":
-
-                        Playgame();
-
+                        Playgame(days);
                         break;
                     case "5":
                         leavemenu = true;
@@ -96,53 +82,54 @@ namespace Lemonade_Stand
             }
 
         }
-        public void AddDay()
-        {
-            for (int i = 8; i > days.Count; i++)
-            {
-                days.Add(new Day());
-                currentday++;
-            }
-        }
-        public void AddCustomer()
-        {
-            for (int i = 0; i < day.CustomerCount(); i++)
-            {
-                day.customers.Add(new Customer());
-                day.customer.DesicionToBuy(day.weather, player1.recipe);
-            }
-        }
+        
 
-        public void Playgame()
+        public void Playgame(List<Day>days)
         {
             bool endday = true;
 
             while (endday != false)
             {
+                
 
-                if (day.customerCount > 0 && player1.pitcher1.CupsinPitcher > 0)
+                if (days.customerCount == 0 && player1.pitcher1.CupsinPitcher == 0)
                 {
                     endday = true;
+                    Console.WriteLine("day has ended");
 
                 }
                 else
                 {
-
+                    DayStart();
+                    Console.WriteLine("lets get started");
                 }
 
             }
         }
 
-        public void CustomerBuyLemon()
+        public bool gameover()
         {
-            foreach (Customer customer in day.customers)
 
-                if (customer.DesicionToBuy(day.weather, player1.recipe) == true)
-                {
-                    UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
-                }
-
+            if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
+            {
+                Console.WriteLine("gameover");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        public void AddDays()
+        {
+            for (int i = 0; i > days.Count; i++)
+            {
+                days.Add(new Day());
+                Console.WriteLine("new day was added");
+            }
+        }
+        
 
 
 
