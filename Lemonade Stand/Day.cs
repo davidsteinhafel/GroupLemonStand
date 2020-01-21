@@ -16,7 +16,7 @@ namespace Lemonade_Stand
         public int customerCount;
         public int pricperCup;
         public Player player1;
-        List<Customer> customers;
+        public List<Customer> customers;
 
 
         public Day()
@@ -29,12 +29,12 @@ namespace Lemonade_Stand
         }
 
 
-        public void displaystartofdaybalance(Wallet wallet)
+        public void DisplayStartOfDayBalance(Wallet wallet)
         {
             startofdaybalance = wallet.Money;
             Console.WriteLine("your starting balance of the day " + startofdaybalance);
         }
-        public void displaydailyprofits(Wallet wallet)
+        public void DisplayDailyProfits(Wallet wallet)
         {
             dailyprofit = wallet.Money - startofdaybalance;
             Console.WriteLine("this is how much moneny you made " + dailyprofit);
@@ -67,7 +67,8 @@ namespace Lemonade_Stand
 
         public void AddCustomer()
         {
-            for (int i = 0; i < CustomerCount(); i++)
+            int amountOfCutomers = CustomerCount();
+            for (int i = 0; i < amountOfCutomers; i++)
             {
                 customers.Add(new Customer());
             }
@@ -85,13 +86,10 @@ namespace Lemonade_Stand
 
         public void DayStart()
         {
-            weather.Weathercontrol();
-            weather.TemperatureSet();
-            CustomerCount();
-            AddCustomer();
-
-
-
+           weather.Weathercontrol();
+           weather.TemperatureSet();
+           AddCustomer(); 
+            
 
         }
     }

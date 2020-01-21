@@ -23,6 +23,7 @@ namespace Lemonade_Stand
             player1 = new Player();
             random = new Random();
             days = new List<Day>();
+            day = new Day();
             currentday = 0;
 
         }
@@ -39,7 +40,6 @@ namespace Lemonade_Stand
         public bool gameover()
         {
 
-          
             if (player1.wallet1.Money == 0 && UserInterface.CalculateDepletedInventory(player1.inventory1) == true)
             {
                 Console.WriteLine("gameover");
@@ -65,7 +65,6 @@ namespace Lemonade_Stand
                 switch (gamemenu)
                 {
                     case "1":
-
                         store.InventoryAquisition(player1);
                         break;
                     case "2":
@@ -75,7 +74,7 @@ namespace Lemonade_Stand
                        player1.recipe.setPricePerCup();
                         break;
                    case "4":
-                        day.DayStart();
+                        
                         break;
                     case "5":
                         leavemenu = true;
@@ -86,9 +85,34 @@ namespace Lemonade_Stand
 
                 }
             }
+
+            
             
 
-        }   
+        }  
+        public void AddDay()
+        {
+            for (int i = 8; i > days.Count;i++)
+            {
+                days.Add(new Day());
+                currentday++;
+            }
+        }
+
+        public void Playgame()
+        {
+            bool playgame = false;
+            while(playgame!= false)
+            { 
+                  
+
+
+            }
+            
+              
+            
+
+        }
        
 
             

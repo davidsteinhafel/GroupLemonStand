@@ -13,7 +13,6 @@ namespace Lemonade_Stand
        public List<string> predictedForecast;
        public  string weather;
        public  int temperature;
-       public  string cast;
        Random random;
         public Weather()
         {
@@ -24,7 +23,7 @@ namespace Lemonade_Stand
 
         public string Weathercontrol()
         {
-            int rng = random.Next(6);
+            int rng = random.Next(5);
             weather = weatherConditions[rng];
             Console.WriteLine("this is today's weather " + weather);
             return weather;
@@ -60,9 +59,9 @@ namespace Lemonade_Stand
         public void Forcasting()
         {
             int rng = random.Next(4);
-            cast = predictedForecast[rng];
+            string cast = predictedForecast[rng];
             random = new Random();
-            Console.WriteLine("this is the predicted forcast" + predictedForecast);
+            Console.WriteLine("this is the predicted forcast" + cast);
         }
 
         

@@ -17,7 +17,6 @@ namespace Lemonade_Stand
         public Customer()
         {
             random = new Random();
-
             customerChoice = random.Next(11);
             customerBuy = false;
            
