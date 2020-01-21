@@ -25,6 +25,7 @@ namespace Lemonade_Stand
             weather = new Weather();
             weather.Weathercontrol();
             weather.TemperatureSet();
+            
             CustomerCount();
             AddCustomer();
             ////AddCustomer();
@@ -54,7 +55,7 @@ namespace Lemonade_Stand
 
         public int CustomerCount()
         {
-            switch (weather.weather)
+            switch (weather.name)
             {
                 case "sunny":
                     customerCount = 30;
@@ -68,7 +69,7 @@ namespace Lemonade_Stand
                 case "sleet":
                     customerCount = 15;
                     return customerCount;
-                case "snowy":
+                case "snow":
                     customerCount = 10;
                     return customerCount;
                 default:

@@ -9,12 +9,12 @@ namespace Lemonade_Stand
     public class Weather
     {
 
-      
-       public List<string> weatherConditions;
-       public List<string> predictedForecast;
-       public  string weather;
-       public  int temperature;
-       Random random;
+
+        public List<string> weatherConditions;
+        public List<string> predictedForecast;
+        public string name;
+        public int temperature;
+        Random random;
 
         public Weather()
         {
@@ -27,9 +27,9 @@ namespace Lemonade_Stand
         public string Weathercontrol()
         {
             int rng = random.Next(5);
-            weather = weatherConditions[rng];
-            return weather;
-            
+            name = weatherConditions[rng];
+            return name;
+
 
         }
 
@@ -38,30 +38,30 @@ namespace Lemonade_Stand
             Random random = new Random();
             int rng = random.Next();
 
-            if (weather == "sunny")
+            if (name == "sunny")
             {
                 temperature = random.Next(70, 105);
-                
+
             }
-            else if (weather == "cloudy")
+            else if (name == "cloudy")
             {
                 temperature = random.Next(60, 80);
-                
+
             }
-            else if (weather == "sleet")
+            else if (name == "sleet")
             {
                 temperature = random.Next(25, 40);
-                
+
             }
-            else if (weather == "snow")
+            else if (name == "snow")
             {
                 temperature = random.Next(0, 30);
-                
+
             }
-            else if (weather == "rain")
+            else if (name == "rain")
             {
                 temperature = random.Next(50, 70);
-                
+
             }
         }
         public void Forcasting()

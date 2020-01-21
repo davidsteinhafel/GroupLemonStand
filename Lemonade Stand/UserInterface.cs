@@ -51,7 +51,7 @@ namespace Lemonade_Stand
         }
         public static void DisplayCurrentWeather(Weather weather)
         {
-            Console.WriteLine("Current weather is {0}", weather);
+            Console.WriteLine("Current weather is {0}", weather.name);
         }
         public static void DisplayRemainingInventory(Inventory inventory1)
         {
@@ -75,17 +75,19 @@ namespace Lemonade_Stand
                 return false;
             }
         }
-        public static void DisplayStartingDayBalance(Wallet wallet)
-        {
 
-        }
         public static void MakeSale(Player player, Wallet wallet, Pitcher pitcher)
         {
             wallet.Money += player.recipe.pricePerCup;
             player.pitcher1.CupsinPitcher -= 1;
             
         }
-        
+        public static void CupsSold(Player player, Cup cups)
+        {
+            
+            int cupSold = 0;
+                cupSold++;
+        }
         
     }
 
