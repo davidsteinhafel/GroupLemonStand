@@ -74,10 +74,10 @@ namespace Lemonade_Stand
         {
             foreach (Day day in week)
             {
+                DayStart(day);
                 currentday++;
                 Console.WriteLine($"Current Day: {currentday}");
                 GameMenu();
-                
                 foreach (Customer customer in day.customers)
                 {
                     
@@ -100,7 +100,7 @@ namespace Lemonade_Stand
                     }
                     else
                     {
-                       //if cant make pitcher and out end day
+                        Console.WriteLine("Out of lemonade!");
                     }
                     if (gameover())
                     {
@@ -138,9 +138,10 @@ namespace Lemonade_Stand
 
         public void GenerateDays()
         {
+            Random rng = new Random();
             for (int i = 0; i < 7; i++)
             {
-                week.Add(new Day());
+                week.Add(new Day(rng));
             }
         }
         

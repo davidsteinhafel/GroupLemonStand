@@ -14,16 +14,18 @@ namespace Lemonade_Stand
         public int customerCount;
         public int pricperCup;
         public List<Customer> customers;
-        
+        private Random rng;
 
 
-        public Day()
+        public Day(Random Rng)
         {
-            customer = new Customer();
+            this.rng = Rng;
+            customer = new Customer(Rng);
             customers = new List<Customer>();
             weather = new Weather();
             weather.Weathercontrol();
             weather.TemperatureSet();
+            CustomerCount();
             AddCustomer();
             ////AddCustomer();
         }
@@ -46,7 +48,7 @@ namespace Lemonade_Stand
             int amountOfCustomers = CustomerCount();
             for (int i = 0; i < amountOfCustomers; i++)
             {
-                customers.Add(new Customer());
+                customers.Add(new Customer(rng));
             }
         }
 

@@ -14,9 +14,9 @@ namespace Lemonade_Stand
         int customerChoice;
         bool customerBuy;
         
-        public Customer()
+        public Customer(Random random)
         {
-            random = new Random();
+            this.random = random;
 
             name = "customer";
 
