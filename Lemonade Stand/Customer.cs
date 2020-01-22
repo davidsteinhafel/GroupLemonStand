@@ -11,17 +11,11 @@ namespace Lemonade_Stand
     {
         public string name;
         Random random;
-        int customerChoice;
-        bool customerBuy;
         
         public Customer()
         {
             random = new Random();
-
             name = "customer";
-
-            //customerChoice = random.Next(11);
-            //customerBuy = false;
         }
 
 

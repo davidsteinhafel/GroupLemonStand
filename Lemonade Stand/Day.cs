@@ -24,21 +24,9 @@ namespace Lemonade_Stand
             weather = new Weather();
             weather.Weathercontrol();
             weather.TemperatureSet();
+            AddCustomer();
             ////AddCustomer();
         }
-
-
-
-        //public void displaystartofdaybalance(Wallet wallet)
-        //{
-        //    startofdaybalance = wallet.Money;
-        //    Console.WriteLine("your starting balance of the day " + startofdaybalance);
-        //}
-        //public void displaydailyprofits(Wallet wallet)
-        //{
-        //    dailyprofit = wallet.Money - startofdaybalance;
-        //    Console.WriteLine("this is how much moneny you made " + dailyprofit);
-        //}
 
         public void AddCustomer()
         {

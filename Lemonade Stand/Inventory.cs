@@ -47,7 +47,7 @@ namespace Lemonade_Stand
                 sugarcubes.Add(new SugarCube());
             }
         }
-        
+
     }
 }
 

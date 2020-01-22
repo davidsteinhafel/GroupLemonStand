@@ -79,15 +79,13 @@ namespace Lemonade_Stand
         {
 
         }
-        public static void MakeSale(Player player, Wallet wallet, Pitcher pitcher)
+        public static void MakeSale(Player player)
         {
-            wallet.Money += player.recipe.pricePerCup;
-            player.pitcher1.CupsinPitcher -= 1;
-            Console.WriteLine("SALE!!!");
-            Console.ReadLine();
+           player.wallet1.Money += player.recipe.pricePerCup;
+           player.pitcher1.CupsinPitcher -= 1;
+             Console.WriteLine("SALE!!!");
+             Console.ReadLine();
         }
-        
-        
     }
 
 }
