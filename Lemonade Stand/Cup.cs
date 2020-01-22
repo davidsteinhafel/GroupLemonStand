@@ -8,6 +8,7 @@ namespace Lemonade_Stand
 {
     public class Cup : Item
     {
+        ///solid "i" inheritance
 
         public Cup()
         {

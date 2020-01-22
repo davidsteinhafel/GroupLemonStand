@@ -12,9 +12,13 @@ namespace Lemonade_Stand
         public string name;
         Random random;
         
-        public Customer()
+        public Customer(Random random)
         {
-            random = new Random();
+
+
+            this.random = random;
+
+
             name = "customer";
         }
 
@@ -35,7 +39,7 @@ namespace Lemonade_Stand
             {
                 numBasedOnRecipe = random.Next(50, 100);
             }
-            if(weather.temperature < 60 || weather.weather != "sunny"|| weather.weather != "cloudy")
+            if(weather.temperature < 60 || weather.name != "sunny"|| weather.name != "cloudy")
             {
                 numBaseOnWeather = random.Next(0, 100);
             }else
@@ -46,6 +50,7 @@ namespace Lemonade_Stand
             {
                 Console.WriteLine("Sale made");
                 return true;
+
 
             }
             else
@@ -60,7 +65,7 @@ namespace Lemonade_Stand
 
                 if (customer.DesicionToBuy(day.weather, player1.recipe) == true)
                 {
-                    UserInterface.MakeSale(player1, player1.wallet1, player1.pitcher1);
+                    UserInterface.MakeSale(player1);
                 }
 
         }

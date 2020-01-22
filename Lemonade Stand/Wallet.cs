@@ -8,6 +8,7 @@ namespace Lemonade_Stand
 {
     public class Wallet
     {
+        //solid priniciple "O" open and closed principle
         private double money;
         public double Money
         {
