@@ -23,10 +23,11 @@ namespace Lemonade_Stand
             weather = new Weather();
             weather.Weathercontrol();
             weather.TemperatureSet();
+            weather.PredictForecast();
 
             CustomerCount();
             AddCustomer();
-            ////AddCustomer();
+            
         }
         public void AddCustomer()
         {

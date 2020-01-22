@@ -11,6 +11,7 @@ namespace Lemonade_Stand
         public string name;
         public Item()
         {
+            
         }
     }
 }

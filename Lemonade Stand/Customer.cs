@@ -43,12 +43,12 @@ namespace Lemonade_Stand
             }
             if (numBaseOnWeather >= 60 && numBasedOnRecipe >= 60)
             {
-                Console.WriteLine("Sale made");
+                Console.WriteLine("Sale!");
                 return true;
             }
             else
             {
-                Console.WriteLine("No sale");
+                Console.WriteLine("No Sale!");
                 return false;
             }
         }

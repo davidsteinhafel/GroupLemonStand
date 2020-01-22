@@ -24,6 +24,7 @@ namespace Lemonade_Stand
             player1 = new Player();
             week = new List<Day>();
             currentday = 0;
+
             UserInterface.DisplayWelcome();
             UserInterface.DisplayInstructions();
             UserInterface.SetName();
@@ -36,8 +37,6 @@ namespace Lemonade_Stand
             UserInterface.CurrentTemp(day.weather);
             day.CustomerCount();
             day.customer.DesicionToBuy(day.weather, player1.recipe);
-
-            day.weather.Forcasting();
         }
 
         public void GameMenu()
@@ -46,6 +45,7 @@ namespace Lemonade_Stand
 
             while (!leaveMenu)
             {
+                Console.WriteLine("Forecast is {0}",week[currentday].weather.predictedForecast);
                 Console.WriteLine("Welcome to game menu press 1 for store, press 2 for Recipe, press 3 for set price of cups of lemonade, press 4 to play game, press 5 to leave game");
                 string gameMenu = Console.ReadLine();
                 switch (gameMenu)
@@ -73,10 +73,9 @@ namespace Lemonade_Stand
             foreach (Day day in week)
             {
                 GameMenu();
+                Console.WriteLine($"Current Day: {currentday}");
                 DayStart(day);
                 currentday++;
-
-                Console.WriteLine($"Current Day: {currentday}");
                 GameOver();
 
                 foreach (Customer customer in day.customers)
