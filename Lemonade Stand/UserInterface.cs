@@ -11,6 +11,8 @@ namespace Lemonade_Stand
         public static void DisplayCurrentDay(Day day)
         {
             Console.WriteLine("Current day is {0}", day);
+            //single responsibility principle. this method has one single responsibility.
+            //in this case that responsibility is to display the current day.
         }
         public static void CurrentTemp(Weather weather)
         {
@@ -77,23 +79,22 @@ namespace Lemonade_Stand
         }
 
 
-        
+
         public static void MakeSale(Player player)
 
         {
-           player.wallet1.Money += player.recipe.pricePerCup;
-           player.pitcher1.CupsinPitcher -= 1;
-             Console.WriteLine("SALE!!!");
+            player.wallet1.Money += player.recipe.pricePerCup;
+            player.pitcher1.CupsinPitcher -= 1;
+            Console.WriteLine("SALE!!!");
             // Console.ReadLine();
         }
 
         public static void CupsSold(Player player, Cup cups)
         {
-            
             int cupSold = 0;
-                cupSold++;
+            cupSold++;
         }
-        
+
 
     }
 

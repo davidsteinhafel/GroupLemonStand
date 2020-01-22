@@ -15,8 +15,6 @@ namespace Lemonade_Stand
         public int pricperCup;
         public List<Customer> customers;
         private Random rng;
-
-
         public Day(Random Rng)
         {
             this.rng = Rng;
@@ -25,12 +23,11 @@ namespace Lemonade_Stand
             weather = new Weather();
             weather.Weathercontrol();
             weather.TemperatureSet();
-            
+
             CustomerCount();
             AddCustomer();
             ////AddCustomer();
         }
-
         public void AddCustomer()
         {
             int amountOfCustomers = CustomerCount();
@@ -63,7 +60,5 @@ namespace Lemonade_Stand
                     return customerCount;
             }
         }
-
-        
     }
 }

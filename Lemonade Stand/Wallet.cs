@@ -30,10 +30,7 @@ namespace Lemonade_Stand
         }
         public Wallet()
         {
-
             money = 50;
-
-
         }
     }
 }

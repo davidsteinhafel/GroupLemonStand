@@ -11,18 +11,12 @@ namespace Lemonade_Stand
     {
         public string name;
         Random random;
-        
+
         public Customer(Random random)
         {
-
-
             this.random = random;
-
-
             name = "customer";
         }
-
-
         public bool DesicionToBuy(Weather weather, Recipe recipe)
         {
             if (recipe.pricePerCup > 5)
@@ -31,7 +25,7 @@ namespace Lemonade_Stand
             }
             int numBasedOnRecipe;
             int numBaseOnWeather;
-            if((recipe.amountOfLemons < 1 || recipe.amountOfLemons > 7) || (recipe.amountOfSugarCubes < 2 || recipe.amountOfSugarCubes > 20))
+            if ((recipe.amountOfLemons < 1 || recipe.amountOfLemons > 7) || (recipe.amountOfSugarCubes < 2 || recipe.amountOfSugarCubes > 20))
             {
                 numBasedOnRecipe = random.Next(0, 100);
             }
@@ -39,10 +33,11 @@ namespace Lemonade_Stand
             {
                 numBasedOnRecipe = random.Next(50, 100);
             }
-            if(weather.temperature < 60 || weather.name != "sunny"|| weather.name != "cloudy")
+            if (weather.temperature < 60 || weather.name != "sunny" || weather.name != "cloudy")
             {
                 numBaseOnWeather = random.Next(0, 100);
-            }else
+            }
+            else
             {
                 numBaseOnWeather = random.Next(50, 100);
             }
@@ -50,8 +45,6 @@ namespace Lemonade_Stand
             {
                 Console.WriteLine("Sale made");
                 return true;
-
-
             }
             else
             {
@@ -59,7 +52,7 @@ namespace Lemonade_Stand
                 return false;
             }
         }
-        public void CustomerBuyLemon(Day day,Player player1)
+        public void CustomerBuyLemon(Day day, Player player1)
         {
             foreach (Customer customer in day.customers)
 
@@ -67,7 +60,6 @@ namespace Lemonade_Stand
                 {
                     UserInterface.MakeSale(player1);
                 }
-
         }
     }
 }

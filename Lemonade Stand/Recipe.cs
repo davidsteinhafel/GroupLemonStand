@@ -18,7 +18,6 @@ namespace Lemonade_Stand
             amountOfLemons = 0;
             amountOfSugarCubes = 0;
             pricePerCup = 0;
-
         }
         public void SetRecipe()
         {
@@ -37,9 +36,9 @@ namespace Lemonade_Stand
             {
                 Console.WriteLine("How many Sugar Cubes do you want to use");
                 isValid = int.TryParse(Console.ReadLine(), out amountOfSugarCubes);
-            } while (isValid == false); 
+            } while (isValid == false);
         }
-        public void setPricePerCup()   
+        public void setPricePerCup()
         {
             bool isValid = false;
             do

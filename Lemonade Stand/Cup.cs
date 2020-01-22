@@ -8,7 +8,9 @@ namespace Lemonade_Stand
 {
     public class Cup : Item
     {
-        ///solid "i" inheritance
+        ///Liskov substitution principle. Cup inherits from the Item class. based on iheritance and
+        ///the liskov property you could effectively interchange this child class with the parent
+        ///item class and they would still logically do the same thing without any suprises.
 
         public Cup()
         {

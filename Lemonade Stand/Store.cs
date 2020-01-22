@@ -12,8 +12,6 @@ namespace Lemonade_Stand
         public double pricePerLemon;
         public double pricePerSugar;
         public double pricePerIceCube;
-
-
         public Store()
         {
             pricePerCup = .50;
@@ -37,7 +35,6 @@ namespace Lemonade_Stand
                         double cost = quantity * pricePerLemon;
                         UserInterface.DisplayRemainingInventory(player1.inventory1);
 
-
                         if (player1.wallet1.Money >= cost)
                         {
                             Console.WriteLine("you have purchased {0}", quantity);
@@ -50,9 +47,7 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-
                         break;
-
                     case "2":
                         Console.WriteLine("How many sugar cubes would you like to purchase?");
                         Console.WriteLine("Sugar cubes cost {0} per cube", pricePerSugar);
@@ -70,9 +65,7 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-
                         break;
-
                     case "3":
                         Console.WriteLine("How many Ice Cubes would you like to purchase?");
                         Console.WriteLine("Price per Ice Cube is = {0}", pricePerIceCube);
@@ -92,9 +85,7 @@ namespace Lemonade_Stand
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-
                         break;
-
                     case "4":
                         Console.WriteLine("How many cups would you like to purchase?");
                         Console.WriteLine("Price per cup is = {0}", pricePerCup);
@@ -107,25 +98,18 @@ namespace Lemonade_Stand
                             Console.WriteLine("thanks for buying {0} cups for ${1}", quantity, cost);
                             player1.wallet1.Money -= cost;
                             UserInterface.DisplayCurrentMoney(player1.wallet1);
-
                         }
                         else
                         {
                             Console.WriteLine("you need more money for this come back later");
                         }
-
                         break;
                     case "5":
                         walkoutdoor = true;
-
                         Console.WriteLine("Thanks for visiting and good luck!!!");
                         break;
-
-
-
                     default:
                         Console.WriteLine("Invalid Input Please Try Again!");
-
                         break;
                 }
             }

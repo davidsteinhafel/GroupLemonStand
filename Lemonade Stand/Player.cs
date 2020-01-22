@@ -21,7 +21,6 @@ namespace Lemonade_Stand
             pitcher1 = new Pitcher();
             recipe = new Recipe();
             inventory1 = new Inventory();
-            
         }
         
         public void FillPitcher()
